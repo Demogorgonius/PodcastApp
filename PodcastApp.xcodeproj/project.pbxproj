@@ -9,21 +9,48 @@
 /* Begin PBXBuildFile section */
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
-		A59C54412AC1F945003E6B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54402AC1F945003E6B89 /* ViewController.swift */; };
-		A59C54442AC1F945003E6B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59C54422AC1F945003E6B89 /* Main.storyboard */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
 		A59C54492AC1F947003E6B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */; };
+		A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54682AC1FBFA003E6B89 /* CustomView.swift */; };
+		A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */; };
+		A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546C2AC1FC31003E6B89 /* CustomTabbarController.swift */; };
+		A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546E2AC1FC54003E6B89 /* MainViewController.swift */; };
+		A59C54712AC1FC5F003E6B89 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54702AC1FC5F003E6B89 /* MainView.swift */; };
+		A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54722AC1FC6F003E6B89 /* SearchView.swift */; };
+		A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54742AC1FC80003E6B89 /* SearchViewController.swift */; };
+		A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54762AC1FC8F003E6B89 /* FavoritesView.swift */; };
+		A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */; };
+		A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */; };
+		A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */; };
+		A59C54802AC1FE78003E6B89 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C547F2AC1FE78003E6B89 /* SnapKit */; };
+		A59C54832AC1FEE8003E6B89 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54822AC1FEE8003E6B89 /* IQKeyboardManagerSwift */; };
+		A59C54862AC1FFA1003E6B89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54852AC1FFA1003E6B89 /* FirebaseAuth */; };
+		A59C54882AC1FFA1003E6B89 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54872AC1FFA1003E6B89 /* FirebaseFirestore */; };
+		A59C548A2AC1FFA2003E6B89 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54892AC1FFA2003E6B89 /* FirebaseStorage */; };
+		A59C548D2AC1FFD6003E6B89 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A59C548C2AC1FFD6003E6B89 /* GoogleSignIn */; };
+		A59C548F2AC1FFD6003E6B89 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C548E2AC1FFD6003E6B89 /* GoogleSignInSwift */; };
+		A59C54922AC20314003E6B89 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54912AC20314003E6B89 /* Realm */; };
+		A59C54942AC20314003E6B89 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54932AC20314003E6B89 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A59C54402AC1F945003E6B89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A59C54432AC1F945003E6B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A59C54452AC1F947003E6B89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A59C54482AC1F947003E6B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A59C544A2AC1F947003E6B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A59C54682AC1FBFA003E6B89 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		A59C546C2AC1FC31003E6B89 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
+		A59C546E2AC1FC54003E6B89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A59C54702AC1FC5F003E6B89 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A59C54722AC1FC6F003E6B89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A59C54742AC1FC80003E6B89 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A59C54762AC1FC8F003E6B89 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +58,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59C54802AC1FE78003E6B89 /* SnapKit in Frameworks */,
+				A59C54882AC1FFA1003E6B89 /* FirebaseFirestore in Frameworks */,
+				A59C548F2AC1FFD6003E6B89 /* GoogleSignInSwift in Frameworks */,
+				A59C54942AC20314003E6B89 /* RealmSwift in Frameworks */,
+				A59C54862AC1FFA1003E6B89 /* FirebaseAuth in Frameworks */,
+				A59C548A2AC1FFA2003E6B89 /* FirebaseStorage in Frameworks */,
+				A59C54832AC1FEE8003E6B89 /* IQKeyboardManagerSwift in Frameworks */,
+				A59C54922AC20314003E6B89 /* Realm in Frameworks */,
+				A59C548D2AC1FFD6003E6B89 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +92,216 @@
 		A59C543B2AC1F945003E6B89 /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				A59C54542AC1FA6D003E6B89 /* Controllers */,
+				A59C54532AC1FA61003E6B89 /* Services */,
+				A59C54522AC1FA42003E6B89 /* Extensions */,
+				A59C54512AC1F9C7003E6B89 /* Resources */,
+				A59C54502AC1F98D003E6B89 /* App */,
+			);
+			path = PodcastApp;
+			sourceTree = "<group>";
+		};
+		A59C54502AC1F98D003E6B89 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				A59C543C2AC1F945003E6B89 /* AppDelegate.swift */,
 				A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */,
-				A59C54402AC1F945003E6B89 /* ViewController.swift */,
-				A59C54422AC1F945003E6B89 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A59C54512AC1F9C7003E6B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A59C54452AC1F947003E6B89 /* Assets.xcassets */,
 				A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */,
 				A59C544A2AC1F947003E6B89 /* Info.plist */,
 			);
-			path = PodcastApp;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A59C54522AC1FA42003E6B89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54682AC1FBFA003E6B89 /* CustomView.swift */,
+				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A59C54532AC1FA61003E6B89 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A59C545B2AC1FB48003E6B89 /* ProfileController */,
+				A59C545A2AC1FB1C003E6B89 /* FavoritesController */,
+				A59C54592AC1FAFE003E6B89 /* SearchController */,
+				A59C54582AC1FABC003E6B89 /* MainController */,
+				A59C54572AC1FAA6003E6B89 /* LoginController */,
+				A59C54562AC1FA9B003E6B89 /* Onboarding */,
+				A59C54552AC1FA82003E6B89 /* CustomTabBarController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A59C54552AC1FA82003E6B89 /* CustomTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C546C2AC1FC31003E6B89 /* CustomTabbarController.swift */,
+			);
+			path = CustomTabBarController;
+			sourceTree = "<group>";
+		};
+		A59C54562AC1FA9B003E6B89 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54672AC1FBD1003E6B89 /* Controller */,
+				A59C54662AC1FBCB003E6B89 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A59C54572AC1FAA6003E6B89 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54652AC1FBBD003E6B89 /* Controller */,
+				A59C54642AC1FBB7003E6B89 /* View */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		A59C54582AC1FABC003E6B89 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54632AC1FBA9003E6B89 /* Controller */,
+				A59C54622AC1FB9D003E6B89 /* View */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		A59C54592AC1FAFE003E6B89 /* SearchController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54612AC1FB8D003E6B89 /* Controller */,
+				A59C54602AC1FB87003E6B89 /* View */,
+			);
+			path = SearchController;
+			sourceTree = "<group>";
+		};
+		A59C545A2AC1FB1C003E6B89 /* FavoritesController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C545F2AC1FB7C003E6B89 /* Controller */,
+				A59C545E2AC1FB77003E6B89 /* View */,
+			);
+			path = FavoritesController;
+			sourceTree = "<group>";
+		};
+		A59C545B2AC1FB48003E6B89 /* ProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C545D2AC1FB6C003E6B89 /* Controller */,
+				A59C545C2AC1FB60003E6B89 /* View */,
+			);
+			path = ProfileController;
+			sourceTree = "<group>";
+		};
+		A59C545C2AC1FB60003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C545D2AC1FB6C003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C545E2AC1FB77003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54762AC1FC8F003E6B89 /* FavoritesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C545F2AC1FB7C003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54602AC1FB87003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54722AC1FC6F003E6B89 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C54612AC1FB8D003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54742AC1FC80003E6B89 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54622AC1FB9D003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54702AC1FC5F003E6B89 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C54632AC1FBA9003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59C546E2AC1FC54003E6B89 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54642AC1FBB7003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C54652AC1FBBD003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54662AC1FBCB003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C54672AC1FBD1003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +320,17 @@
 			dependencies = (
 			);
 			name = PodcastApp;
+			packageProductDependencies = (
+				A59C547F2AC1FE78003E6B89 /* SnapKit */,
+				A59C54822AC1FEE8003E6B89 /* IQKeyboardManagerSwift */,
+				A59C54852AC1FFA1003E6B89 /* FirebaseAuth */,
+				A59C54872AC1FFA1003E6B89 /* FirebaseFirestore */,
+				A59C54892AC1FFA2003E6B89 /* FirebaseStorage */,
+				A59C548C2AC1FFD6003E6B89 /* GoogleSignIn */,
+				A59C548E2AC1FFD6003E6B89 /* GoogleSignInSwift */,
+				A59C54912AC20314003E6B89 /* Realm */,
+				A59C54932AC20314003E6B89 /* RealmSwift */,
+			);
 			productName = PodcastApp;
 			productReference = A59C54392AC1F945003E6B89 /* PodcastApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +359,13 @@
 				Base,
 			);
 			mainGroup = A59C54302AC1F945003E6B89;
+			packageReferences = (
+				A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A59C54812AC1FEE8003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = A59C543A2AC1F945003E6B89 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +382,6 @@
 			files = (
 				A59C54492AC1F947003E6B89 /* LaunchScreen.storyboard in Resources */,
 				A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */,
-				A59C54442AC1F945003E6B89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +392,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59C54412AC1F945003E6B89 /* ViewController.swift in Sources */,
+				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
+				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
+				A59C54712AC1FC5F003E6B89 /* MainView.swift in Sources */,
+				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
+				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
+				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
+				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
+				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
+				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
+				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A59C54422AC1F945003E6B89 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A59C54432AC1F945003E6B89 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,12 +545,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TWQL7PLAUC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PodcastApp/Info.plist;
+				INFOPLIST_FILE = PodcastApp/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +559,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "zvontsov-adadigital.ru.PodcastApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +577,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TWQL7PLAUC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PodcastApp/Info.plist;
+				INFOPLIST_FILE = PodcastApp/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +591,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "zvontsov-adadigital.ru.PodcastApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +622,97 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A59C54812AC1FEE8003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A59C547F2AC1FE78003E6B89 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A59C54822AC1FEE8003E6B89 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54812AC1FEE8003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		A59C54852AC1FFA1003E6B89 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A59C54872AC1FFA1003E6B89 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		A59C54892AC1FFA2003E6B89 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		A59C548C2AC1FFD6003E6B89 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		A59C548E2AC1FFD6003E6B89 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		A59C54912AC20314003E6B89 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A59C54932AC20314003E6B89 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A59C54312AC1F945003E6B89 /* Project object */;
 }
