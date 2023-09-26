@@ -14,7 +14,7 @@ class LoginInViewController: UIViewController {
     //    MARK: - UI
     
     private let loginLabel: UILabel = {
-        return UILabel(labelText: "Логин", textColor: .gray)
+        return UILabel(labelText: "Введите логин", textColor: .gray)
     }()
     
     private let loginTextField: UITextField = {
