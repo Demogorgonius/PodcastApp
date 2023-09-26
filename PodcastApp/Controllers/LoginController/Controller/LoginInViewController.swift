@@ -21,6 +21,10 @@ class LoginInViewController: UIViewController {
         return UITextField(placeholder: "Пароль", borderStyle: .roundedRect)
     }()
     
+    private let enterButton: UIButton = {
+        return UIButton(normalStateText: "Войти", backgroundColor: .blue)
+    }()
+    
     //    MARK: - Override Functions
     
     override func viewDidLoad() {
