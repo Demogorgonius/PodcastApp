@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
             make.top.equalTo(mainSeeAllView.snp.bottom)
             make.leading.equalTo(view)
             make.trailing.equalTo(view)
-            make.bottom.equalTo(view).inset(50)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
         }
     }
     private func setupMainProfileView() {
