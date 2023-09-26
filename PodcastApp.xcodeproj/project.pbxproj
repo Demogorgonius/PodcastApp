@@ -14,7 +14,7 @@
 		0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */; };
 		0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */; };
 		0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */; };
-		0BF5ACA52AC2E4B400FF7B41 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */; };
+		0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -48,10 +48,10 @@
 		0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNameCell.swift; sourceTree = "<group>"; };
 		0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastCell.swift; path = ../PodcastCell.swift; sourceTree = "<group>"; };
 		0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
 		0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
 		0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
+		0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */,
-				0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */,
+				0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */,
 				0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */,
 			);
 			path = Cell;
@@ -433,7 +433,6 @@
 			files = (
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
-				0BF5ACA52AC2E4B400FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
@@ -444,6 +443,7 @@
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
