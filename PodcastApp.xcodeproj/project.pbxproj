@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BF5AC972AC2E44E00FF7B41 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */; };
+		0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC982AC2E46F00FF7B41 /* View.swift */; };
+		0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC992AC2E47000FF7B41 /* Label.swift */; };
+		0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */; };
+		0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */; };
+		0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */; };
+		0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */; };
+		0BF5ACA52AC2E4B400FF7B41 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -34,6 +42,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BF5AC982AC2E46F00FF7B41 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		0BF5AC992AC2E47000FF7B41 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNameCell.swift; sourceTree = "<group>"; };
+		0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastCell.swift; path = ../PodcastCell.swift; sourceTree = "<group>"; };
+		0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
+		0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +85,23 @@
 				A59C54832AC1FEE8003E6B89 /* IQKeyboardManagerSwift in Frameworks */,
 				A59C54922AC20314003E6B89 /* Realm in Frameworks */,
 				A59C548D2AC1FFD6003E6B89 /* GoogleSignIn in Frameworks */,
+				0BF5AC972AC2E44E00FF7B41 /* PodcastIndexKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BF5ACA92AC2E65900FF7B41 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */,
+				0BF5ACA22AC2E4B400FF7B41 /* PodcastCell.swift */,
+				0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +142,9 @@
 		A59C54512AC1F9C7003E6B89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */,
+				0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */,
+				0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */,
 				A59C54452AC1F947003E6B89 /* Assets.xcassets */,
 				A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */,
 				A59C544A2AC1F947003E6B89 /* Info.plist */,
@@ -123,6 +155,10 @@
 		A59C54522AC1FA42003E6B89 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */,
+				0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */,
+				0BF5AC992AC2E47000FF7B41 /* Label.swift */,
+				0BF5AC982AC2E46F00FF7B41 /* View.swift */,
 				A59C54682AC1FBFA003E6B89 /* CustomView.swift */,
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
 			);
@@ -264,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				A59C54702AC1FC5F003E6B89 /* MainView.swift */,
+				0BF5ACA92AC2E65900FF7B41 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +367,7 @@
 				A59C548E2AC1FFD6003E6B89 /* GoogleSignInSwift */,
 				A59C54912AC20314003E6B89 /* Realm */,
 				A59C54932AC20314003E6B89 /* RealmSwift */,
+				0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */,
 			);
 			productName = PodcastApp;
 			productReference = A59C54392AC1F945003E6B89 /* PodcastApp.app */;
@@ -365,6 +403,7 @@
 				A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
 			);
 			productRefGroup = A59C543A2AC1F945003E6B89 /* Products */;
 			projectDirPath = "";
@@ -392,7 +431,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
+				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
+				0BF5ACA52AC2E4B400FF7B41 /* PodcastCell.swift in Sources */,
+				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
+				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
@@ -400,10 +444,12 @@
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
+				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +670,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SparrowTek/PodcastIndexKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -667,6 +721,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
+			productName = PodcastIndexKit;
+		};
 		A59C547F2AC1FE78003E6B89 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */;
