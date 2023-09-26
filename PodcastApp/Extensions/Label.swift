@@ -21,4 +21,11 @@ extension UILabel {
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }
+    
+    convenience init(labelText: String, textColor: UIColor) {
+        self.init()
+        self.text = labelText
+        self.textColor = textColor
+    }
+    
 }

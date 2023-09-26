@@ -20,6 +20,9 @@
 		0BF5ACB02AC323E600FF7B41 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */; };
 		0BF5ACB12AC323E600FF7B41 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */; };
 		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
+		16F287262AC32ED50049EA0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F287252AC32ED50049EA0E /* LoginViewController.swift */; };
+		16F287282AC32F520049EA0E /* UItextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F287272AC32F520049EA0E /* UItextField.swift */; };
+		16F2872A2AC330AF0049EA0E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F287292AC330AF0049EA0E /* UIButton.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		0BF5ACAC2AC30A3300FF7B41 /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
+		16F287252AC32ED50049EA0E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		16F287272AC32F520049EA0E /* UItextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItextField.swift; sourceTree = "<group>"; };
+		16F287292AC330AF0049EA0E /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,30 @@
 				0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		16F287222AC32E610049EA0E /* AuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				16F287232AC32E930049EA0E /* Controller */,
+				16F287242AC32E990049EA0E /* View */,
+			);
+			path = AuthScreen;
+			sourceTree = "<group>";
+		};
+		16F287232AC32E930049EA0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16F287252AC32ED50049EA0E /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16F287242AC32E990049EA0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A59C54302AC1F945003E6B89 = {
@@ -168,9 +198,8 @@
 				0BF5AC982AC2E46F00FF7B41 /* View.swift */,
 				A59C54682AC1FBFA003E6B89 /* CustomView.swift */,
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
-				16F2871C2AC29E160049EA0E /* UITextField + Extension.swift */,
-				16F2871E2AC2A01C0049EA0E /* UIbutton + Extension.swift */,
-				16F287202AC2A1AA0049EA0E /* UILabel + Extension.swift */,
+				16F287272AC32F520049EA0E /* UItextField.swift */,
+				16F287292AC330AF0049EA0E /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,7 +218,7 @@
 				A59C545A2AC1FB1C003E6B89 /* FavoritesController */,
 				A59C54592AC1FAFE003E6B89 /* SearchController */,
 				A59C54582AC1FABC003E6B89 /* MainController */,
-				16F287172AC29AEA0049EA0E /* LoginController */,
+				16F287222AC32E610049EA0E /* AuthScreen */,
 				A59C54562AC1FA9B003E6B89 /* Onboarding */,
 				A59C54552AC1FA82003E6B89 /* CustomTabBarController */,
 			);
@@ -426,15 +455,16 @@
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
+				16F287262AC32ED50049EA0E /* LoginViewController.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
+				16F2872A2AC330AF0049EA0E /* UIButton.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
-				16F2871F2AC2A01C0049EA0E /* UIbutton + Extension.swift in Sources */,
-				16F287212AC2A1AA0049EA0E /* UILabel + Extension.swift in Sources */,
+				16F287282AC32F520049EA0E /* UItextField.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
