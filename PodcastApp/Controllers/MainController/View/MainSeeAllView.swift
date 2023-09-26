@@ -72,14 +72,3 @@ class MainSeeAllView: UIView {
       }
   }
 }
-
-extension MainViewController {
-    @objc func seeAllButtonWasTapped() {
-        let viewController = SearchViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func configureSeeAllButtons() {
-        mainSeeAllView.seeAllButton.addTarget(self, action: #selector(seeAllButtonWasTapped), for: .touchUpInside)
-    }
-}
