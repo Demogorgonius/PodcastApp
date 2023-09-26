@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */,
-				0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */,
 				0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */,
+				0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
