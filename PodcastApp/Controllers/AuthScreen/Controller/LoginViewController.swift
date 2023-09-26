@@ -38,7 +38,10 @@ class LoginInViewController: UIViewController {
     }()
 
     private let enterButton: UIButton = {
-        return UIButton(normalStateText: "Войти", backgroundColor: .blue)
+        let button = UIButton(normalStateText: "Войти", backgroundColor: .blue)
+        button.layer.cornerRadius = 25.0
+        button.addTarget(enterButtonPressed.self, action: #selector(enterButtonPressed), for: .touchUpInside)
+        return button
     }()
 
     // MARK: - Override Functions
@@ -73,7 +76,6 @@ extension LoginInViewController {
             make.trailing.equalToSuperview().offset(-16)
         }
         
-        // Set the height constraint for loginTextField and passwordTextField
         loginTextField.snp.makeConstraints { make in
             make.height.equalTo(45)
         }
@@ -83,9 +85,17 @@ extension LoginInViewController {
         }
 
         enterButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.top.equalTo(loginAndPasswordStack.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.height.equalTo(57)
         }
     }
+    
+    
+    //  MARK: - @objc private Functions
 
+    @objc func enterButtonPressed() {
+        print("Enter Button Pressed")
+    }
 }
