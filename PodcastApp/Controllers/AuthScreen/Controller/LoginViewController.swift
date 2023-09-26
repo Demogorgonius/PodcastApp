@@ -53,7 +53,7 @@ class LoginInViewController: UIViewController {
     }()
     
     private let enterButton: UIButton = {
-        let button = UIButton(normalStateText: "Войти", backgroundColor: .blue)
+        let button = UIButton(normalStateText: "Войти", backgroundColor: .skyBlue)
         button.layer.cornerRadius = 25.0
         button.addTarget(enterButtonPressed.self, action: #selector(enterButtonPressed), for: .touchUpInside)
         return button
