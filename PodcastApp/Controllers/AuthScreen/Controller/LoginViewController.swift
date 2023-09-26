@@ -6,24 +6,86 @@
 //
 
 import UIKit
+import SnapKit
+import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginInViewController: UIViewController {
+
+    // MARK: - UI
+
+    private let loginLabel: UILabel = {
+        return UILabel(labelText: "Логин", textColor: .gray)
+    }()
+
+    private let loginTextField: UITextField = {
+        return UITextField(placeholder: "Логин", borderStyle: .roundedRect)
+    }()
+    
+    private let passwordLabel: UILabel = {
+        return UILabel(labelText: "Пароль", textColor: .gray)
+    }()
+
+    private let passwordTextField: UITextField = {
+        return UITextField(placeholder: "Пароль", borderStyle: .roundedRect)
+    }()
+
+    private lazy var loginAndPasswordStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [loginLabel, loginTextField, passwordLabel, passwordTextField])
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fill
+        return stackView
+    }()
+
+    private let enterButton: UIButton = {
+        return UIButton(normalStateText: "Войти", backgroundColor: .blue)
+    }()
+
+    // MARK: - Override Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setUpView()
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginInViewController {
+
+    // MARK: - Private Functions
+
+    private func setUpView() {
+        addSubviews()
+        setConstraints()
     }
-    */
+
+    private func addSubviews() {
+        view.addSubview(loginAndPasswordStack)
+        view.addSubview(enterButton)
+    }
+
+    private func setConstraints() {
+        
+        loginAndPasswordStack.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(38)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+        }
+        
+        // Set the height constraint for loginTextField and passwordTextField
+        loginTextField.snp.makeConstraints { make in
+            make.height.equalTo(45)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(45)
+        }
+
+        enterButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(loginAndPasswordStack.snp.bottom).offset(20)
+        }
+    }
 
 }
