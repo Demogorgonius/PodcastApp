@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16F2871B2AC29B270049EA0E /* LoginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F2871A2AC29B270049EA0E /* LoginInViewController.swift */; };
-		16F2871D2AC29E160049EA0E /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F2871C2AC29E160049EA0E /* UITextField + Extension.swift */; };
-		16F2871F2AC2A01C0049EA0E /* UIbutton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F2871E2AC2A01C0049EA0E /* UIbutton + Extension.swift */; };
-		16F287212AC2A1AA0049EA0E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F287202AC2A1AA0049EA0E /* UILabel + Extension.swift */; };
+		0BF5AC972AC2E44E00FF7B41 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */; };
+		0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC982AC2E46F00FF7B41 /* View.swift */; };
+		0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC992AC2E47000FF7B41 /* Label.swift */; };
+		0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */; };
+		0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */; };
+		0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */; };
+		0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */; };
+		0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */; };
+		0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACAC2AC30A3300FF7B41 /* MainProfileView.swift */; };
+		0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */; };
+		0BF5ACB02AC323E600FF7B41 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */; };
+		0BF5ACB12AC323E600FF7B41 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */; };
+		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -19,7 +28,7 @@
 		A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */; };
 		A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546C2AC1FC31003E6B89 /* CustomTabbarController.swift */; };
 		A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C546E2AC1FC54003E6B89 /* MainViewController.swift */; };
-		A59C54712AC1FC5F003E6B89 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54702AC1FC5F003E6B89 /* MainView.swift */; };
+		A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54702AC1FC5F003E6B89 /* MainCollectionView.swift */; };
 		A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54722AC1FC6F003E6B89 /* SearchView.swift */; };
 		A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54742AC1FC80003E6B89 /* SearchViewController.swift */; };
 		A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54762AC1FC8F003E6B89 /* FavoritesView.swift */; };
@@ -38,10 +47,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16F2871A2AC29B270049EA0E /* LoginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInViewController.swift; sourceTree = "<group>"; };
-		16F2871C2AC29E160049EA0E /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
-		16F2871E2AC2A01C0049EA0E /* UIbutton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton + Extension.swift"; sourceTree = "<group>"; };
-		16F287202AC2A1AA0049EA0E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		0BF5AC982AC2E46F00FF7B41 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		0BF5AC992AC2E47000FF7B41 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNameCell.swift; sourceTree = "<group>"; };
+		0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
+		0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
+		0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		0BF5ACAC2AC30A3300FF7B41 /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
+		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +69,7 @@
 		A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		A59C546C2AC1FC31003E6B89 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 		A59C546E2AC1FC54003E6B89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A59C54702AC1FC5F003E6B89 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A59C54702AC1FC5F003E6B89 /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 		A59C54722AC1FC6F003E6B89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A59C54742AC1FC80003E6B89 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A59C54762AC1FC8F003E6B89 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -75,34 +92,21 @@
 				A59C54832AC1FEE8003E6B89 /* IQKeyboardManagerSwift in Frameworks */,
 				A59C54922AC20314003E6B89 /* Realm in Frameworks */,
 				A59C548D2AC1FFD6003E6B89 /* GoogleSignIn in Frameworks */,
+				0BF5AC972AC2E44E00FF7B41 /* PodcastIndexKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16F287172AC29AEA0049EA0E /* LoginController */ = {
+		0BF5ACA92AC2E65900FF7B41 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				16F287182AC29AF90049EA0E /* Controller */,
-				16F287192AC29B040049EA0E /* View */,
+				0BF5ACA12AC2E4AF00FF7B41 /* CategoryCell.swift */,
+				0BF5ACAA2AC2EA7D00FF7B41 /* PodcastCell.swift */,
+				0BF5ACA02AC2E4AC00FF7B41 /* CategoryNameCell.swift */,
 			);
-			path = LoginController;
-			sourceTree = "<group>";
-		};
-		16F287182AC29AF90049EA0E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				16F2871A2AC29B270049EA0E /* LoginInViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		16F287192AC29B040049EA0E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A59C54302AC1F945003E6B89 = {
@@ -145,6 +149,9 @@
 		A59C54512AC1F9C7003E6B89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0BF5ACA82AC2E5DC00FF7B41 /* Manrope-Regular.ttf */,
+				0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */,
+				0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */,
 				A59C54452AC1F947003E6B89 /* Assets.xcassets */,
 				A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */,
 				A59C544A2AC1F947003E6B89 /* Info.plist */,
@@ -155,6 +162,10 @@
 		A59C54522AC1FA42003E6B89 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0BF5AC9B2AC2E47500FF7B41 /* CustomColor.swift */,
+				0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */,
+				0BF5AC992AC2E47000FF7B41 /* Label.swift */,
+				0BF5AC982AC2E46F00FF7B41 /* View.swift */,
 				A59C54682AC1FBFA003E6B89 /* CustomView.swift */,
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
 				16F2871C2AC29E160049EA0E /* UITextField + Extension.swift */,
@@ -289,7 +300,10 @@
 		A59C54622AC1FB9D003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A59C54702AC1FC5F003E6B89 /* MainView.swift */,
+				0BF5ACAC2AC30A3300FF7B41 /* MainProfileView.swift */,
+				0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */,
+				A59C54702AC1FC5F003E6B89 /* MainCollectionView.swift */,
+				0BF5ACA92AC2E65900FF7B41 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +356,7 @@
 				A59C548E2AC1FFD6003E6B89 /* GoogleSignInSwift */,
 				A59C54912AC20314003E6B89 /* Realm */,
 				A59C54932AC20314003E6B89 /* RealmSwift */,
+				0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */,
 			);
 			productName = PodcastApp;
 			productReference = A59C54392AC1F945003E6B89 /* PodcastApp.app */;
@@ -377,6 +392,7 @@
 				A59C54842AC1FFA1003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A59C548B2AC1FFD6003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				A59C54902AC20314003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
 			);
 			productRefGroup = A59C543A2AC1F945003E6B89 /* Products */;
 			projectDirPath = "";
@@ -392,6 +408,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF5ACB02AC323E600FF7B41 /* Manrope-Regular.ttf in Resources */,
+				0BF5ACB12AC323E600FF7B41 /* Manrope-ExtraBold.ttf in Resources */,
+				0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */,
 				A59C54492AC1F947003E6B89 /* LaunchScreen.storyboard in Resources */,
 				A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */,
 			);
@@ -404,10 +423,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
+				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
+				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
-				16F2871B2AC29B270049EA0E /* LoginInViewController.swift in Sources */,
+				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
-				A59C54712AC1FC5F003E6B89 /* MainView.swift in Sources */,
+				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
@@ -415,12 +437,16 @@
 				16F287212AC2A1AA0049EA0E /* UILabel + Extension.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
+				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
-				16F2871D2AC29E160049EA0E /* UITextField + Extension.swift in Sources */,
+				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
+				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
+				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +666,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SparrowTek/PodcastIndexKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -683,6 +717,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0BF5AC962AC2E44E00FF7B41 /* PodcastIndexKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BF5AC952AC2E44E00FF7B41 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
+			productName = PodcastIndexKit;
+		};
 		A59C547F2AC1FE78003E6B89 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A59C547E2AC1FE78003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */;
