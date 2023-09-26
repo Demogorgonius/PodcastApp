@@ -12,14 +12,14 @@ import SnapKit
 class CategoryNameCell: UICollectionViewCell {
 
   static let identifier = "CategoryNameCell"
-  var categoryLabel = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .black)
+  var categoryLabel = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .gray)
 
   override var isSelected: Bool {
     didSet {
       if isSelected {
         backgroundColor = UIColor.shadowGray
         categoryLabel.textColor = UIColor.black
-        categoryLabel.font = .manropeBold(size: 14)
+        categoryLabel.font = .manropeExtraBold(size: 14)
       } else {
         backgroundColor = UIColor.white
         categoryLabel.textColor = UIColor.gray
