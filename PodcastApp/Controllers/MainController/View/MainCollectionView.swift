@@ -85,7 +85,8 @@ class MainCollection: UIView, UICollectionViewDelegate {
         }
         bottomVerticalCollectionView.snp.makeConstraints { make in
             make.top.equalTo(topHorizontalCollectionView2.snp.bottom).offset(padding)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.trailing.equalTo(self).inset(32)
+            make.leading.equalToSuperview()
             make.bottom.equalTo(self)
         }
     }

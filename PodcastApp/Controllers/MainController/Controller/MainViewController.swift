@@ -8,23 +8,46 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    weak var mainCollectionView: MainCollection?
-    var tabBar = UITabBar()
-    
-    override func viewDidLoad() {
+    let mainCollectionView = MainCollection()
+    let mainProfileView = MainProfileView()
+    let mainSeeAllView = MainSeeAllView()
+     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setupMainProfileView()
+        setupMainSeeAllView()
         setupMainCollectionView()
+        configureSeeAllButtons()
+
     }
     
     private func setupMainCollectionView() {
-        let mainCollectionView = MainCollection()
         view.addSubview(mainCollectionView)
         mainCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.trailing.equalTo(view)
-            make.bottom.equalTo(view).offset(tabBar.frame.height)
+            make.top.equalTo(mainSeeAllView.snp.bottom).offset(5)
+            make.leading.equalTo(view).offset(32)
+            make.trailing.equalTo(view)
+            make.bottom.equalTo(view).inset(50)
             
+        }
+    }
+    private func setupMainProfileView() {
+        view.addSubview(mainProfileView)
+        mainProfileView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
+            make.leading.equalTo(view).offset(32)
+            make.trailing.equalTo(view).inset(32)
+            make.height.equalTo(50)
+        }
+    }
+    
+    private func setupMainSeeAllView() {
+        view.addSubview(mainSeeAllView)
+        mainSeeAllView.snp.makeConstraints { make in
+            make.top.equalTo(mainProfileView.snp.bottom).offset(5)
+            make.leading.equalTo(view).offset(32)
+            make.trailing.equalTo(view).inset(32)
+            make.height.equalTo(50)
         }
     }
 }

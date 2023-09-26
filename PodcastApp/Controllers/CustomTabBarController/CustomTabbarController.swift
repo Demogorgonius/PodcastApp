@@ -8,7 +8,10 @@
 import UIKit
 
 class CustomTabBarController: UITabBarController {
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         modalPresentationStyle = .automatic
         modalTransitionStyle = .crossDissolve
@@ -17,13 +20,15 @@ class CustomTabBarController: UITabBarController {
         let searchNavigationVC = UINavigationController(rootViewController: SearchViewController())
         let favoritesNavigationVC = UINavigationController(rootViewController: FavoritesViewController())
         let profileNavigationVC = UINavigationController(rootViewController: ProfileViewController())
-       
+        
         setViewControllers([mainNavigationVC, searchNavigationVC, favoritesNavigationVC, profileNavigationVC], animated: false)
         
         customizeTabBar(mainNavigationVC, name: "Home page")
         customizeTabBar(favoritesNavigationVC, name: "Favorites")
         customizeTabBar(searchNavigationVC, name: "Search")
         customizeTabBar(profileNavigationVC, name: "Profile")
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+
     }
 }
 
@@ -37,7 +42,7 @@ private extension CustomTabBarController {
             controller.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
             
             controller.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemTeal]
-            controller.navigationBar.prefersLargeTitles = true
+            controller.navigationBar.prefersLargeTitles = false
             controller.navigationItem.largeTitleDisplayMode = .automatic
             
             if #available(iOS 13.0, *) {
@@ -72,13 +77,13 @@ private extension CustomTabBarController {
         case "Search":
             controller.tabBarItem.image = UIImage(systemName: "magnifyingglass")
             controller.tabBarItem.selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
-            controller.navigationBar.prefersLargeTitles = true
+            controller.navigationBar.prefersLargeTitles = false
             controller.navigationItem.largeTitleDisplayMode = .automatic
             
         case "Profile":
             controller.tabBarItem.image = UIImage(systemName: "person")
             controller.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
-            controller.navigationBar.prefersLargeTitles = true
+            controller.navigationBar.prefersLargeTitles = false
             controller.navigationItem.largeTitleDisplayMode = .automatic
             
         default:
