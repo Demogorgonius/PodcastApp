@@ -13,8 +13,16 @@ class LoginInViewController: UIViewController {
 
     //    MARK: - UI
     
+    private let loginLabel: UILabel = {
+        return UILabel(labelText: "Логин", textColor: .gray)
+    }()
+    
     private let loginTextField: UITextField = {
         return UITextField(placeholder: "Логин", borderStyle: .roundedRect)
+    }()
+    
+    private let passwordLabel: UILabel = {
+        return UILabel(labelText: "Пароль", textColor: .gray)
     }()
     
     private let password: UITextField = {
