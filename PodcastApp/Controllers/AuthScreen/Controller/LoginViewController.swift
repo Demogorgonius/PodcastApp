@@ -100,6 +100,19 @@ final class LoginInViewController: UIViewController {
         button.layer.borderWidth = 1.0
         return button
     }()
+    
+    private let registerLabel: UILabel = {
+        let label = UILabel()
+        let text = "У вас еще нет аккаунта? Зарегистрироваться"
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: text.count))
+        let greenRange = (text as NSString).range(of: "Зарегистрироваться")
+        attributedText.addAttribute(.foregroundColor, value: UIColor.lightGreen, range: greenRange)
+        label.attributedText = attributedText
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+
 
     // MARK: - Override Functions
     
@@ -127,6 +140,7 @@ extension LoginInViewController {
         view.addSubview(enterButton)
         view.addSubview(continueStack)
         view.addSubview(continueWithGoogleLabel)
+        view.addSubview(registerLabel)
     }
     
     private func setConstraints() {
@@ -186,6 +200,11 @@ extension LoginInViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
+        }
+        
+        registerLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-33)
+            make.centerX.equalToSuperview()
         }
     }
     
