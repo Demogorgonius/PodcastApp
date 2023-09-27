@@ -119,7 +119,14 @@ class PodcastCell: UICollectionViewCell {
     
     
     
-    public func setupPodcastCell(titleLeft: String, titleRight: String?, descriptionLeft: String, descriptionRight: String?, image: UIImage?, cellType: Cell?) {
+    public func setupPodcastCell(
+        titleLeft: String = "",
+        titleRight: String? = nil,
+        descriptionLeft: String = "",
+        descriptionRight: String? = nil,
+        image: UIImage? = nil,
+        cellType: Cell? = nil
+    )  {
         if let textR = titleRight {
             titleLbl.text = titleLeft + " | " + textR
         } else {
