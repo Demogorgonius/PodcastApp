@@ -10,13 +10,13 @@ import UIKit
 import SnapKit
 
 class PodcastCell: UICollectionViewCell {
-  private var whiteBackgroundView = UIView.makeView(backgroundColor: .white, cornerRadius: 5)
     
   var imageViewCell: UIImageView = {
     let imageView = UIImageView()
     imageView.clipsToBounds = true
     imageView.contentMode = .scaleAspectFit
     imageView.layer.cornerRadius = 5
+    imageView.backgroundColor = .white
     imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView
   }()
@@ -134,7 +134,6 @@ class PodcastCell: UICollectionViewCell {
 
   private func setupUI() {
     contentView.addSubview(cardView)
-    cardView.addSubview(whiteBackgroundView)
     cardView.addSubview(imageViewCell)
       cardView.addSubview(stackView)
       stackView.addArrangedSubview(stackViewTitle)
@@ -152,8 +151,8 @@ class PodcastCell: UICollectionViewCell {
 
   private func setupLayout() {
       cardView.snp.makeConstraints { make in
-          make.leading.equalToSuperview()
-          make.trailing.equalToSuperview()
+          make.leading.equalToSuperview().offset(32)
+          make.trailing.equalToSuperview().inset(32)
           make.top.equalToSuperview()
           make.bottom.equalToSuperview()
       }
@@ -172,14 +171,10 @@ class PodcastCell: UICollectionViewCell {
       }
 
       checkmarkImage.snp.makeConstraints { make in
-          make.trailing.equalTo(cardView).offset(-16)
+          make.trailing.equalTo(cardView).inset(16)
           make.centerY.equalTo(stackView)
           make.width.equalTo(24)
           make.height.equalTo(24)
-      }
-
-      whiteBackgroundView.snp.makeConstraints { make in
-          make.edges.equalTo(imageViewCell)
       }
   }
 
