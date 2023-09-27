@@ -8,9 +8,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let mainCollectionView = MainCollection()
-    let mainProfileView = MainProfileView()
-    let mainSeeAllView = MainSeeAllView()
+    private let mainCollectionView = MainCollection()
+    private let mainProfileView = MainProfileView()
+    private let mainSeeAllView = MainSeeAllView()
      override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -54,16 +54,17 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc func seeAllButtonWasTapped() {
-        let viewController = SearchViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func configureSeeAllButtons() {
+
+   private func configureSeeAllButtons() {
         mainSeeAllView.seeAllButton.addTarget(self, action: #selector(seeAllButtonWasTapped), for: .touchUpInside)
     }
+    
+    @objc func seeAllButtonWasTapped() {
+        let viewController = AllCategoriesController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 
-    func setupCollectionViewDelegate(_ collectionView: UICollectionView) {
+    private  func setupCollectionViewDelegate(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
