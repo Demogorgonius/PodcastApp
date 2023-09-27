@@ -46,7 +46,8 @@
 		A59C54AD2AC34DAE003E6B89 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */; };
 		A59C54B02AC34E3D003E6B89 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */; };
 		E23E74CF2AC43DE300663FA1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23E74CE2AC43DE300663FA1 /* OnboardingViewController.swift */; };
-		E23E74D12AC43E1800663FA1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23E74D02AC43E1800663FA1 /* OnboardingView.swift */; };
+		E2773BE32AC466FC000A2551 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2773BE22AC466FC000A2551 /* PageViewController.swift */; };
+		E2773BE52AC46722000A2551 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2773BE42AC46722000A2551 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +81,8 @@
 		A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E23E74CE2AC43DE300663FA1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		E23E74D02AC43E1800663FA1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E2773BE22AC466FC000A2551 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		E2773BE42AC46722000A2551 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				E23E74CE2AC43DE300663FA1 /* OnboardingViewController.swift */,
+				E2773BE22AC466FC000A2551 /* PageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,7 +324,7 @@
 		E23E74CD2AC43D8400663FA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E23E74D02AC43E1800663FA1 /* OnboardingView.swift */,
+				E2773BE42AC46722000A2551 /* PageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,17 +434,18 @@
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
+				E2773BE32AC466FC000A2551 /* PageViewController.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
+				E2773BE52AC46722000A2551 /* PageView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
-				E23E74D12AC43E1800663FA1 /* OnboardingView.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 			);
