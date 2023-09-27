@@ -53,6 +53,7 @@
 		A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */; };
 		A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */; };
 		A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */; };
+		A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			children = (
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
+				A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
+				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
