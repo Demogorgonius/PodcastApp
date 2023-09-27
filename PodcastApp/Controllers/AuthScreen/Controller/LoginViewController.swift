@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import FirebaseAuth
 
-class LoginInViewController: UIViewController {
+final class LoginInViewController: UIViewController {
     
     // MARK: - UI
     
@@ -59,6 +59,36 @@ class LoginInViewController: UIViewController {
         return button
     }()
     
+    private lazy var leftStrightLine: LineView = {
+        let lineView = LineView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        lineView.backgroundColor = .clear
+        return lineView
+    }()
+    
+    private lazy var continueWithLabel: UILabel = {
+        let label = UILabel(labelText: "Or continue with", textColor: .gray)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+
+    
+    private lazy var rightStraightLine: LineView = {
+        let lineView = LineView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        lineView.backgroundColor = .clear
+        return lineView
+    }()
+    
+    private lazy var continueStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [leftStrightLine, continueWithLabel, rightStraightLine])
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
+    
     // MARK: - Override Functions
     
     override func viewDidLoad() {
@@ -83,6 +113,7 @@ extension LoginInViewController {
         loginTextField.addSubview(loginShowInidcator)
         passwordTextField.addSubview(passwordShowIndicator)
         view.addSubview(enterButton)
+        view.addSubview(continueStack)
     }
     
     private func setConstraints() {
@@ -122,7 +153,20 @@ extension LoginInViewController {
             make.height.equalTo(57)
         }
         
+        continueStack.snp.makeConstraints { make in
+            make.top.equalTo(enterButton.snp.bottom).offset(45)
+            make.leading.equalToSuperview().offset(57)
+            make.trailing.equalToSuperview().offset(-57)
+            make.height.equalTo(30)
+        }
         
+        leftStrightLine.snp.makeConstraints { make in
+            make.width.equalTo(67)
+        }
+        
+        rightStraightLine.snp.makeConstraints { make in
+            make.width.equalTo(67)
+        }
     }
     
     
