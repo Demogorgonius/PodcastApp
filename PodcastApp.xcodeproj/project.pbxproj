@@ -46,6 +46,10 @@
 		A59C54AB2AC34DAE003E6B89 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AA2AC34DAE003E6B89 /* GoogleSignIn */; };
 		A59C54AD2AC34DAE003E6B89 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */; };
 		A59C54B02AC34E3D003E6B89 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */; };
+		A59C54B22AC49D84003E6B89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B12AC49D84003E6B89 /* LoginViewController.swift */; };
+		A59C54B42AC49DA7003E6B89 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B32AC49DA7003E6B89 /* LoginView.swift */; };
+		A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */; };
+		A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A59C54B12AC49D84003E6B89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A59C54B32AC49DA7003E6B89 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +346,7 @@
 		A59C54642AC1FBB7003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A59C54B32AC49DA7003E6B89 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 		A59C54652AC1FBBD003E6B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A59C54B12AC49D84003E6B89 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 		A59C54662AC1FBCB003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 		A59C54672AC1FBD1003E6B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,8 +472,10 @@
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
+				A59C54B22AC49D84003E6B89 /* LoginViewController.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
+				A59C54B42AC49DA7003E6B89 /* LoginView.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
@@ -469,11 +483,13 @@
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
+				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
+				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,

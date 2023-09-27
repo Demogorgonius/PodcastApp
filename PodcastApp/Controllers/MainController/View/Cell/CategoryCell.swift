@@ -45,7 +45,7 @@ class CategoryCell: UICollectionViewCell {
   private func setupViews() {
       stackView.addArrangedSubview(categoryLabelTob)
       stackView.addArrangedSubview(categoryLabelBottom)
-    contentView.addSubview(stackView)
+      contentView.addSubview(stackView)
   }
 
   private func setupConstraints() {
