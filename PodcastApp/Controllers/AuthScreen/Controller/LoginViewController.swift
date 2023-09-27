@@ -53,7 +53,7 @@ final class LoginInViewController: UIViewController {
     }()
     
     private let enterButton: UIButton = {
-        let button = UIButton(normalStateText: "Войти", backgroundColor: .skyBlue)
+        let button = UIButton(normalStateText: "Войти", normalStateTextColor: .white, backgroundColor: .skyBlue)
         button.layer.cornerRadius = 25.0
         button.addTarget(enterButtonPressed.self, action: #selector(enterButtonPressed), for: .touchUpInside)
         return button
@@ -73,7 +73,6 @@ final class LoginInViewController: UIViewController {
         return label
     }()
 
-    
     private lazy var rightStraightLine: LineView = {
         let lineView = LineView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         lineView.backgroundColor = .clear
@@ -88,7 +87,20 @@ final class LoginInViewController: UIViewController {
         return stackView
     }()
     
-    
+    private let continueWithGoogleLabel: UIButton = {
+        var buttonConfiguration = UIButton.Configuration.plain()
+        buttonConfiguration.title = "Continue with Google"
+        buttonConfiguration.image = UIImage(named: "googleSymbol")
+        buttonConfiguration.imagePadding = 12
+        buttonConfiguration.baseForegroundColor = .black
+        let button = UIButton(configuration: buttonConfiguration)
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 20
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1.0
+        return button
+    }()
+
     // MARK: - Override Functions
     
     override func viewDidLoad() {
@@ -114,6 +126,7 @@ extension LoginInViewController {
         passwordTextField.addSubview(passwordShowIndicator)
         view.addSubview(enterButton)
         view.addSubview(continueStack)
+        view.addSubview(continueWithGoogleLabel)
     }
     
     private func setConstraints() {
@@ -153,6 +166,14 @@ extension LoginInViewController {
             make.height.equalTo(57)
         }
         
+        leftStrightLine.snp.makeConstraints { make in
+            make.width.equalTo(67)
+        }
+        
+        rightStraightLine.snp.makeConstraints { make in
+            make.width.equalTo(67)
+        }
+        
         continueStack.snp.makeConstraints { make in
             make.top.equalTo(enterButton.snp.bottom).offset(45)
             make.leading.equalToSuperview().offset(57)
@@ -160,12 +181,11 @@ extension LoginInViewController {
             make.height.equalTo(30)
         }
         
-        leftStrightLine.snp.makeConstraints { make in
-            make.width.equalTo(67)
-        }
-        
-        rightStraightLine.snp.makeConstraints { make in
-            make.width.equalTo(67)
+        continueWithGoogleLabel.snp.makeConstraints { make in
+            make.top.equalTo(continueStack.snp.bottom).offset(56)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(56)
         }
     }
     

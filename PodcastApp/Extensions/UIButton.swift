@@ -9,8 +9,9 @@ import UIKit
 
 extension UIButton {
     
-    convenience init(normalStateText: String, backgroundColor: UIColor) {
+    convenience init(normalStateText: String, normalStateTextColor: UIColor, backgroundColor: UIColor) {
         self.init()
+        self.setTitleColor(normalStateTextColor, for: .normal)
         self.setTitle(normalStateText, for: .normal)
         self.backgroundColor = backgroundColor
     }
