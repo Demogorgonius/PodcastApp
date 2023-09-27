@@ -119,13 +119,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		16F287222AC32E610049EA0E /* AuthScreen */ = {
+		16F287222AC32E610049EA0E /* AuthController */ = {
 			isa = PBXGroup;
 			children = (
 				16F287232AC32E930049EA0E /* Controller */,
 				16F287242AC32E990049EA0E /* View */,
 			);
-			path = AuthScreen;
+			path = AuthController;
 			sourceTree = "<group>";
 		};
 		16F287232AC32E930049EA0E /* Controller */ = {
@@ -223,7 +223,7 @@
 				A59C545A2AC1FB1C003E6B89 /* FavoritesController */,
 				A59C54592AC1FAFE003E6B89 /* SearchController */,
 				A59C54582AC1FABC003E6B89 /* MainController */,
-				16F287222AC32E610049EA0E /* AuthScreen */,
+				16F287222AC32E610049EA0E /* AuthController */,
 				A59C54562AC1FA9B003E6B89 /* Onboarding */,
 				A59C54552AC1FA82003E6B89 /* CustomTabBarController */,
 			);
