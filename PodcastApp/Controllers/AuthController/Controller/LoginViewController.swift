@@ -98,6 +98,7 @@ final class LoginInViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 1.0
+        button.addTarget(continueWithGoogleButtonPressed.self, action: #selector(continueWithGoogleButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -213,5 +214,9 @@ extension LoginInViewController {
 
     @objc func enterButtonPressed() {
         print("Enter Button Pressed")
+    }
+    
+    @objc func continueWithGoogleButtonPressed() {
+        print("continueWithGoogleButtonPressed")
     }
 }
