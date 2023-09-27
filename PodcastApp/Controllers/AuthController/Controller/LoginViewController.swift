@@ -23,10 +23,11 @@ final class LoginInViewController: UIViewController {
     }()
     
     private let loginShowInidcator: UIImageView = {
-        let indicator = UIImageView()
-        indicator.image = UIImage(systemName: "eye")
-        indicator.tintColor = .gray
-        return indicator
+        let passwordIndicator = UIImageView()
+        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.tintColor = .gray
+        passwordIndicator.isUserInteractionEnabled = true
+        return passwordIndicator
     }()
     
     private let passwordLabel: UILabel = {
@@ -41,6 +42,7 @@ final class LoginInViewController: UIViewController {
         let passwordIndicator = UIImageView()
         passwordIndicator.image = UIImage(systemName: "eye")
         passwordIndicator.tintColor = .gray
+        passwordIndicator.isUserInteractionEnabled = true
         return passwordIndicator
     }()
     
@@ -212,13 +214,25 @@ extension LoginInViewController {
     }
     
     private func addActionsToUI() {
+        let loginShowInidcatorTapGesture = UITapGestureRecognizer(target: self, action: #selector(loginShowInidcatorPressed))
+        loginShowInidcator.addGestureRecognizer(loginShowInidcatorTapGesture)
         
+        let passwordShowIndicatorPressed = UITapGestureRecognizer(target: self, action: #selector(passwordShowIndicatorPressed))
+        passwordShowIndicator.addGestureRecognizer(passwordShowIndicatorPressed)
         
         let registerLabelTapGesture = UITapGestureRecognizer(target: self, action: #selector(registerLabelTapped))
         registerLabel.addGestureRecognizer(registerLabelTapGesture)
     }
     
     //  MARK: - @objc private Functions
+    
+    @objc func loginShowInidcatorPressed() {
+        print("loginShowInidcator Pressed")
+    }
+    
+    @objc func passwordShowIndicatorPressed() {
+        print("passwordShowIndicator Pressed")
+    }
 
     @objc func enterButtonPressed() {
         print("Enter Button Pressed")
