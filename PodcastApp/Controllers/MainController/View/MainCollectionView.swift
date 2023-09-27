@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-let categoryNames = ["Popular 🔥", "Recent","News"
-    ,"Music","Home","Travel","Design","Film","TV","Food","Language"]
+
 
 import UIKit
 

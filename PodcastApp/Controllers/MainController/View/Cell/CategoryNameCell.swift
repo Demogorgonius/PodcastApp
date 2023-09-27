@@ -12,7 +12,7 @@ import SnapKit
 class CategoryNameCell: UICollectionViewCell {
 
   static let identifier = "CategoryNameCell"
-  var categoryLabel = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .gray)
+  private var categoryLabel = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .gray)
 
   override var isSelected: Bool {
     didSet {
@@ -64,4 +64,7 @@ class CategoryNameCell: UICollectionViewCell {
           make.trailing.equalTo(contentView)
       }
   }
+    public func setupCategoryNameCell(with name: String) {
+        categoryLabel.text = name 
+    }
 }

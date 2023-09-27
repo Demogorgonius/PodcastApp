@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
             make.top.equalTo(mainSeeAllView.snp.bottom)
             make.leading.equalTo(view)
             make.trailing.equalTo(view)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
     private func setupMainProfileView() {
@@ -79,9 +79,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            cell.categoryLabelTob.text = categoryNames[indexPath.row]
-            cell.categoryLabelBottom.text = "1234"
-                    if indexPath.row % 2 == 0 {
+            
+            cell.setupCategoryCell(
+                topLbl: "Name Of Categorys",
+                bottomLbl: "94 podcasts")
+            
+            if indexPath.row % 2 == 0 {
                         cell.layer.backgroundColor = UIColor.palePink.withAlphaComponent(0.5).cgColor
                     } else {
                         cell.layer.backgroundColor = UIColor.ghostWhite.withAlphaComponent(0.5).cgColor
@@ -89,10 +92,18 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryNameCell", for: indexPath) as! CategoryNameCell
-            cell.categoryLabel.text = categoryNames[indexPath.row]
+            let categoryArray = AppCategoryModel.categoryNames
+            let name = categoryArray[indexPath.row]
+            cell.setupCategoryNameCell(with: name)
             return cell
         } else if collectionView == mainCollectionView.bottomVerticalCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
+            cell.setupPodcastCell(titleLeft: "LeftTitle",
+                                  titleRight: "RightTitle",
+                                  descriptionLeft: "Left",
+                                  descriptionRight: "Right",
+                                  image: UIImage(systemName: "person.fill"),
+                                  cellType: .podcast)
             return cell
         }
         return UICollectionViewCell()
@@ -103,7 +114,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
             return CGSize(width: 144, height: 85)
         } else if collectionView == mainCollectionView.topHorizontalCollectionView2 {
-            let text = categoryNames[indexPath.row]
+            let text = AppCategoryModel.categoryNames[indexPath.row]
             let cellWidth = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: 16)]).width + 40
             return CGSize(width: cellWidth, height: 44)
         } else if collectionView == mainCollectionView.bottomVerticalCollectionView {
