@@ -28,12 +28,40 @@ class PageView: CustomView {
         return view
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 34)
+        label.numberOfLines = 0
+        label.text = """
+        SUPER APP
+        SUPER APP
+        SUPER APP
+        """
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.numberOfLines = 0
+        label.text = """
+        SUPER APP SUPER APP SUPER APP
+        SUPER APP SUPER APP SUPER APP
+        SUPER APP SUPER APP SUPER APP
+        """
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     //MARK: - Life Cycle
     
     override func setViews() {
         super.setViews()
         addSubview(logoImageView)
         addSubview(contentView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
     }
     
     override func layoutViews() {
@@ -56,6 +84,16 @@ class PageView: CustomView {
             make.trailing.equalToSuperview().inset(27)
             make.bottom.equalToSuperview().inset(20)
         }
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().inset(30)
+        }
         
+        subtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().inset(30)
+        }
     }
 }
