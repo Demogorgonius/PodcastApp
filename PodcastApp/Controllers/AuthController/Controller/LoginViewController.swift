@@ -111,6 +111,7 @@ final class LoginInViewController: UIViewController {
         attributedText.addAttribute(.foregroundColor, value: UIColor.lightGreen, range: greenRange)
         label.attributedText = attributedText
         label.font = UIFont.systemFont(ofSize: 12)
+        label.isUserInteractionEnabled = true
         return label
     }()
 
@@ -132,6 +133,7 @@ extension LoginInViewController {
     private func setUpView() {
         addSubviews()
         setConstraints()
+        addActionsToUI()
     }
     
     private func addSubviews() {
@@ -209,6 +211,12 @@ extension LoginInViewController {
         }
     }
     
+    private func addActionsToUI() {
+        
+        
+        let registerLabelTapGesture = UITapGestureRecognizer(target: self, action: #selector(registerLabelTapped))
+        registerLabel.addGestureRecognizer(registerLabelTapGesture)
+    }
     
     //  MARK: - @objc private Functions
 
@@ -219,4 +227,9 @@ extension LoginInViewController {
     @objc func continueWithGoogleButtonPressed() {
         print("continueWithGoogleButtonPressed")
     }
+    
+    @objc func registerLabelTapped() {
+        print("registerLabel pressed")
+    }
+    
 }
