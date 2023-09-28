@@ -6,22 +6,36 @@
 //
 
 import UIKit
-
+import PodcastIndexKit
 class MainViewController: UIViewController {
+    private let podcastIndexKit = PodcastIndexKit()
     private let mainCollectionView = MainCollection()
     private let mainProfileView = MainProfileView()
     private let mainSeeAllView = MainSeeAllView()
-     override func viewDidLoad() {
+    private let categoryArray = AppCategoryModel.categoryNames
+    private var podcasts: PodcastArrayResponse? {
+        didSet {
+            mainCollectionView.bottomVerticalCollectionView.reloadData()
+        }
+    }
+    private var categoriesArray: CategoriesResponse? {
+        didSet {
+            mainCollectionView.topHorizontalCollectionView1.reloadData()
+        }
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView1)
-         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView2)
-         setupCollectionViewDelegate(mainCollectionView.bottomVerticalCollectionView)
+        fetchData()
+        setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView1)
+        setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView2)
+        setupCollectionViewDelegate(mainCollectionView.bottomVerticalCollectionView)
         setupMainProfileView()
         setupMainSeeAllView()
         setupMainCollectionView()
         configureSeeAllButtons()
-         makeFirstCellActive()
+        makeFirstCellActive()
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -54,27 +68,67 @@ class MainViewController: UIViewController {
         }
     }
     
-
-   private func configureSeeAllButtons() {
+    
+    private func configureSeeAllButtons() {
         mainSeeAllView.seeAllButton.addTarget(self, action: #selector(seeAllButtonWasTapped), for: .touchUpInside)
     }
     
     @objc func seeAllButtonWasTapped() {
         let viewController = AllCategoriesController()
+        viewController.categoriesArray = categoriesArray
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-
+    
     private  func setupCollectionViewDelegate(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
     }
+    private func fetchData() {
+        Task {
+            do {
+                //MARK: - Cписок категорий
+                let categories = try await podcastIndexKit.categoriesService.list()
+                //MARK: - Популярные по подкасты
+                let popular = try await podcastIndexKit.podcastsService.trendingPodcasts()
+                categoriesArray = categories
+                podcasts = popular
+            } catch {
+                print("Произошла ошибка: \(error)")
+            }
+        }
+    }
+    
+    private func fetchDataForSelected(name: String) {
+        Task {
+            do {
+                if name == categoryArray[0] {
+                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts()
+                    podcasts = data
+                } else if name == categoryArray[1] {
+                      let data = try await podcastIndexKit.recentService.recentFeeds(max: 20)
+                    podcasts = data
+                } else {
+                    //MARK: - Недавние Подкасты
+                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: name)
+                    podcasts = data
+                }
+            } catch {
+                print("Произошла ошибка: \(error)")
+            }
+        }
+    }
 }
+
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == mainCollectionView.bottomVerticalCollectionView {
+            return podcasts?.feeds?.count ?? 1
+        } else {
+            return 11
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,30 +136,38 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             
             cell.setupCategoryCell(
-                topLbl: "Name Of Categorys",
+                topLbl: categoriesArray?.feeds?[indexPath.row].name ?? "",
                 bottomLbl: "94 podcasts")
             
             if indexPath.row % 2 == 0 {
-                        cell.layer.backgroundColor = UIColor.palePink.withAlphaComponent(0.5).cgColor
-                    } else {
-                        cell.layer.backgroundColor = UIColor.ghostWhite.withAlphaComponent(0.5).cgColor
-                    }
+                cell.layer.backgroundColor = UIColor.palePink.withAlphaComponent(0.5).cgColor
+            } else {
+                cell.layer.backgroundColor = UIColor.ghostWhite.withAlphaComponent(0.5).cgColor
+            }
             return cell
         } else if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryNameCell", for: indexPath) as! CategoryNameCell
-            let categoryArray = AppCategoryModel.categoryNames
             let name = categoryArray[indexPath.row]
             cell.setupCategoryNameCell(with: name)
             return cell
         } else if collectionView == mainCollectionView.bottomVerticalCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
-            cell.setupPodcastCell(titleLeft: "LeftTitle",
-                                  titleRight: "RightTitle",
-                                  descriptionLeft: "Left",
-                                  descriptionRight: "Right",
-                                  image: UIImage(systemName: "person.fill"),
-                                  cellType: .podcast)
-            return cell
+            let podcast = podcasts?.feeds?[indexPath.row]
+            
+            FetchImage.loadImageFromURL(urlString: podcast?.image ?? "") { image in
+                let resizedImage = FetchImage.resizeImage(image: image ?? UIImage(), targetSize: CGSize(width: 50, height: 50))
+                DispatchQueue.main.async {
+                    cell.setupPodcastCell(
+                        titleLeft: podcast?.title ?? "",
+                        titleRight: podcast?.author ?? "",
+                        descriptionLeft: podcast?.categories?.values.joined(separator: " & ") ?? "",
+                        descriptionRight: "Right",
+                        image: resizedImage,
+                        cellType: .podcast)
+                }
+            }
+              
+                return cell
         }
         return UICollectionViewCell()
     }
@@ -125,15 +187,21 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func makeFirstCellActive() {
-      let firstIndexPath = IndexPath(item: 0, section: 0)
+        let firstIndexPath = IndexPath(item: 0, section: 0)
         mainCollectionView.topHorizontalCollectionView2.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
+    // Отступы с лева, c ними консоль ругается...
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        if collectionView == mainCollectionView.bottomVerticalCollectionView {
+//            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
+//        } else {
+//            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0)
+//        }
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == mainCollectionView.bottomVerticalCollectionView {
-            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
-        } else {
-            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == mainCollectionView.topHorizontalCollectionView2 {
+            fetchDataForSelected(name: categoryArray[indexPath.row])
         }
-      }
+    }
 }
