@@ -57,6 +57,12 @@
 		A59C54D82AC602D9003E6B89 /* AllCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */; };
 		A59C54DD2AC60373003E6B89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54DC2AC60373003E6B89 /* LoginViewController.swift */; };
 		A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54DE2AC6037E003E6B89 /* LoginView.swift */; };
+		A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */; };
+		A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E52AC60732003E6B89 /* ButtonView.swift */; };
+		A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */; };
+		A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E92AC6077E003E6B89 /* UserView.swift */; };
+		A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54ED2AC60830003E6B89 /* AvatarView.swift */; };
+		A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +107,12 @@
 		A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesController.swift; sourceTree = "<group>"; };
 		A59C54DC2AC60373003E6B89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A59C54DE2AC6037E003E6B89 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		A59C54E52AC60732003E6B89 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
+		A59C54E92AC6077E003E6B89 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		A59C54ED2AC60830003E6B89 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +311,8 @@
 		A59C545C2AC1FB60003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
+				A59C54E32AC606D2003E6B89 /* AccountSettings */,
+				A59C54E42AC606F4003E6B89 /* ProfileView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
+				A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,6 +434,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A59C54E32AC606D2003E6B89 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54ED2AC60830003E6B89 /* AvatarView.swift */,
+				A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		A59C54E42AC606F4003E6B89 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
+				A59C54E52AC60732003E6B89 /* ButtonView.swift */,
+				A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */,
+				A59C54E92AC6077E003E6B89 /* UserView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -517,15 +551,19 @@
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
+				A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */,
+				A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */,
 				A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
+				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
+				A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
@@ -535,10 +573,12 @@
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
+				A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54DD2AC60373003E6B89 /* LoginViewController.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
+				A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
