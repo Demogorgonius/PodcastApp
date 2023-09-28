@@ -10,6 +10,8 @@ import SnapKit
 
 class PageView: CustomView {
     
+    weak var delegate: PageViewDelegate?
+    
     //MARK: - UI Elements
     
     private lazy var logoImageView: UIImageView = {
@@ -61,6 +63,7 @@ class PageView: CustomView {
         button.layer.cornerRadius = 20
         button.backgroundColor = .white
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -72,6 +75,7 @@ class PageView: CustomView {
         button.contentHorizontalAlignment = .left
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(skipButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -109,6 +113,18 @@ class PageView: CustomView {
         setLayout()
         logoImageView.layer.cornerRadius = self.frame.height / 2
         logoImageView.clipsToBounds = true
+    }
+    
+    //MARK: - Actions
+    
+    @objc
+    private func nextButtonPressed() {
+        delegate?.nextButtonPressed()
+    }
+    
+    @objc
+    private func skipButtonPressed() {
+        delegate?.skipButtonPressed()
     }
     
     //MARK: - Methods
