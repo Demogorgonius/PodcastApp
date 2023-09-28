@@ -12,6 +12,18 @@ class OnboardingViewController: UIPageViewController {
     
     let pageControllers = [PageViewController(), ProfileViewController(), FavoritesViewController()]
     
+    //MARK: - UI Elements
+    
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = pageControllers.count
+        pageControl.pageIndicatorTintColor = .white
+        pageControl.currentPageIndicatorTintColor = .black
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        return pageControl
+    }()
+    
     //MARK: - Life Cycle
     
     init() {
@@ -25,14 +37,24 @@ class OnboardingViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingPageViewController()
+        view.addSubview(pageControl)
+        setupLayout()
     }
     
     //MARK: - Methods
     
     private func settingPageViewController() {
         dataSource = self
+        delegate = self
         guard let firstVC = pageControllers.first else { return }
         setViewControllers([firstVC], direction: .forward, animated: true)
+    }
+    
+    private func setupLayout() {
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(30)
+        }
     }
 }
 
@@ -57,6 +79,18 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
             return pageControllers[previousIndex]
         } else {
             return pageControllers[pageControllers.count - 1]
+        }
+    }
+}
+
+//MARK: - UIPageViewControllerDelegate
+
+extension OnboardingViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed,
+            let currentViewController = pageViewController.viewControllers?.first,
+           let currentIndex = pageControllers.firstIndex(of: currentViewController) {
+            pageControl.currentPage = currentIndex
         }
     }
 }

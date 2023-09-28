@@ -54,6 +54,7 @@ class PageView: CustomView {
         return label
     }()
     
+    
     //MARK: - Life Cycle
     
     override func setViews() {
