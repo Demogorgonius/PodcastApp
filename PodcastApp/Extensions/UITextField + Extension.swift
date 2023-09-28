@@ -1,0 +1,18 @@
+//
+//  UITextField + Extension.swift
+//  PodcastApp
+//
+//  Created by Ислам Пулатов on 9/28/23.
+//
+
+import UIKit
+
+extension UITextField {
+    
+    convenience init(placeholder: String = "", borderStyle: UITextField.BorderStyle) {
+        self.init()
+        self.placeholder = placeholder
+        self.borderStyle = borderStyle
+    }
+    
+}
