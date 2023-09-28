@@ -1,8 +1,8 @@
 //
-//  AllCategoresController.swift
+//  AllCategoriesController.swift
 //  PodcastApp
 //
-//  Created by Vanopr on 27.09.2023.
+//  Created by Sergey on 28.09.2023.
 //
 
 import UIKit
@@ -84,3 +84,4 @@ class AllCategoriesController: UIViewController, UICollectionViewDataSource, UIC
                }
            }
 }
+
