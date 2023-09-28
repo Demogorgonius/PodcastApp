@@ -382,17 +382,17 @@
 		A59C54D52AC60296003E6B89 /* AllCategoresController */ = {
 			isa = PBXGroup;
 			children = (
-				A59C54D62AC602BC003E6B89 /* New Group */,
+				A59C54D62AC602BC003E6B89 /* Controller */,
 			);
 			path = AllCategoresController;
 			sourceTree = "<group>";
 		};
-		A59C54D62AC602BC003E6B89 /* New Group */ = {
+		A59C54D62AC602BC003E6B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */,
 			);
-			path = "New Group";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A59C54D92AC60343003E6B89 /* LoginController */ = {
