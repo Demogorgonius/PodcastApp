@@ -13,9 +13,10 @@ import SnapKit
 class CategoryCell: UICollectionViewCell {
 
   static let identifier = "CategoryCell"
-   var categoryLabelTob = UILabel.makeLabel(text: "", font: .manropeBold(size: 16), textColor: .black)
-  var categoryLabelBottom = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .gray)
+    private var categoryLabelTob = UILabel.makeLabel(text: "", font: .manropeBold(size: 16), textColor: .black)
+    private var categoryLabelBottom = UILabel.makeLabel(text: "", font: .manropeRegular(size: 14), textColor: .gray)
   let stackView = UIStackView()
+    
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
@@ -23,7 +24,7 @@ class CategoryCell: UICollectionViewCell {
     setupUICell()
   }
 
-  func setupUICell() {
+    private func setupUICell() {
     backgroundColor = .white
     layer.masksToBounds = false
     layer.cornerRadius = 25
@@ -44,7 +45,7 @@ class CategoryCell: UICollectionViewCell {
   private func setupViews() {
       stackView.addArrangedSubview(categoryLabelTob)
       stackView.addArrangedSubview(categoryLabelBottom)
-    contentView.addSubview(stackView)
+      contentView.addSubview(stackView)
   }
 
   private func setupConstraints() {
@@ -55,4 +56,8 @@ class CategoryCell: UICollectionViewCell {
           make.trailing.equalTo(contentView)
       }
   }
+    public func setupCategoryCell(topLbl: String, bottomLbl: String) {
+        categoryLabelTob.text = topLbl
+        categoryLabelBottom.text = bottomLbl
+    }
 }
