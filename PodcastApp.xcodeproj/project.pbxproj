@@ -24,6 +24,8 @@
 		2F74AD932AC52A3500727DC6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD912AC52A3400727DC6 /* ButtonView.swift */; };
 		2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD922AC52A3400727DC6 /* UserView.swift */; };
 		2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */; };
+		2F74AD982AC52B4500727DC6 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */; };
+		2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		2F74AD912AC52A3400727DC6 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		2F74AD922AC52A3400727DC6 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
+		2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				2F74AD912AC52A3400727DC6 /* ButtonView.swift */,
 				2F74AD922AC52A3400727DC6 /* UserView.swift */,
 				2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */,
+				2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
+				2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
+				2F74AD982AC52B4500727DC6 /* AccountSettingsViewController.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
@@ -531,6 +538,7 @@
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
+				2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
