@@ -11,7 +11,7 @@ import UIKit
 class MainSeeAllView: UIView {
   private var whiteBackgroundView = UIView.makeView(backgroundColor: .white, cornerRadius: 5)
 
-    let categoryLbl: UILabel = {
+    private let categoryLbl: UILabel = {
       let label = UILabel()
         label.font = .manropeExtraBold(size: 16)
         label.text = "Category"
@@ -31,7 +31,7 @@ class MainSeeAllView: UIView {
         return button
     }()
    
-    var stackView: UIStackView = {
+  private  var stackView: UIStackView = {
       let stackView = UIStackView()
       stackView.backgroundColor = UIColor(white: 0, alpha: 0)
         stackView.distribution = .equalSpacing

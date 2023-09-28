@@ -2,7 +2,7 @@
 //  UITextField + Extension.swift
 //  PodcastApp
 //
-//  Created by Ислам Пулатов on 9/26/23.
+//  Created by Ислам Пулатов on 9/28/23.
 //
 
 import UIKit
@@ -16,4 +16,3 @@ extension UITextField {
     }
     
 }
-
