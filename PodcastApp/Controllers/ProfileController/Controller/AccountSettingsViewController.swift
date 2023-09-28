@@ -11,6 +11,7 @@ import SnapKit
 class AccountSettingsViewController: UIViewController {
 	
 	private let avatarView = AvatarView()
+	private let profileInfo = ProfileInfo(title: "First Name")
 	private let saveButton: UIButton = {
 		let button = UIButton(type: .system)
 		button.setTitle("Save Changes", for: .normal)
@@ -60,6 +61,7 @@ extension AccountSettingsViewController {
 	func addSubviews() {
 		view.addSubview(avatarView)
 		view.addSubview(saveButton)
+		view.addSubview(profileInfo)
 	}
 	
 	func setupConstraints() {
@@ -76,6 +78,13 @@ extension AccountSettingsViewController {
 			make.leading.equalToSuperview().offset(24)
 			make.trailing.equalToSuperview().offset(-24)
 			make.height.equalTo(56)
+		}
+		
+		profileInfo.snp.makeConstraints { make in
+			make.top.equalTo(avatarView.snp.bottom).offset(16)
+			make.leading.equalToSuperview().offset(24)
+			make.trailing.equalToSuperview().offset(-24)
+			make.height.equalTo(82)
 		}
 	}
 }

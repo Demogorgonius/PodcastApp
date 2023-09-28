@@ -26,6 +26,7 @@
 		2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */; };
 		2F74AD982AC52B4500727DC6 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */; };
 		2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */; };
+		2F74ADA02AC5689200727DC6 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
 		2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */,
+				2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */,
 			);
 			path = AccountSettings;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
+				2F74ADA02AC5689200727DC6 /* ProfileInfo.swift in Sources */,
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
