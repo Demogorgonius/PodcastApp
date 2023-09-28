@@ -56,6 +56,25 @@ class OnboardingViewController: UIPageViewController {
             make.bottom.equalToSuperview().inset(30)
         }
     }
+    
+    private func updatePageControl(toPageIndex pageIndex: Int) {
+        pageControl.currentPage = pageIndex
+    }
+    
+    //MARK: - Actions
+    
+    func scrollNextViewController() {
+        if let currentViewController = self.viewControllers?.first,
+           let currentIndex = pageControllers.firstIndex(of: currentViewController) {
+            var nextIndex = currentIndex + 1
+            if nextIndex > pageControllers.count {
+                nextIndex = 0
+            }
+            let nextPageController = pageControllers[nextIndex]
+            self.setViewControllers([nextPageController], direction: .forward, animated: true)
+            updatePageControl(toPageIndex: nextIndex)
+        }
+    }
 }
 
 //MARK: - UIPageViewControllerDataSource

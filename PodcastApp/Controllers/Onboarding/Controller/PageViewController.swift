@@ -28,5 +28,7 @@ extension PageViewController: PageViewDelegate {
     
     func nextButtonPressed() {
         print("nextButton pressed")
+        guard let pageViewController = parent as? OnboardingViewController else { return }
+        pageViewController.scrollNextViewController()
     }
 }
