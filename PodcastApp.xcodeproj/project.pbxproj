@@ -164,6 +164,25 @@
 			path = "../AllCategoresController/New Group";
 			sourceTree = "<group>";
 		};
+		2F74AD9D2AC5574500727DC6 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		2F74AD9E2AC5576A00727DC6 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
+				2F74AD912AC52A3400727DC6 /* ButtonView.swift */,
+				2F74AD922AC52A3400727DC6 /* UserView.swift */,
+				2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -318,11 +337,8 @@
 		A59C545C2AC1FB60003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
-				2F74AD912AC52A3400727DC6 /* ButtonView.swift */,
-				2F74AD922AC52A3400727DC6 /* UserView.swift */,
-				2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */,
-				2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */,
+				2F74AD9D2AC5574500727DC6 /* AccountSettings */,
+				2F74AD9E2AC5576A00727DC6 /* ProfileView */,
 			);
 			path = View;
 			sourceTree = "<group>";

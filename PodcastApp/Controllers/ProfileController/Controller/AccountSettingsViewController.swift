@@ -11,10 +11,20 @@ import SnapKit
 class AccountSettingsViewController: UIViewController {
 	
 	private let avatarView = AvatarView()
+	private let saveButton: UIButton = {
+		let button = UIButton(type: .system)
+		button.setTitle("Save Changes", for: .normal)
+		button.setTitleColor(.santaGray, for: .normal)
+		button.backgroundColor = .ghostWhite
+		button.clipsToBounds = true
+		button.layer.cornerRadius = 24
+		return button
+	}()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		view.backgroundColor = .white
+		tabBarController?.tabBar.isHidden = true
 		addSubviews()
 		setupConstraints()
 		setupNavigationBarAppearance()
@@ -40,6 +50,7 @@ class AccountSettingsViewController: UIViewController {
 	}
 	
 	@objc private func popToPrevious() {
+		tabBarController?.tabBar.isHidden = false
 		navigationController?.popViewController(animated: true)
 	}
 }
@@ -48,6 +59,7 @@ class AccountSettingsViewController: UIViewController {
 extension AccountSettingsViewController {
 	func addSubviews() {
 		view.addSubview(avatarView)
+		view.addSubview(saveButton)
 	}
 	
 	func setupConstraints() {
@@ -56,6 +68,14 @@ extension AccountSettingsViewController {
 			make.top.equalTo(view.safeAreaLayoutGuide).offset(37)
 			make.height.equalTo(100)
 			make.width.equalTo(105)
+		}
+		
+		saveButton.snp.makeConstraints { make in
+			make.centerX.equalToSuperview()
+			make.bottom.equalToSuperview().offset(-34)
+			make.leading.equalToSuperview().offset(24)
+			make.trailing.equalToSuperview().offset(-24)
+			make.height.equalTo(56)
 		}
 	}
 }
