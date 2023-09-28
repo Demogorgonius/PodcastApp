@@ -21,6 +21,7 @@
 		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
 		0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */; };
 		0BF5ACB82AC4A5B600FF7B41 /* AllCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */; };
+		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
 		2F74AD932AC52A3500727DC6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD912AC52A3400727DC6 /* ButtonView.swift */; };
 		2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD922AC52A3400727DC6 /* UserView.swift */; };
 		2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */; };
@@ -77,6 +78,7 @@
 		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
 		0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 		0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesController.swift; sourceTree = "<group>"; };
+		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 		2F74AD912AC52A3400727DC6 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		2F74AD922AC52A3400727DC6 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
 				A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */,
+				0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
+				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
 				2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */,
