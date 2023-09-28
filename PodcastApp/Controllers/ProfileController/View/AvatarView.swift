@@ -14,6 +14,7 @@ class AvatarView: UIView {
 		imageView.clipsToBounds = true
 		imageView.layer.cornerRadius = 50
 		imageView.image = UIImage(named: "ProfileImg")
+		imageView.backgroundColor = .ghostWhite
 		imageView.contentMode = .scaleAspectFit
 		return imageView
 	}()
