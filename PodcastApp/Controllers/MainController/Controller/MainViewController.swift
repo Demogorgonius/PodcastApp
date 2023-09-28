@@ -155,7 +155,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let podcast = podcasts?.feeds?[indexPath.row]
             
             FetchImage.loadImageFromURL(urlString: podcast?.image ?? "") { image in
-                let resizedImage = FetchImage.resizeImage(image: image ?? UIImage(named: "noImage")!, targetSize: CGSize(width: 50, height: 50))
+                let resizedImage = FetchImage.resizeImage(image: image ?? UIImage(), targetSize: CGSize(width: 50, height: 50))
                 DispatchQueue.main.async {
                     cell.setupPodcastCell(
                         titleLeft: podcast?.title ?? "",
