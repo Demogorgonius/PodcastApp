@@ -54,6 +54,41 @@ class PageView: CustomView {
         return label
     }()
     
+    private lazy var nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Next", for: .normal)
+        button.tintColor = .black
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .white
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var skipButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Skip", for: .normal)
+        button.tintColor = .black
+        button.contentHorizontalAlignment = .left
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var spacingView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var stackOfButtons: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     //MARK: - Life Cycle
     
@@ -63,6 +98,10 @@ class PageView: CustomView {
         addSubview(contentView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subtitleLabel)
+        stackOfButtons.addArrangedSubview(skipButton)
+        stackOfButtons.addArrangedSubview(spacingView)
+        stackOfButtons.addArrangedSubview(nextButton)
+        contentView.addSubview(stackOfButtons)
     }
     
     override func layoutViews() {
@@ -93,6 +132,27 @@ class PageView: CustomView {
         
         subtitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().inset(30)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.height.equalTo(58)
+            make.width.equalTo(85)
+        }
+        
+        skipButton.snp.makeConstraints { make in
+            make.height.equalTo(58)
+            make.width.equalTo(85)
+        }
+        
+        spacingView.snp.makeConstraints { make in
+            make.height.equalTo(58)
+            make.width.equalTo(90)
+        }
+        
+        stackOfButtons.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().inset(30)
         }
