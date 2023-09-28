@@ -21,6 +21,7 @@
 		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
 		0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */; };
 		0BF5ACB82AC4A5B600FF7B41 /* AllCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */; };
+		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
 		0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 		0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesController.swift; sourceTree = "<group>"; };
+		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
 				A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */,
+				0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
+				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,

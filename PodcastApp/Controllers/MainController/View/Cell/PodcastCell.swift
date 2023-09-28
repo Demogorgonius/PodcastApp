@@ -30,6 +30,9 @@ class PodcastCell: UICollectionViewCell {
     private var titleLbl: UILabel = {
         let label = UILabel()
         label.font = .manropeBold(size: 16)
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.7
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,6 +41,9 @@ class PodcastCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .manropeRegular(size: 16)
         label.textColor = UIColor.systemGray
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.7
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
