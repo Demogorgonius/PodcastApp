@@ -111,7 +111,8 @@ class MainViewController: UIViewController {
                     podcasts = data
                 } else {
                     //MARK: - Недавние Подкасты
-                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: name)
+                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: "Technology," + name)
+                    print(data)
                     podcasts = data
                 }
             } catch {
@@ -134,10 +135,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            
+            let imageName = AppCategoryModel.combinedCategoriesImages[indexPath.row]
+            let combinedCategoryName = AppCategoryModel.combinedCategories[indexPath.row]
             cell.setupCategoryCell(
-                topLbl: categoriesArray?.feeds?[indexPath.row].name ?? "",
-                bottomLbl: "94 podcasts")
+                topLbl: combinedCategoryName,
+                bottomLbl: "94 podcasts",
+                image: UIImage(named: imageName))
             
             if indexPath.row % 2 == 0 {
                 cell.layer.backgroundColor = UIColor.palePink.withAlphaComponent(0.5).cgColor
@@ -174,7 +177,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
-            return CGSize(width: 144, height: 85)
+            return CGSize(width: 144, height: 200)
         } else if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             let text = AppCategoryModel.categoryNames[indexPath.row]
             let cellWidth = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: 16)]).width + 40
