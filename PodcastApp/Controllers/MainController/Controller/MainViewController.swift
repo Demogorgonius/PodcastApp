@@ -117,8 +117,7 @@ class MainViewController: UIViewController {
                     podcasts = data
                 } else {
                     //MARK: - Недавние Подкасты
-                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: "Technology," + name)
-                    print(data)
+                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: name)
                     podcasts = data
                 }
             } catch {
@@ -227,6 +226,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             fetchDataForSelected(name: categoryArray[indexPath.row])
+        } else if collectionView == mainCollectionView.topHorizontalCollectionView1 {
+            let viewController = AllTrandingsPodcasts()
+            let categoryArray = AppCategoryModel.splitCategories()
+            viewController.name = categoryArray[indexPath.row]
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }

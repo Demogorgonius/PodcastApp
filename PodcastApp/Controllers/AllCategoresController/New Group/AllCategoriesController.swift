@@ -51,6 +51,14 @@ class AllCategoriesController: UIViewController, UICollectionViewDataSource, UIC
             make.top.equalTo(searchBar.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
         }
+        
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.borderStyle = .roundedRect
+            textField.layer.borderWidth = 1.0
+            textField.clipsToBounds = true
+            textField.layer.cornerRadius = 10
+            textField.layer.borderColor = UIColor.lightBlue.cgColor
+        }
 
     }
     private func makeCategoryArray() -> [String]  {
@@ -82,5 +90,11 @@ class AllCategoriesController: UIViewController, UICollectionViewDataSource, UIC
         categories = makeCategoryArray().filter { $0.localizedCaseInsensitiveContains(searchText) }
                }
            }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = AllTrandingsPodcasts()
+        viewController.name = categories?[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
