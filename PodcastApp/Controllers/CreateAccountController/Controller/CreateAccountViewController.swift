@@ -25,7 +25,12 @@ final class CreateAccountViewController: UIViewController {
         label.font = .manropeExtraBold(size: 16)
         return label
     }()
-
+    
+    private let createAccountView: CreateAccountView = {
+        let view = CreateAccountView()
+        return view
+    }()
+    
     //    MARK: - Override Functions
     
     override func viewDidLoad() {
@@ -50,6 +55,7 @@ extension CreateAccountViewController {
     private func addSubViews() {
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
+        view.addSubview(createAccountView)
     }
     
     private func setConstrains() {
@@ -61,6 +67,11 @@ extension CreateAccountViewController {
         subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
+        }
+        
+        createAccountView.snp.makeConstraints { make in
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(60)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
     
