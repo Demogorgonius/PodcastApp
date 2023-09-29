@@ -10,7 +10,9 @@ class OnboardingViewController: UIPageViewController {
     
     //MARK: - Properties
     
-    let pageControllers = [PageViewController(), ProfileViewController(), FavoritesViewController()]
+    let pageControllers = [PageViewController(pageType: .first),
+                           PageViewController(pageType: .second),
+                           PageViewController(pageType: .last),]
     
     //MARK: - UI Elements
     
@@ -65,9 +67,9 @@ class OnboardingViewController: UIPageViewController {
     
     func scrollNextViewController() {
         if let currentViewController = self.viewControllers?.first,
-           let currentIndex = pageControllers.firstIndex(of: currentViewController) {
+           let currentIndex = pageControllers.firstIndex(of: currentViewController as! PageViewController) {
             var nextIndex = currentIndex + 1
-            if nextIndex > pageControllers.count {
+            if nextIndex > pageControllers.count - 1 {
                 nextIndex = 0
             }
             let nextPageController = pageControllers[nextIndex]
@@ -81,7 +83,7 @@ class OnboardingViewController: UIPageViewController {
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pageControllers.firstIndex(of: viewController) else { return nil }
+        guard let currentIndex = pageControllers.firstIndex(of: viewController as! PageViewController) else { return nil }
         
         let nextIndex = currentIndex + 1
         if nextIndex < pageControllers.count {
@@ -92,7 +94,7 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pageControllers.firstIndex(of: viewController) else { return nil }
+        guard let currentIndex = pageControllers.firstIndex(of: viewController as! PageViewController) else { return nil }
         let previousIndex = currentIndex - 1
         if previousIndex >= 0 {
             return pageControllers[previousIndex]
@@ -108,7 +110,7 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed,
             let currentViewController = pageViewController.viewControllers?.first,
-           let currentIndex = pageControllers.firstIndex(of: currentViewController) {
+           let currentIndex = pageControllers.firstIndex(of: currentViewController as! PageViewController) {
             pageControl.currentPage = currentIndex
         }
     }

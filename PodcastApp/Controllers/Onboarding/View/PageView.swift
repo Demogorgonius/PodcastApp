@@ -5,6 +5,12 @@
 //  Created by Aleksandr Garipov on 27.09.2023.
 //
 
+enum PageViewType {
+    case first
+    case second
+    case last
+}
+
 import UIKit
 import SnapKit
 
@@ -80,6 +86,18 @@ class PageView: CustomView {
         return button
     }()
     
+    private lazy var startButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Get Started", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = #colorLiteral(red: 0.1536328793, green: 0.5095483661, blue: 0.9458360076, alpha: 1)
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(skipButtonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private lazy var spacingView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -129,6 +147,23 @@ class PageView: CustomView {
     
     //MARK: - Methods
     
+    func configureView(with type: PageViewType) {
+        switch type {
+        case .first:
+            break
+        case .second:
+            logoImageView.image = UIImage(resource: .secondPageLogo)
+        case .last:
+            logoImageView.image = UIImage(resource: .lastPageLogo)
+            skipButton.removeFromSuperview()
+            nextButton.removeFromSuperview()
+            spacingView.removeFromSuperview()
+            stackOfButtons
+            stackOfButtons.addArrangedSubview(startButton)
+            layoutIfNeeded()
+        }
+    }
+    
     private func setLayout() {
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -171,6 +206,10 @@ class PageView: CustomView {
             make.top.equalTo(subtitleLabel.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().inset(30)
+        }
+        
+        startButton.snp.makeConstraints { make in
+            make.height.equalTo(58)
         }
     }
 }
