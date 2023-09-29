@@ -67,8 +67,7 @@ class AllCategoriesController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
-        cell.setupPodcastCell(titleLeft: categories?[indexPath.row] ?? "",
-                              descriptionLeft: "59")
+        cell.setupPodcastCell(titleLeft: categories?[indexPath.row] ?? "")
         return cell
     }
     
