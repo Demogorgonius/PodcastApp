@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         fetchData()
-//        fetchDataForCombinedCategories()
+        //        fetchDataForCombinedCategories()
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView1)
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView2)
         setupCollectionViewDelegate(mainCollectionView.bottomVerticalCollectionView)
@@ -126,22 +126,40 @@ class MainViewController: UIViewController {
         }
     }
     //Получение сколько подкастов в комбинированных категориях: Всегда 40!
-//    private func fetchDataForCombinedCategories() {
-//        var array: [PodcastArrayResponse] = []
-//        for i in 0...AppCategoryModel.combinedCategories.count - 1 {
-//            Task {
-//                do {
-//                    let nameArray = AppCategoryModel.splitCategories()
-//                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: nameArray[i])
-//                    array.append(data)
-//                    combinedCategoriesArray = array
-//                } catch {
-//                    print("Произошла ошибка: \(error)")
-//                }
-//            }
-//        }
-//            mainCollectionView.topHorizontalCollectionView1.reloadData()
-//    }
+    //    private func fetchDataForCombinedCategories() {
+    //        var array: [PodcastArrayResponse] = []
+    //        for i in 0...AppCategoryModel.combinedCategories.count - 1 {
+    //            Task {
+    //                do {
+    //                    let nameArray = AppCategoryModel.splitCategories()
+    //                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: nameArray[i])
+    //                    array.append(data)
+    //                    combinedCategoriesArray = array
+    //                } catch {
+    //                    print("Произошла ошибка: \(error)")
+    //                }
+    //            }
+    //        }
+    //            mainCollectionView.topHorizontalCollectionView1.reloadData()
+    //    }
+    
+    @objc private func liked(sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: mainCollectionView.bottomVerticalCollectionView)
+        if let indexPath = mainCollectionView.bottomVerticalCollectionView.indexPathForItem(at: point) {
+            guard let id = podcasts?.feeds?[indexPath.row].id else { return }
+            if  sender.tintColor == UIColor.gray {
+                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                sender.tintColor = UIColor.red
+                LikedPodcast.shared.selectedIngredients.append(id)
+                print(LikedPodcast.shared.selectedIngredients)
+            } else {
+                sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                sender.tintColor = UIColor.gray
+                LikedPodcast.shared.selectedIngredients.removeAll{$0 == id}
+                print(LikedPodcast.shared.selectedIngredients)
+            }
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
@@ -160,7 +178,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let combinedCategoryName = AppCategoryModel.combinedCategories[indexPath.row]
             cell.setupCategoryCell(
                 topLbl: combinedCategoryName,
-//                bottomLbl: combinedCategoriesArray?[indexPath.row].feeds?.count ?? 0,
+                //                bottomLbl: combinedCategoriesArray?[indexPath.row].feeds?.count ?? 0,
                 bottomLbl: 40,
                 image: UIImage(named: imageName))
             
@@ -188,10 +206,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                         descriptionRight: "Right",
                         image: resizedImage,
                         cellType: .podcast)
+                    cell.checkmarkButton.addTarget(self, action: #selector(self.liked(sender:)), for: .touchUpInside)
+                    cell.ifLiked(id: podcast?.id ?? 0)
                 }
             }
-              
-                return cell
+            
+            return cell
         }
         return UICollectionViewCell()
     }
@@ -214,14 +234,14 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let firstIndexPath = IndexPath(item: 0, section: 0)
         mainCollectionView.topHorizontalCollectionView2.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
-////     Отступы с лева, c ними консоль ругается...
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        if collectionView == mainCollectionView.bottomVerticalCollectionView {
-//            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
-//        } else {
-//            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0)
-//        }
-//    }
+    ////     Отступы с лева, c ними консоль ругается...
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        if collectionView == mainCollectionView.bottomVerticalCollectionView {
+    //            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
+    //        } else {
+    //            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0)
+    //        }
+    //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCollectionView.topHorizontalCollectionView2 {

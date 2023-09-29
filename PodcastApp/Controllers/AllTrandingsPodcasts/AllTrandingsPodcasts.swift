@@ -52,6 +52,24 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             }
         }
     }
+    
+    @objc private func liked(sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: collectionView)
+        if let indexPath = collectionView.indexPathForItem(at: point) {
+            guard let id = podcasts?.feeds?[indexPath.row].id else { return }
+            if  sender.tintColor == UIColor.gray {
+                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                sender.tintColor = UIColor.red
+                LikedPodcast.shared.selectedIngredients.append(id)
+                print(LikedPodcast.shared.selectedIngredients)
+            } else {
+                sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                sender.tintColor = UIColor.gray
+                LikedPodcast.shared.selectedIngredients.removeAll{$0 == id}
+                print(LikedPodcast.shared.selectedIngredients)
+            }
+        }
+    }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return podcasts?.count ?? 1
@@ -70,6 +88,8 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
                         descriptionRight: "Right",
                         image: resizedImage,
                         cellType: .podcast)
+                    cell.checkmarkButton.addTarget(self, action: #selector(self.liked(sender:)), for: .touchUpInside)
+                    cell.ifLiked(id: podcast?.id ?? 0)
                 }
             }
             return cell
