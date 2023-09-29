@@ -25,7 +25,11 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             collectionView.backgroundColor = .white
             return collectionView
         }()
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             fetchDataForSelected(name: name ?? "")
@@ -35,7 +39,6 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             collectionView.dataSource = self
             collectionView.delegate = self
             navigationController?.navigationBar.isHidden = false
-
             collectionView.snp.makeConstraints { make in
                 make.edges.equalTo(view)
             }
@@ -60,13 +63,13 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             if  sender.tintColor == UIColor.gray {
                 sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 sender.tintColor = UIColor.red
-                LikedPodcast.shared.selectedIngredients.append(id)
-                print(LikedPodcast.shared.selectedIngredients)
+                LikedPodcast.shared.likedPodcasts.append(id)
+                print(LikedPodcast.shared.likedPodcasts)
             } else {
                 sender.setImage(UIImage(systemName: "heart"), for: .normal)
                 sender.tintColor = UIColor.gray
-                LikedPodcast.shared.selectedIngredients.removeAll{$0 == id}
-                print(LikedPodcast.shared.selectedIngredients)
+                LikedPodcast.shared.likedPodcasts.removeAll{$0 == id}
+                print(LikedPodcast.shared.likedPodcasts)
             }
         }
     }
