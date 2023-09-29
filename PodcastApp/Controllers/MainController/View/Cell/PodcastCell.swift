@@ -160,7 +160,7 @@ class PodcastCell: UICollectionViewCell {
         }
     }
     public func ifLiked(id: Int) {
-        if LikedPodcast.shared.selectedIngredients.contains(id) {
+        if LikedPodcast.shared.likedPodcasts.contains(id) {
            checkmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
            checkmarkButton.tintColor = UIColor.red
         } else {

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class LikedPodcast {
-  static let shared = LikedPodcast()
-  var selectedIngredients: [Int] = []
-  private init() {}
+    static let shared = LikedPodcast()
+    var likedPodcasts: [Int] = []
+    init(){} 
 }
