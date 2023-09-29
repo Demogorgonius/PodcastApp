@@ -24,10 +24,16 @@ class MainViewController: UIViewController {
         }
     }
     
+    private var combinedCategoriesArray: [PodcastArrayResponse]? {
+        didSet {
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         fetchData()
+//        fetchDataForCombinedCategories()
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView1)
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView2)
         setupCollectionViewDelegate(mainCollectionView.bottomVerticalCollectionView)
@@ -107,7 +113,7 @@ class MainViewController: UIViewController {
                     let data = try await podcastIndexKit.podcastsService.trendingPodcasts()
                     podcasts = data
                 } else if name == categoryArray[1] {
-                      let data = try await podcastIndexKit.recentService.recentFeeds(max: 20)
+                    let data = try await podcastIndexKit.recentService.recentFeeds(max: 20)
                     podcasts = data
                 } else {
                     //MARK: - Недавние Подкасты
@@ -120,8 +126,24 @@ class MainViewController: UIViewController {
             }
         }
     }
+    //Получение сколько подкастов в комбинированных категориях: Всегда 40!
+//    private func fetchDataForCombinedCategories() {
+//        var array: [PodcastArrayResponse] = []
+//        for i in 0...AppCategoryModel.combinedCategories.count - 1 {
+//            Task {
+//                do {
+//                    let nameArray = AppCategoryModel.splitCategories()
+//                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: nameArray[i])
+//                    array.append(data)
+//                    combinedCategoriesArray = array
+//                } catch {
+//                    print("Произошла ошибка: \(error)")
+//                }
+//            }
+//        }
+//            mainCollectionView.topHorizontalCollectionView1.reloadData()
+//    }
 }
-
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -139,7 +161,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let combinedCategoryName = AppCategoryModel.combinedCategories[indexPath.row]
             cell.setupCategoryCell(
                 topLbl: combinedCategoryName,
-                bottomLbl: "94 podcasts",
+//                bottomLbl: combinedCategoriesArray?[indexPath.row].feeds?.count ?? 0,
+                bottomLbl: 40,
                 image: UIImage(named: imageName))
             
             if indexPath.row % 2 == 0 {
@@ -192,7 +215,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let firstIndexPath = IndexPath(item: 0, section: 0)
         mainCollectionView.topHorizontalCollectionView2.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
-    // Отступы с лева, c ними консоль ругается...
+////     Отступы с лева, c ними консоль ругается...
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        if collectionView == mainCollectionView.bottomVerticalCollectionView {
 //            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)

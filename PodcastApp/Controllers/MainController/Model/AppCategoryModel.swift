@@ -48,6 +48,18 @@ struct AppCategoryModel {
         "LifeHome",
         "HobbiesSports"
     ]
+    
+    static func splitCategories() -> [String] {
+        var resultCategories: [String] = []
+
+        for category in combinedCategories {
+            let words = category.components(separatedBy: " & ")
+            let formattedCategory = words.joined(separator: ",")
+            resultCategories.append(formattedCategory)
+        }
+
+        return resultCategories
+    }
 }
 
 

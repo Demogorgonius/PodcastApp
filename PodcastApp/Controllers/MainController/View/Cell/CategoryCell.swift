@@ -85,9 +85,9 @@ class CategoryCell: UICollectionViewCell {
           make.trailing.equalTo(cardView).inset(3)
       }
   }
-    public func setupCategoryCell(topLbl: String, bottomLbl: String, image: UIImage?) {
+    public func setupCategoryCell(topLbl: String, bottomLbl: Int, image: UIImage?) {
         categoryLabelTob.text = topLbl
-        categoryLabelBottom.text = bottomLbl
+        categoryLabelBottom.text = String(bottomLbl) + " podcasts"
         if let image = image {
             imageView.image = image
         } else {
