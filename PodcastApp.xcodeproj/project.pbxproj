@@ -24,6 +24,8 @@
 		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
 		169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C12AC5B7BD00ACC05B /* UIBUtton.swift */; };
 		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
+		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
+		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 		169992C12AC5B7BD00ACC05B /* UIBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBUtton.swift; sourceTree = "<group>"; };
 		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +176,31 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		16AB17142AC800D300906EB1 /* CreateAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16AB17172AC800F900906EB1 /* Controller */,
+				16AB17162AC800F100906EB1 /* View */,
+			);
+			path = CreateAccountViewController;
+			sourceTree = "<group>";
+		};
+		16AB17162AC800F100906EB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171A2AC8015400906EB1 /* CreateAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16AB17172AC800F900906EB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +281,7 @@
 		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				16AB17142AC800D300906EB1 /* CreateAccountViewController */,
 				0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */,
 				A59C54D92AC60343003E6B89 /* LoginController */,
 				A59C54D52AC60296003E6B89 /* AllCategoresController */,
@@ -559,8 +589,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */,
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
+				16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
 				A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */,
 				A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */,
