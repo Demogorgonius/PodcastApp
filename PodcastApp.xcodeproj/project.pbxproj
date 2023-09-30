@@ -23,6 +23,8 @@
 		0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */; };
 		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
 		1688C43A2AC871AF00505476 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C4392AC871AF00505476 /* Validator.swift */; };
+		1688C43C2AC8724E00505476 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C43B2AC8724E00505476 /* AuthService.swift */; };
+		1688C4402AC872F300505476 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C43F2AC872F300505476 /* UserRequest.swift */; };
 		169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C12AC5B7BD00ACC05B /* UIBUtton.swift */; };
 		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
@@ -87,6 +89,8 @@
 		0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 		1688C4392AC871AF00505476 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		1688C43B2AC8724E00505476 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1688C43F2AC872F300505476 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		169992C12AC5B7BD00ACC05B /* UIBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBUtton.swift; sourceTree = "<group>"; };
 		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,23 @@
 			isa = PBXGroup;
 			children = (
 				0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1688C43D2AC872D700505476 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				1688C43E2AC872E700505476 /* Model */,
+				1688C43B2AC8724E00505476 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		1688C43E2AC872E700505476 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1688C43F2AC872F300505476 /* UserRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +319,7 @@
 		A59C54532AC1FA61003E6B89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1688C43D2AC872D700505476 /* AuthService */,
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
 				A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */,
@@ -620,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */,
+				1688C43C2AC8724E00505476 /* AuthService.swift in Sources */,
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
 				16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */,
@@ -634,6 +657,7 @@
 				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
 				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
+				1688C4402AC872F300505476 /* UserRequest.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,

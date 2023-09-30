@@ -24,18 +24,6 @@ class Validator {
         return  results.count == 0 ? false : true
     }
     
-    static func isValidUserName(for username: String) -> Bool {
-    
-        let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        let usernameRegEx = "\\w{4,24}"
-        
-        let userNamePred = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
-        
-        return userNamePred.evaluate(with: trimmedUsername)
-    }
-
-    
     static func isPasswordValid(for password : String) -> Bool {
         
         let password = password.trimmingCharacters(in: .whitespacesAndNewlines)
