@@ -96,6 +96,25 @@ final class CompleteAccountViewContoller: UIViewController {
         return stackView
     }()
     
+    private let signUpButton: UIButton = {
+        let button = UIButton(normalStateText: "Sign Up", normalStateTextColor: .white, backgroundColor: .skyBlue)
+        button.layer.cornerRadius = 25.0
+        button.addTarget(signupButtonPressed.self, action: #selector(signupButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var logInLabel: UILabel = {
+        let label = UILabel()
+        let text = "Already have an account? Login"
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: text.count))
+        let purpleRange = (text as NSString).range(of: "Login")
+        attributedText.addAttribute(.foregroundColor, value: UIColor.lightPurple, range: purpleRange)
+        label.attributedText = attributedText
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.isUserInteractionEnabled = true
+        return label
+    }()
     
     //    MARK: - Override Functions
     
@@ -115,6 +134,7 @@ extension CompleteAccountViewContoller {
         setNavigationBar()
         addSubViews()
         setConstrains()
+        actionsToUI()
     }
     
     func setNavigationBar() {
@@ -144,6 +164,8 @@ extension CompleteAccountViewContoller {
         view.addSubview(credentialsStackView)
         passwordTextField.addSubview(passwordShowIndicator)
         confirmPasswordTextField.addSubview(confirmPasswordShowIndicator)
+        view.addSubview(signUpButton)
+        view.addSubview(logInLabel)
     }
     
     private func setConstrains() {
@@ -183,6 +205,30 @@ extension CompleteAccountViewContoller {
             make.centerY.equalTo(confirmPasswordTextField)
         }
         
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(credentialsStackView.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(56)
+        }
+        
+        logInLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-33)
+            make.centerX.equalToSuperview()
+        }
+        
+        
+    }
+    
+    private func actionsToUI() {
+        let passwordShowIndicatorPressed = UITapGestureRecognizer(target: self, action: #selector(passwordShowIndicatorPressed))
+        passwordShowIndicator.addGestureRecognizer(passwordShowIndicatorPressed)
+        
+        let confirmPasswordShowIndicatorTapGesture = UITapGestureRecognizer(target: self, action: #selector(confirmPasswordShowIndicatorPressed))
+        confirmPasswordShowIndicator.addGestureRecognizer(confirmPasswordShowIndicatorTapGesture)
+        
+        logInLabel.isUserInteractionEnabled = true
+        logInLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logInLabelPressed)))
     }
     
     //  MARK: - Private objc func
@@ -190,6 +236,22 @@ extension CompleteAccountViewContoller {
     @objc private func backButtonPressed() {
         print("backButtonPressed")
         //        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func passwordShowIndicatorPressed() {
+        print("passwordShowIndicatorPressed")
+    }
+    
+    @objc private func confirmPasswordShowIndicatorPressed() {
+        print("confirmPasswordShowIndicatorPressed")
+    }
+    
+    @objc private func signupButtonPressed() {
+        print("signupButtonPressed")
+    }
+    
+    @objc private func logInLabelPressed() {
+        print("logInLabelPressed")
     }
     
 }

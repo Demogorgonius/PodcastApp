@@ -78,7 +78,7 @@ class CreateAccountView: UIView {
         return button
     }()
     
-    private lazy var registerLabel: UILabel = {
+    private lazy var logLabel: UILabel = {
         let label = UILabel()
         let text = "Already have an account? Login"
         let attributedText = NSMutableAttributedString(string: text)
@@ -117,7 +117,7 @@ class CreateAccountView: UIView {
         addSubview(continueButton)
         addSubview(continueStack)
         addSubview(continueWithGoogleLabel)
-        addSubview(registerLabel)
+        addSubview(logLabel)
     }
     
     private func setConstrains() {
@@ -162,15 +162,15 @@ class CreateAccountView: UIView {
             make.height.equalTo(56)
         }
         
-        registerLabel.snp.makeConstraints { make in
+        logLabel.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-33)
             make.centerX.equalToSuperview()
         }
     }
     
     private func setActionsToUI() {
-        registerLabel.isUserInteractionEnabled = true
-        registerLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
+        logLabel.isUserInteractionEnabled = true
+        logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
     }
 
     
