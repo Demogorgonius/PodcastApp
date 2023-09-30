@@ -16,11 +16,12 @@ extension UITextField {
     }
     
     //  MARK: Round UITextField
-    convenience init(placeHolder: String, textColor: UIColor) {
+    convenience init(placeHolder: String, textColor: UIColor, backGroundColor: UIColor) {
         self.init()
         self.borderStyle = .none
         self.placeholder = placeHolder
-        self.textColor = textColor
+        self.textColor = .gray
+        self.backgroundColor = .ghostWhite
         self.layer.cornerRadius = 18
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         self.leftViewMode = .always

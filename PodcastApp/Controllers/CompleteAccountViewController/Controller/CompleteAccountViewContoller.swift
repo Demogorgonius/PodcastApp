@@ -36,6 +36,67 @@ final class CompleteAccountViewContoller: UIViewController {
         return label
     }()
     
+    private let firstNameLabel: UILabel = {
+        return UILabel(labelText: "First Name", textColor: .gray)
+    }()
+    
+    private let firstNameTextField = {
+        let textField = UITextField(placeHolder: "Enter your First Name", textColor: .gray, backGroundColor: .ghostWhite)
+        return textField
+    }()
+    
+    private let lastNameLabel: UILabel = {
+        return UILabel(labelText: "Last Name", textColor: .gray)
+    }()
+    
+    private let lastNameTextField: UITextField = {
+        let textField = UITextField(placeHolder: "Enter your Last Name", textColor: .gray, backGroundColor: .ghostWhite)
+        return textField
+    }()
+    
+    private let passwordLabel: UILabel = {
+        return UILabel(labelText: "Password", textColor: .gray)
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textField = UITextField(placeHolder: "Enter your password", textColor: .gray, backGroundColor: .ghostWhite)
+        return textField
+    }()
+    
+    private let passwordShowIndicator: UIImageView = {
+        let passwordIndicator = UIImageView()
+        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.tintColor = .gray
+        passwordIndicator.isUserInteractionEnabled = true
+        return passwordIndicator
+    }()
+    
+    private let confirmPasswordLabel: UILabel = {
+        return UILabel(labelText: "Confirm Password", textColor: .gray)
+    }()
+    
+    private let confirmPasswordTextField: UITextField = {
+        let textField = UITextField(placeHolder: "Confirm your password", textColor: .gray, backGroundColor: .ghostWhite)
+        return textField
+    }()
+    
+    private let confirmPasswordShowIndicator: UIImageView = {
+        let passwordIndicator = UIImageView()
+        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.tintColor = .gray
+        passwordIndicator.isUserInteractionEnabled = true
+        return passwordIndicator
+    }()
+    
+    private lazy var credentialsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [firstNameLabel, firstNameTextField, lastNameLabel, lastNameTextField, passwordLabel, passwordTextField, confirmPasswordLabel, confirmPasswordTextField])
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    
     //    MARK: - Override Functions
     
     override func viewDidLoad() {
@@ -54,11 +115,6 @@ extension CompleteAccountViewContoller {
         setNavigationBar()
         addSubViews()
         setConstrains()
-    }
-    
-    private func addSubViews() {
-        view.addSubview(titleLabel)
-        view.addSubview(subTitleLabel)
     }
     
     func setNavigationBar() {
@@ -82,6 +138,14 @@ extension CompleteAccountViewContoller {
         }
     }
     
+    private func addSubViews() {
+        view.addSubview(titleLabel)
+        view.addSubview(subTitleLabel)
+        view.addSubview(credentialsStackView)
+        passwordTextField.addSubview(passwordShowIndicator)
+        confirmPasswordTextField.addSubview(confirmPasswordShowIndicator)
+    }
+    
     private func setConstrains() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(45)
@@ -92,6 +156,33 @@ extension CompleteAccountViewContoller {
             make.top.equalTo(titleLabel.snp.bottom).offset(6)
             make.centerX.equalToSuperview()
         }
+        
+        credentialsStackView.snp.makeConstraints { make in
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(25)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        
+        for textField in credentialsStackView.arrangedSubviews.compactMap({ $0 as? UITextField }) {
+            textField.snp.makeConstraints { make in
+                make.height.equalTo(52)
+            }
+        }
+        
+        passwordShowIndicator.snp.makeConstraints { make in
+            make.width.equalTo(25)
+            make.height.equalTo(20)
+            make.trailing.equalTo(passwordTextField).offset(-10)
+            make.centerY.equalTo(passwordTextField)
+        }
+        
+        confirmPasswordShowIndicator.snp.makeConstraints { make in
+            make.width.equalTo(25)
+            make.height.equalTo(20)
+            make.trailing.equalTo(confirmPasswordTextField).offset(-10)
+            make.centerY.equalTo(confirmPasswordTextField)
+        }
+        
     }
     
     //  MARK: - Private objc func
