@@ -31,7 +31,7 @@ class CreateAccountView: UIView {
     private let continueButton: UIButton = {
         let button = UIButton(normalStateText: "Continue with Email", normalStateTextColor: .white, backgroundColor: .skyBlue)
         button.layer.cornerRadius = 25.0
-//        button.addTarget(enterButtonPressed.self, action: #selector(enterButtonPressed), for: .touchUpInside)
+        button.addTarget(continueWithEmailPressed.self, action: #selector(continueWithEmailPressed), for: .touchUpInside)
         return button
     }()
     
@@ -74,11 +74,11 @@ class CreateAccountView: UIView {
         button.layer.cornerRadius = 20
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 1.0
-//        button.addTarget(continueWithGoogleButtonPressed.self, action: #selector(continueWithGoogleButtonPressed), for: .touchUpInside)
+        button.addTarget(continueWithGooglePressed.self, action: #selector(continueWithGooglePressed), for: .touchUpInside)
         return button
     }()
     
-    private let registerLabel: UILabel = {
+    private lazy var registerLabel: UILabel = {
         let label = UILabel()
         let text = "Already have an account? Login"
         let attributedText = NSMutableAttributedString(string: text)
@@ -108,6 +108,7 @@ class CreateAccountView: UIView {
     private func setUpView() {
         addSubViews()
         setConstrains()
+        setActionsToUI()
     }
     
     private func addSubViews() {
@@ -165,6 +166,26 @@ class CreateAccountView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-33)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    private func setActionsToUI() {
+        registerLabel.isUserInteractionEnabled = true
+        registerLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
+    }
+
+    
+    //  MARK: - objc Private Functions
+    
+    @objc func continueWithEmailPressed() {
+        print("continueWithEmailPressed")
+    }
+    
+    @objc func continueWithGooglePressed() {
+        print("continueWithGooglePressed")
+    }
+    
+    @objc func registerLabelPressed() {
+        print("registerLabelPressed")
     }
     
     // MARK: - Corner Radius
