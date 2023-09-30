@@ -48,7 +48,7 @@ class CreateAccountView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private lazy var rightStraightLine: LineView = {
         let lineView = LineView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         lineView.backgroundColor = .clear
@@ -109,6 +109,7 @@ class CreateAccountView: UIView {
         addSubViews()
         setConstrains()
         setActionsToUI()
+        setDelegates()
     }
     
     private func addSubViews() {
@@ -171,10 +172,19 @@ class CreateAccountView: UIView {
     private func setActionsToUI() {
         logLabel.isUserInteractionEnabled = true
         logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
+        
+        let gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        addGestureRecognizer(gestureHideKeyboard)
     }
-
+    
+    private func setDelegates() {
+        emailTextField.delegate = self
+    }
     
     //  MARK: - objc Private Functions
+    @objc private func hideKeyboard() {
+        endEditing(true)
+    }
     
     @objc private func continueWithEmailPressed() {
         print("continueWithEmailPressed")
@@ -204,4 +214,12 @@ class CreateAccountView: UIView {
         maskLayer.path = maskPath.cgPath
         layer.mask = maskLayer
     }
+}
+
+extension CreateAccountView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
 }

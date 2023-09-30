@@ -74,7 +74,7 @@ final class LoginInViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private lazy var rightStraightLine: LineView = {
         let lineView = LineView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         lineView.backgroundColor = .clear
@@ -116,8 +116,8 @@ final class LoginInViewController: UIViewController {
         label.isUserInteractionEnabled = true
         return label
     }()
-
-
+    
+    
     // MARK: - Override Functions
     
     override func viewDidLoad() {
@@ -136,6 +136,7 @@ extension LoginInViewController {
         addSubviews()
         setConstraints()
         addActionsToUI()
+        setDelegates()
     }
     
     private func addSubviews() {
@@ -166,7 +167,7 @@ extension LoginInViewController {
             make.trailing.equalTo(loginTextField).offset(-10)
             make.centerY.equalTo(loginTextField)
         }
-                
+        
         passwordTextField.snp.makeConstraints { make in
             make.height.equalTo(45)
         }
@@ -214,6 +215,9 @@ extension LoginInViewController {
     }
     
     private func addActionsToUI() {
+        let gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
+        
         let loginShowInidcatorTapGesture = UITapGestureRecognizer(target: self, action: #selector(loginShowInidcatorPressed))
         loginShowInidcator.addGestureRecognizer(loginShowInidcatorTapGesture)
         
@@ -224,26 +228,43 @@ extension LoginInViewController {
         registerLabel.addGestureRecognizer(registerLabelTapGesture)
     }
     
+    private func setDelegates() {
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
     //  MARK: - @objc private Functions
     
-    @objc func loginShowInidcatorPressed() {
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func loginShowInidcatorPressed() {
         print("loginShowInidcator Pressed")
     }
     
-    @objc func passwordShowIndicatorPressed() {
+    @objc private func passwordShowIndicatorPressed() {
         print("passwordShowIndicator Pressed")
     }
-
-    @objc func enterButtonPressed() {
+    
+    @objc private func enterButtonPressed() {
         print("Enter Button Pressed")
     }
     
-    @objc func continueWithGoogleButtonPressed() {
+    @objc private func continueWithGoogleButtonPressed() {
         print("continueWithGoogleButtonPressed")
     }
     
-    @objc func registerLabelTapped() {
+    @objc private func registerLabelTapped() {
         print("registerLabel pressed")
+    }
+    
+}
+
+extension LoginInViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
     
 }
