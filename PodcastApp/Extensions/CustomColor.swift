@@ -18,4 +18,27 @@ extension UIColor {
     static var shadowGray: UIColor {
         return UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 0.05)
     }
+    static var skyBlue: UIColor {
+        return UIColor(red: 40/255, green: 130/255, blue: 241/255, alpha: 1.0)
+    }
+    static var lightGreen: UIColor {
+        return UIColor(red: 181/255, green: 203/255, blue: 92/255, alpha: 1.0)
+    }
+    static var lightBlue: UIColor {
+        return UIColor(red: 40/255, green: 130/255, blue: 241/255, alpha: 1)
+    }
+    
+    static var purplyGrey: UIColor {
+        return UIColor(red: 66/255, green: 63/255, blue: 81/255, alpha: 1)
+    }
+    
+    static var santaGray: UIColor {
+        return UIColor(red: 156/255, green: 164/255, blue: 171/255, alpha: 1)
+    }
+    
+    static var lightPurple: UIColor {
+        return UIColor(red: 81/255, green: 78/255, blue: 182/255, alpha: 1)
+    }
+    
+    static var onboardBackgroundViewColor = UIColor(named: "OnboardingBackgroundViewColor")
 }

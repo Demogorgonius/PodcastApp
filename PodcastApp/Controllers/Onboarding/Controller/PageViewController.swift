@@ -42,7 +42,9 @@ class PageViewController: CustomViewController<PageView> {
 
 extension PageViewController: PageViewDelegate {
     func skipButtonPressed() {
-        print("skipButton pressed")
+        let customTabBarController = CustomTabBarController()
+        customTabBarController.modalPresentationStyle = .fullScreen
+        present(customTabBarController, animated: true)
     }
     
     func nextButtonPressed() {

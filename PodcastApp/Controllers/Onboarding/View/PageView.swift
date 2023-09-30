@@ -22,14 +22,14 @@ class PageView: CustomView {
     
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(resource: .firstPageLogo)
+        imageView.image = UIImage(named: "firstPageLogo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private lazy var contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(resource: .onboardingView)
+        view.backgroundColor = UIColor.onboardBackgroundViewColor
         view.layer.cornerRadius = 30
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -152,13 +152,12 @@ class PageView: CustomView {
         case .first:
             break
         case .second:
-            logoImageView.image = UIImage(resource: .secondPageLogo)
+            logoImageView.image = UIImage(named: "secondPageLogo")
         case .last:
-            logoImageView.image = UIImage(resource: .lastPageLogo)
+            logoImageView.image = UIImage(named: "lastPageLogo")
             skipButton.removeFromSuperview()
             nextButton.removeFromSuperview()
             spacingView.removeFromSuperview()
-            stackOfButtons
             stackOfButtons.addArrangedSubview(startButton)
             layoutIfNeeded()
         }

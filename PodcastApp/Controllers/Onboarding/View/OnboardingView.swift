@@ -1,15 +1,15 @@
 //
-//  ProfileView.swift
+//  OnboardingView.swift
 //  PodcastApp
 //
-//  Created by Sergey on 25.09.2023.
+//  Created by Sergey on 27.09.2023.
 //
 
 import Foundation
 import UIKit
 import SnapKit
 
-class ProfileView: CustomView {
+class OnboardingView: CustomView {
     
     override func setViews() {
         super.setViews()
