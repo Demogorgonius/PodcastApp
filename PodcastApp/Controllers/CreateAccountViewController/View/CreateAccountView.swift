@@ -19,7 +19,7 @@ class CreateAccountView: UIView {
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .none
-        textField.text = "Enter your email address"
+        textField.placeholder = "Enter your email address"
         textField.textColor = .gray
         textField.backgroundColor = .ghostWhite
         textField.layer.cornerRadius = 18
@@ -176,15 +176,15 @@ class CreateAccountView: UIView {
     
     //  MARK: - objc Private Functions
     
-    @objc func continueWithEmailPressed() {
+    @objc private func continueWithEmailPressed() {
         print("continueWithEmailPressed")
     }
     
-    @objc func continueWithGooglePressed() {
+    @objc private func continueWithGooglePressed() {
         print("continueWithGooglePressed")
     }
     
-    @objc func registerLabelPressed() {
+    @objc private func registerLabelPressed() {
         print("registerLabelPressed")
     }
     

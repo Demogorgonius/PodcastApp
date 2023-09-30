@@ -15,4 +15,14 @@ extension UITextField {
         self.borderStyle = borderStyle
     }
     
+    //  MARK: Round UITextField
+    convenience init(placeHolder: String, textColor: UIColor) {
+        self.init()
+        self.borderStyle = .none
+        self.placeholder = placeHolder
+        self.textColor = textColor
+        self.layer.cornerRadius = 18
+        self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
+        self.leftViewMode = .always
+    }
 }

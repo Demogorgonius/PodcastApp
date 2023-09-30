@@ -26,6 +26,7 @@
 		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
 		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
+		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		16AB171C2AC8036900906EB1 /* CompleteAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171E2AC8038B00906EB1 /* View */,
+				16AB171D2AC8038700906EB1 /* Controller */,
+			);
+			path = CompleteAccountViewController;
+			sourceTree = "<group>";
+		};
+		16AB171D2AC8038700906EB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16AB171E2AC8038B00906EB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +307,7 @@
 		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				16AB171C2AC8036900906EB1 /* CompleteAccountViewController */,
 				16AB17142AC800D300906EB1 /* CreateAccountViewController */,
 				0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */,
 				A59C54D92AC60343003E6B89 /* LoginController */,
@@ -613,6 +640,7 @@
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
