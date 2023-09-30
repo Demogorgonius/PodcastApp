@@ -10,6 +10,12 @@ import SnapKit
 
 final class CompleteAccountViewContoller: UIViewController {
     
+    //  MARK: - Variables
+    
+    private var originalFrame: CGRect?
+    
+    private var keyboardOffset: CGFloat = 0
+    
     //    MARK: - UI Elements
     
     private lazy var backButton: UIButton = {
@@ -268,9 +274,39 @@ extension CompleteAccountViewContoller {
         print("logInLabelPressed")
     }
     
+    
+    
+    
 }
 
 extension CompleteAccountViewContoller: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == passwordTextField || textField == confirmPasswordTextField {
+            
+            let offset: CGFloat = 100.0
+            
+            if originalFrame == nil {
+                originalFrame = view.frame
+            }
+            
+            view.frame = CGRect(x: view.frame.origin.x,
+                                y: view.frame.origin.y - offset,
+                                width: view.frame.size.width,
+                                height: view.frame.size.height)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if textField == passwordTextField || textField == confirmPasswordTextField {
+            if let originalFrame = originalFrame {
+                view.frame = originalFrame
+            }
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
