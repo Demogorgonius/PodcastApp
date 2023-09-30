@@ -135,6 +135,7 @@ extension CompleteAccountViewContoller {
         addSubViews()
         setConstrains()
         actionsToUI()
+        setDelegates()
     }
     
     func setNavigationBar() {
@@ -221,6 +222,9 @@ extension CompleteAccountViewContoller {
     }
     
     private func actionsToUI() {
+        let gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
+        
         let passwordShowIndicatorPressed = UITapGestureRecognizer(target: self, action: #selector(passwordShowIndicatorPressed))
         passwordShowIndicator.addGestureRecognizer(passwordShowIndicatorPressed)
         
@@ -231,7 +235,17 @@ extension CompleteAccountViewContoller {
         logInLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logInLabelPressed)))
     }
     
+    private func setDelegates() {
+        
+        for textField in credentialsStackView.arrangedSubviews.compactMap({ $0 as? UITextField }) {
+            textField.delegate = self
+        }
+    }
+    
     //  MARK: - Private objc func
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
     
     @objc private func backButtonPressed() {
         print("backButtonPressed")
@@ -254,4 +268,10 @@ extension CompleteAccountViewContoller {
         print("logInLabelPressed")
     }
     
+}
+
+extension CompleteAccountViewContoller: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
