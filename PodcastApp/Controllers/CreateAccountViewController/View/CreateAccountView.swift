@@ -8,7 +8,16 @@
 import UIKit
 import SnapKit
 
+protocol CreateAccountViewDelegate: AnyObject {
+    func continueWithEmailButtonPressed(email: String)
+    func showAlert(title: String, message: String)
+}
+
 class CreateAccountView: UIView {
+    
+    //  MARK: - Variables
+    
+    weak var delegate: CreateAccountViewDelegate?
     
     // MARK: - UI Elements
     
@@ -187,8 +196,17 @@ class CreateAccountView: UIView {
     }
     
     @objc private func continueWithEmailPressed() {
-        print("continueWithEmailPressed")
+        guard let email = emailTextField.text, !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            delegate?.showAlert(title: "Not Valid Email!", message: "Please enter a valid Email")
+            return
+        }
+        
+        let destinationVC = CompleteAccountViewContoller()
+        destinationVC.enteredEmail = email
+        
+        delegate?.continueWithEmailButtonPressed(email: email)
     }
+
     
     @objc private func continueWithGooglePressed() {
         print("continueWithGooglePressed")
@@ -196,6 +214,7 @@ class CreateAccountView: UIView {
     
     @objc private func registerLabelPressed() {
         print("registerLabelPressed")
+        
     }
     
     // MARK: - Corner Radius

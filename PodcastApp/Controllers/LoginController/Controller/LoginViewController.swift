@@ -256,8 +256,18 @@ extension LoginInViewController {
     }
     
     @objc private func registerLabelTapped() {
-        print("registerLabel pressed")
+        let fullScreenViewController = CreateAccountViewController()
+        let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+        navigationController.navigationBar.tintColor = .blue
+
+        if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            if let window = targetWindowScene.windows.first {
+                window.rootViewController = navigationController
+            }
+        }
     }
+
     
 }
 

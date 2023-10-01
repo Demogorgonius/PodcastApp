@@ -25,6 +25,7 @@
 		1688C43A2AC871AF00505476 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C4392AC871AF00505476 /* Validator.swift */; };
 		1688C43C2AC8724E00505476 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C43B2AC8724E00505476 /* AuthService.swift */; };
 		1688C4402AC872F300505476 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688C43F2AC872F300505476 /* UserRequest.swift */; };
+		1688C4442AC8768A00505476 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1688C4432AC8768A00505476 /* GoogleService-Info.plist */; };
 		169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C12AC5B7BD00ACC05B /* UIBUtton.swift */; };
 		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
@@ -91,6 +92,7 @@
 		1688C4392AC871AF00505476 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		1688C43B2AC8724E00505476 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1688C43F2AC872F300505476 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		1688C4432AC8768A00505476 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		169992C12AC5B7BD00ACC05B /* UIBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBUtton.swift; sourceTree = "<group>"; };
 		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				A59C54452AC1F947003E6B89 /* Assets.xcassets */,
 				A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */,
 				A59C544A2AC1F947003E6B89 /* Info.plist */,
+				1688C4432AC8768A00505476 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */,
 				A59C54492AC1F947003E6B89 /* LaunchScreen.storyboard in Resources */,
 				A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */,
+				1688C4442AC8768A00505476 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

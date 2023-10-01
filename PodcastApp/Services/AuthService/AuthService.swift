@@ -25,53 +25,52 @@ final class AuthService {
     ///    -  Bool: wasRegistered - Determines the user was registered and saved to the Data Base correctly
     ///    - Error? : An optinoal Error if Data Base provides one
     
-//    public func registerUser(with userRequest: UserRequest, completion: @escaping (Bool, Error?) -> Void) {
-//        
-//        let userName = userRequest.userName
-//        let email = userRequest.email
-//        let password = userRequest.password
-//        
-//        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-//            
-//            guard error == nil else {
-//                
-//                completion(false, error)
-//                
-//                return
-//            }
-//            
-//            //            Getting Signed Up User
-//            
-//            guard let resultUser = result?.user else {
-//                
-//                completion(false, nil)
-//                
-//                return
-//            }
-//            
-//            let db = Firestore.firestore()
-//            
-//            db.collection("user")
-//                .document(resultUser.uid)
-//                .setData([
-//                    
-//                    "username" : userName,
-//                    "email" : email
-//                    
-//                ]) { error in
-//                    if let error = error {
-//                        
-//                        completion(false, error)
-//                        
-//                        return
-//                    }
-//                    
-//                    completion(true, nil)
-//                }
-//            
-//        }
-//        
-//    }
+    public func registerUser(with userRequest: UserRequest, completion: @escaping (Bool, Error?) -> Void) {
+        
+        let firstName = userRequest.firstName
+        let lastName = userRequest.lastName
+        let email = userRequest.email
+        let password = userRequest.password
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            
+            guard error == nil else {
+                
+                completion(false, error)
+                
+                return
+            }
+            
+            //            Getting Signed Up User
+            guard let resultUser = result?.user else {
+                completion(false, nil)
+                return
+            }
+            
+            let db = Firestore.firestore()
+            
+            db.collection("user")
+                .document(resultUser.uid)
+                .setData([
+                    
+                    "fistName" : firstName,
+                    "lastName" : lastName,
+                    "email" : email
+                    
+                ]) { error in
+                    if let error = error {
+                        
+                        completion(false, error)
+                        
+                        return
+                    }
+                    
+                    completion(true, nil)
+                }
+            
+        }
+        
+    }
     
     /// A method to signInUser
         /// - Parameters:

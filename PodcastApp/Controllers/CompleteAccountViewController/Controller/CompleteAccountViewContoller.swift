@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 final class CompleteAccountViewContoller: UIViewController {
     
@@ -15,6 +16,10 @@ final class CompleteAccountViewContoller: UIViewController {
     private var originalFrame: CGRect?
     
     private var keyboardOffset: CGFloat = 0
+    
+    private let alertControllerManager = AlertControllerManager()
+    
+    var enteredEmail: String?
     
     //    MARK: - UI Elements
     
@@ -127,6 +132,7 @@ final class CompleteAccountViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
         setUpView()
     }
     
@@ -137,32 +143,38 @@ extension CompleteAccountViewContoller {
     //    MARK: - Private Functions
     
     private func setUpView() {
-        setNavigationBar()
+        setNavigation()
         addSubViews()
         setConstrains()
         actionsToUI()
         setDelegates()
     }
     
-    func setNavigationBar() {
-        let navigationBar = UINavigationBar()
-        navigationBar.backgroundColor = .clear
-        navigationBar.isTranslucent = false
-        navigationBar.shadowImage = UIImage()
+//    func setNavigationBar() {
+//        let navigationBar = UINavigationBar()
+//        navigationBar.backgroundColor = .clear
+//        navigationBar.isTranslucent = false
+//        navigationBar.shadowImage = UIImage()
+//        
+//        let navigationItem = UINavigationItem()
+//        let backButtonItem = UIBarButtonItem(customView: backButton)
+//        navigationItem.leftBarButtonItem = backButtonItem
+//        navigationItem.title = "Sign Up"
+//        
+//        navigationBar.items = [navigationItem]
+//        view.addSubview(navigationBar)
+//        
+//        navigationBar.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide)
+//            make.left.equalTo(view)
+//            make.right.equalTo(view)
+//        }
+//    }
+    
+    private func setNavigation() {
+        title = "Sign Up"
         
-        let navigationItem = UINavigationItem()
-        let backButtonItem = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = backButtonItem
-        navigationItem.title = "Sign Up"
         
-        navigationBar.items = [navigationItem]
-        view.addSubview(navigationBar)
-        
-        navigationBar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.left.equalTo(view)
-            make.right.equalTo(view)
-        }
     }
     
     private func addSubViews() {
@@ -267,15 +279,55 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func signupButtonPressed() {
-        print("signupButtonPressed")
+        
+        guard let email = enteredEmail else { return }
+        
+        guard let firstName = firstNameTextField.text, !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        guard let lastName = lastNameTextField.text, !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        guard let password = passwordTextField.text, !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        guard let confirmPassword = confirmPasswordTextField.text, !confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        if !Validator.isPasswordValid(for: password) {
+            let alert = alertControllerManager.showAlert(title: "Invalid Password", message: "Your Password must contain 1 upper case letter, 1 lower case letter, 1 Number, 1 special character.")
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if password == confirmPassword {
+            let userRequest = UserRequest(firstName: firstName, lastName: lastName, email: email, password: password)
+            
+            AuthService.shared.registerUser(with: userRequest) { [weak self] wasRegistered, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    let alert = self.alertControllerManager.showAlert(title: "Error", message: error.localizedDescription)
+                    self.present(alert, animated: true)
+                }
+                
+                if wasRegistered {
+                    guard let user = Auth.auth().currentUser else { 
+//                    Handle
+                        return
+                    }
+
+                    print("Registered")
+                }
+                
+            }
+            
+        } else {
+            let alert = alertControllerManager.showAlert(title: "Passwords do not match", message: "Please enter password, then confirm it")
+            present(alert, animated: true)
+        }
+        
     }
     
     @objc private func logInLabelPressed() {
         print("logInLabelPressed")
     }
-    
-    
-    
     
 }
 
