@@ -170,7 +170,7 @@ extension CompleteAccountViewContoller {
     
     private func setConstrains() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(45)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(0)
             make.centerX.equalToSuperview()
         }
         
