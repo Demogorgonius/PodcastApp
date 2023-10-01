@@ -58,7 +58,7 @@ class MainCollection: UIView  {
         topHorizontalCollectionView1.snp.makeConstraints { make in
             make.top.equalTo(self)
             make.leading.trailing.equalTo(self)
-            make.height.equalTo(100)
+            make.height.equalTo(200)
         }
         topHorizontalCollectionView2.snp.makeConstraints { make in
             make.top.equalTo(topHorizontalCollectionView1.snp.bottom).offset(padding)

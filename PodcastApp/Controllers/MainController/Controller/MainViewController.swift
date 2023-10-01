@@ -24,10 +24,16 @@ class MainViewController: UIViewController {
         }
     }
     
+    private var combinedCategoriesArray: [PodcastArrayResponse]? {
+        didSet {
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         fetchData()
+//        fetchDataForCombinedCategories()
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView1)
         setupCollectionViewDelegate(mainCollectionView.topHorizontalCollectionView2)
         setupCollectionViewDelegate(mainCollectionView.bottomVerticalCollectionView)
@@ -107,7 +113,7 @@ class MainViewController: UIViewController {
                     let data = try await podcastIndexKit.podcastsService.trendingPodcasts()
                     podcasts = data
                 } else if name == categoryArray[1] {
-                      let data = try await podcastIndexKit.recentService.recentFeeds(max: 20)
+                    let data = try await podcastIndexKit.recentService.recentFeeds(max: 20)
                     podcasts = data
                 } else {
                     //MARK: - Недавние Подкасты
@@ -119,8 +125,24 @@ class MainViewController: UIViewController {
             }
         }
     }
+    //Получение сколько подкастов в комбинированных категориях: Всегда 40!
+//    private func fetchDataForCombinedCategories() {
+//        var array: [PodcastArrayResponse] = []
+//        for i in 0...AppCategoryModel.combinedCategories.count - 1 {
+//            Task {
+//                do {
+//                    let nameArray = AppCategoryModel.splitCategories()
+//                    let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: nameArray[i])
+//                    array.append(data)
+//                    combinedCategoriesArray = array
+//                } catch {
+//                    print("Произошла ошибка: \(error)")
+//                }
+//            }
+//        }
+//            mainCollectionView.topHorizontalCollectionView1.reloadData()
+//    }
 }
-
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -134,10 +156,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            
+            let imageName = AppCategoryModel.combinedCategoriesImages[indexPath.row]
+            let combinedCategoryName = AppCategoryModel.combinedCategories[indexPath.row]
             cell.setupCategoryCell(
-                topLbl: categoriesArray?.feeds?[indexPath.row].name ?? "",
-                bottomLbl: "94 podcasts")
+                topLbl: combinedCategoryName,
+//                bottomLbl: combinedCategoriesArray?[indexPath.row].feeds?.count ?? 0,
+                bottomLbl: 40,
+                image: UIImage(named: imageName))
             
             if indexPath.row % 2 == 0 {
                 cell.layer.backgroundColor = UIColor.palePink.withAlphaComponent(0.5).cgColor
@@ -153,9 +178,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         } else if collectionView == mainCollectionView.bottomVerticalCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
             let podcast = podcasts?.feeds?[indexPath.row]
-            
             FetchImage.loadImageFromURL(urlString: podcast?.image ?? "") { image in
-                let resizedImage = FetchImage.resizeImage(image: image ?? UIImage(), targetSize: CGSize(width: 50, height: 50))
+                let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 50, height: 50))
                 DispatchQueue.main.async {
                     cell.setupPodcastCell(
                         titleLeft: podcast?.title ?? "",
@@ -175,7 +199,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView.topHorizontalCollectionView1 {
-            return CGSize(width: 144, height: 85)
+            return CGSize(width: 144, height: 200)
         } else if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             let text = AppCategoryModel.categoryNames[indexPath.row]
             let cellWidth = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: 16)]).width + 40
@@ -190,7 +214,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let firstIndexPath = IndexPath(item: 0, section: 0)
         mainCollectionView.topHorizontalCollectionView2.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
-    // Отступы с лева, c ними консоль ругается...
+////     Отступы с лева, c ними консоль ругается...
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        if collectionView == mainCollectionView.bottomVerticalCollectionView {
 //            return UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
@@ -202,6 +226,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCollectionView.topHorizontalCollectionView2 {
             fetchDataForSelected(name: categoryArray[indexPath.row])
+        } else if collectionView == mainCollectionView.topHorizontalCollectionView1 {
+            let viewController = AllTrandingsPodcasts()
+            let categoryArray = AppCategoryModel.splitCategories()
+            viewController.name = categoryArray[indexPath.row]
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }

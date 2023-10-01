@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */; };
 		0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC982AC2E46F00FF7B41 /* View.swift */; };
 		0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC992AC2E47000FF7B41 /* Label.swift */; };
 		0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */; };
@@ -20,14 +21,12 @@
 		0BF5ACB12AC323E600FF7B41 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA72AC2E5D300FF7B41 /* Manrope-ExtraBold.ttf */; };
 		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
 		0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */; };
-		0BF5ACB82AC4A5B600FF7B41 /* AllCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */; };
 		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
-		2F74AD932AC52A3500727DC6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD912AC52A3400727DC6 /* ButtonView.swift */; };
-		2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD922AC52A3400727DC6 /* UserView.swift */; };
-		2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */; };
-		2F74AD982AC52B4500727DC6 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */; };
-		2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */; };
-		2F74ADA02AC5689200727DC6 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */; };
+		169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C12AC5B7BD00ACC05B /* UIBUtton.swift */; };
+		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
+		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
+		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
+		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -54,16 +53,27 @@
 		A59C54AB2AC34DAE003E6B89 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AA2AC34DAE003E6B89 /* GoogleSignIn */; };
 		A59C54AD2AC34DAE003E6B89 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */; };
 		A59C54B02AC34E3D003E6B89 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */; };
-		A59C54B22AC49D84003E6B89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B12AC49D84003E6B89 /* LoginViewController.swift */; };
-		A59C54B42AC49DA7003E6B89 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B32AC49DA7003E6B89 /* LoginView.swift */; };
 		A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */; };
 		A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */; };
 		A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */; };
 		A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */; };
 		A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */; };
+		A59C54D82AC602D9003E6B89 /* AllCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */; };
+		A59C54DD2AC60373003E6B89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54DC2AC60373003E6B89 /* LoginViewController.swift */; };
+		A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54DE2AC6037E003E6B89 /* LoginView.swift */; };
+		A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */; };
+		A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E52AC60732003E6B89 /* ButtonView.swift */; };
+		A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */; };
+		A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54E92AC6077E003E6B89 /* UserView.swift */; };
+		A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54ED2AC60830003E6B89 /* AvatarView.swift */; };
+		A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */; };
+		E224952B2AC88386007EA23B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224952A2AC88386007EA23B /* PageViewController.swift */; };
+		E224952D2AC8839A007EA23B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224952C2AC8839A007EA23B /* PageView.swift */; };
+		E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224952E2AC883B5007EA23B /* PageViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrandingsPodcasts.swift; sourceTree = "<group>"; };
 		0BF5AC982AC2E46F00FF7B41 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0BF5AC992AC2E47000FF7B41 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -77,14 +87,12 @@
 		0BF5ACAC2AC30A3300FF7B41 /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
 		0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
-		0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesController.swift; sourceTree = "<group>"; };
 		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
-		2F74AD912AC52A3400727DC6 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		2F74AD922AC52A3400727DC6 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
-		2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
-		2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		169992C12AC5B7BD00ACC05B /* UIBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBUtton.swift; sourceTree = "<group>"; };
+		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,13 +110,23 @@
 		A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A59C54B12AC49D84003E6B89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A59C54B32AC49DA7003E6B89 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesController.swift; sourceTree = "<group>"; };
+		A59C54DC2AC60373003E6B89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A59C54DE2AC6037E003E6B89 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		A59C54E52AC60732003E6B89 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsButton.swift; sourceTree = "<group>"; };
+		A59C54E92AC6077E003E6B89 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		A59C54ED2AC60830003E6B89 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		E224952A2AC88386007EA23B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		E224952C2AC8839A007EA23B /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		E224952E2AC883B5007EA23B /* PageViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */ = {
+			isa = PBXGroup;
+			children = (
+				0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */,
+			);
+			path = AllTrandingsPodcasts;
+			sourceTree = "<group>";
+		};
 		0BF5ACA92AC2E65900FF7B41 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,21 +177,60 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0BF5ACB62AC4A56400FF7B41 /* AllCategoriesController */ = {
+		169992BA2AC5B4E500ACC05B /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				0BF5ACB92AC4A5DE00FF7B41 /* Controller */,
 			);
-			path = AllCategoriesController;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		0BF5ACB92AC4A5DE00FF7B41 /* Controller */ = {
+		16AB17142AC800D300906EB1 /* CreateAccountViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0BF5ACB72AC4A5B600FF7B41 /* AllCategoriesController.swift */,
+				16AB17172AC800F900906EB1 /* Controller */,
+				16AB17162AC800F100906EB1 /* View */,
 			);
-			name = Controller;
-			path = "../AllCategoresController/New Group";
+			path = CreateAccountViewController;
+			sourceTree = "<group>";
+		};
+		16AB17162AC800F100906EB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171A2AC8015400906EB1 /* CreateAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16AB17172AC800F900906EB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16AB171C2AC8036900906EB1 /* CompleteAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171E2AC8038B00906EB1 /* View */,
+				16AB171D2AC8038700906EB1 /* Controller */,
+			);
+			path = CompleteAccountViewController;
+			sourceTree = "<group>";
+		};
+		16AB171D2AC8038700906EB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16AB171E2AC8038B00906EB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2F74AD9D2AC5574500727DC6 /* AccountSettings */ = {
@@ -193,6 +258,7 @@
 			children = (
 				A59C543B2AC1F945003E6B89 /* PodcastApp */,
 				A59C543A2AC1F945003E6B89 /* Products */,
+				169992BA2AC5B4E500ACC05B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +313,8 @@
 				0BF5AC982AC2E46F00FF7B41 /* View.swift */,
 				A59C54682AC1FBFA003E6B89 /* CustomView.swift */,
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
+				169992C12AC5B7BD00ACC05B /* UIBUtton.swift */,
+				169992C52AC5B80600ACC05B /* UITextField + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,12 +333,15 @@
 		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				16AB171C2AC8036900906EB1 /* CompleteAccountViewController */,
+				16AB17142AC800D300906EB1 /* CreateAccountViewController */,
+				0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */,
+				A59C54D92AC60343003E6B89 /* LoginController */,
+				A59C54D52AC60296003E6B89 /* AllCategoresController */,
 				A59C545B2AC1FB48003E6B89 /* ProfileController */,
 				A59C545A2AC1FB1C003E6B89 /* FavoritesController */,
 				A59C54592AC1FAFE003E6B89 /* SearchController */,
 				A59C54582AC1FABC003E6B89 /* MainController */,
-				0BF5ACB62AC4A56400FF7B41 /* AllCategoriesController */,
-				A59C54572AC1FAA6003E6B89 /* LoginController */,
 				A59C54562AC1FA9B003E6B89 /* Onboarding */,
 				A59C54552AC1FA82003E6B89 /* CustomTabBarController */,
 			);
@@ -288,19 +359,11 @@
 		A59C54562AC1FA9B003E6B89 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				E224952E2AC883B5007EA23B /* PageViewDelegate.swift */,
 				A59C54672AC1FBD1003E6B89 /* Controller */,
 				A59C54662AC1FBCB003E6B89 /* View */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		A59C54572AC1FAA6003E6B89 /* LoginController */ = {
-			isa = PBXGroup;
-			children = (
-				A59C54652AC1FBBD003E6B89 /* Controller */,
-				A59C54642AC1FBB7003E6B89 /* View */,
-			);
-			path = LoginController;
 			sourceTree = "<group>";
 		};
 		A59C54582AC1FABC003E6B89 /* MainController */ = {
@@ -343,8 +406,8 @@
 		A59C545C2AC1FB60003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F74AD9D2AC5574500727DC6 /* AccountSettings */,
-				2F74AD9E2AC5576A00727DC6 /* ProfileView */,
+				A59C54E32AC606D2003E6B89 /* AccountSettings */,
+				A59C54E42AC606F4003E6B89 /* ProfileView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,7 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
-				2F74AD972AC52B4500727DC6 /* AccountSettingsViewController.swift */,
+				A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -409,25 +472,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A59C54642AC1FBB7003E6B89 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A59C54B32AC49DA7003E6B89 /* LoginView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A59C54652AC1FBBD003E6B89 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A59C54B12AC49D84003E6B89 /* LoginViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		A59C54662AC1FBCB003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E224952C2AC8839A007EA23B /* PageView.swift */,
 				A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */,
 			);
 			path = View;
@@ -436,9 +484,71 @@
 		A59C54672AC1FBD1003E6B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E224952A2AC88386007EA23B /* PageViewController.swift */,
 				A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54D52AC60296003E6B89 /* AllCategoresController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54D62AC602BC003E6B89 /* New Group */,
+			);
+			path = AllCategoresController;
+			sourceTree = "<group>";
+		};
+		A59C54D62AC602BC003E6B89 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54D72AC602D9003E6B89 /* AllCategoriesController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A59C54D92AC60343003E6B89 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54DB2AC6035E003E6B89 /* Controller */,
+				A59C54DA2AC60353003E6B89 /* View */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		A59C54DA2AC60353003E6B89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54DE2AC6037E003E6B89 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59C54DB2AC6035E003E6B89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54DC2AC60373003E6B89 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A59C54E32AC606D2003E6B89 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A59C54ED2AC60830003E6B89 /* AvatarView.swift */,
+				A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		A59C54E42AC606F4003E6B89 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
+				A59C54E52AC60732003E6B89 /* ButtonView.swift */,
+				A59C54E72AC60758003E6B89 /* ProfileSettingsButton.swift */,
+				A59C54E92AC6077E003E6B89 /* UserView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,44 +645,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */,
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
-				2F74AD932AC52A3500727DC6 /* ButtonView.swift in Sources */,
+				16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
+				A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */,
+				E224952B2AC88386007EA23B /* PageViewController.swift in Sources */,
+				A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */,
 				A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */,
-				A59C54B22AC49D84003E6B89 /* LoginViewController.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
+				E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
-				A59C54B42AC49DA7003E6B89 /* LoginView.swift in Sources */,
+				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
+				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
+				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
-				2F74AD982AC52B4500727DC6 /* AccountSettingsViewController.swift in Sources */,
+				A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
+				A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
-				0BF5ACB82AC4A5B600FF7B41 /* AllCategoriesController.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				E224952D2AC8839A007EA23B /* PageView.swift in Sources */,
+				16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
-				2F74AD9C2AC52B6700727DC6 /* AvatarView.swift in Sources */,
+				A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
+				A59C54DD2AC60373003E6B89 /* LoginViewController.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
+				A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
 				2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
+				A59C54D82AC602D9003E6B89 /* AllCategoriesController.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
 				2F74ADA02AC5689200727DC6 /* ProfileInfo.swift in Sources */,
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
+				169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +833,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = PodcastApp/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = TWQL7PLAUC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PodcastApp/Resources/Info.plist;
@@ -718,7 +841,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,6 +865,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = PodcastApp/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = TWQL7PLAUC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PodcastApp/Resources/Info.plist;
@@ -750,7 +873,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
