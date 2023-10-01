@@ -39,4 +39,6 @@ extension UIColor {
     static var lightPurple: UIColor {
         return UIColor(red: 81/255, green: 78/255, blue: 182/255, alpha: 1)
     }
+    
+    static var onboardBackgroundViewColor = UIColor(named: "OnboardingBackgroundViewColor")
 }

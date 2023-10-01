@@ -24,12 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
-        
-        // Create a navigation controller and set your CreateAccountViewController as its root view controller
-        let createAccountViewController = LoginInViewController()
-        let navigationController = UINavigationController(rootViewController: createAccountViewController)
-        
-        window.rootViewController = navigationController
+        window.rootViewController = OnboardingViewController()
         self.window = window
     }
 
