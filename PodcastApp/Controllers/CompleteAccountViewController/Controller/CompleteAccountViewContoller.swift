@@ -26,12 +26,13 @@ final class CompleteAccountViewContoller: UIViewController {
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "ArrowBack"), for: .normal)
-        button.addTarget(backButtonPressed.self, action: #selector(backButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
         button.layer.cornerRadius = 24
         button.backgroundColor = .shadowGray
         return button
     }()
+
     
     private let titleLabel: UILabel = {
         let label = UILabel(labelText: "Complet your account", textColor: .black)
@@ -150,31 +151,11 @@ extension CompleteAccountViewContoller {
         setDelegates()
     }
     
-//    func setNavigationBar() {
-//        let navigationBar = UINavigationBar()
-//        navigationBar.backgroundColor = .clear
-//        navigationBar.isTranslucent = false
-//        navigationBar.shadowImage = UIImage()
-//        
-//        let navigationItem = UINavigationItem()
-//        let backButtonItem = UIBarButtonItem(customView: backButton)
-//        navigationItem.leftBarButtonItem = backButtonItem
-//        navigationItem.title = "Sign Up"
-//        
-//        navigationBar.items = [navigationItem]
-//        view.addSubview(navigationBar)
-//        
-//        navigationBar.snp.makeConstraints { make in
-//            make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.left.equalTo(view)
-//            make.right.equalTo(view)
-//        }
-//    }
+
     
     private func setNavigation() {
         title = "Sign Up"
-        
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     private func addSubViews() {
@@ -266,8 +247,7 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func backButtonPressed() {
-        print("backButtonPressed")
-        //        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func passwordShowIndicatorPressed() {

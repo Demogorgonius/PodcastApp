@@ -109,9 +109,8 @@ extension CreateAccountViewController: CreateAccountViewDelegate {
         
         if let navigationController = navigationController {
             navigationController.pushViewController(destinationVC, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(customView: backTapButton)
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backTapButton)
-            print("After pushing destinationVC")
+            
         } else {
             print("Navigation controller is nil. Make sure CreateAccountViewController is embedded in a UINavigationController.")
         }
