@@ -11,7 +11,9 @@ import SnapKit
 class AccountSettingsViewController: UIViewController {
     
     private let avatarView = AvatarView()
-    private let profileInfo = ProfileInfo(title: "First Name")
+//    private let profileInfo = ProfileInfo(title: "First Name", buttonIsHidden: false)
+	private let profileInfo = ProfileInfo()
+	private let scrollView = UIScrollView()
     private let saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Save Changes", for: .normal)
@@ -29,6 +31,8 @@ class AccountSettingsViewController: UIViewController {
         addSubviews()
         setupConstraints()
         setupNavigationBarAppearance()
+		
+		
     }
     
     private func setupNavigationBarAppearance() {
@@ -61,7 +65,9 @@ extension AccountSettingsViewController {
     func addSubviews() {
         view.addSubview(avatarView)
         view.addSubview(saveButton)
-        view.addSubview(profileInfo)
+		view.addSubview(scrollView)
+		scrollView.addSubview(profileInfo)
+       // view.addSubview(profileInfo)
     }
     
     func setupConstraints() {
@@ -79,12 +85,19 @@ extension AccountSettingsViewController {
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
         }
+		
+		scrollView.snp.makeConstraints { make in
+			make.top.equalTo(avatarView.snp.bottom).offset(16)
+			make.leading.equalToSuperview().offset(24)
+			make.trailing.equalToSuperview().offset(-19)
+			make.bottom.equalTo(saveButton.snp.top)
+		}
+		
+		profileInfo.snp.makeConstraints { make in
+			make.edges.equalToSuperview()
+			make.width.equalTo(scrollView.snp.width).offset(-5)
+			make.height.equalTo(470)
+		}
         
-        profileInfo.snp.makeConstraints { make in
-            make.top.equalTo(avatarView.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.height.equalTo(82)
-        }
     }
 }

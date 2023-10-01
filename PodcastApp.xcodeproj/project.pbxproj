@@ -27,6 +27,7 @@
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
 		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
 		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
+		2F3A63C52AC9849000199BCA /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63C42AC9849000199BCA /* ProfileTextField.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
+		2F3A63C42AC9849000199BCA /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,26 +233,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2F74AD9D2AC5574500727DC6 /* AccountSettings */ = {
-			isa = PBXGroup;
-			children = (
-				2F74AD9B2AC52B6700727DC6 /* AvatarView.swift */,
-				2F74AD9F2AC5689200727DC6 /* ProfileInfo.swift */,
-			);
-			path = AccountSettings;
-			sourceTree = "<group>";
-		};
-		2F74AD9E2AC5576A00727DC6 /* ProfileView */ = {
-			isa = PBXGroup;
-			children = (
-				A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */,
-				2F74AD912AC52A3400727DC6 /* ButtonView.swift */,
-				2F74AD922AC52A3400727DC6 /* UserView.swift */,
-				2F74AD952AC52A5B00727DC6 /* ProfileSettingsButton.swift */,
-			);
-			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		A59C54302AC1F945003E6B89 = {
@@ -536,6 +518,7 @@
 			children = (
 				A59C54ED2AC60830003E6B89 /* AvatarView.swift */,
 				A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */,
+				2F3A63C42AC9849000199BCA /* ProfileTextField.swift */,
 			);
 			path = AccountSettings;
 			sourceTree = "<group>";
@@ -656,6 +639,7 @@
 				A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */,
+				2F3A63C52AC9849000199BCA /* ProfileTextField.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
@@ -676,7 +660,6 @@
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
-				2F74AD942AC52A3500727DC6 /* UserView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
 				A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
@@ -686,13 +669,11 @@
 				A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				A59C54BE2AC4B20C003E6B89 /* AlertManager.swift in Sources */,
-				2F74AD962AC52A5B00727DC6 /* ProfileSettingsButton.swift in Sources */,
 				A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */,
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
 				A59C54D82AC602D9003E6B89 /* AllCategoriesController.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
-				2F74ADA02AC5689200727DC6 /* ProfileInfo.swift in Sources */,
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 				169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */,
 			);
