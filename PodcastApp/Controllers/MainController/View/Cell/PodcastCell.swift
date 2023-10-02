@@ -66,7 +66,7 @@ class PodcastCell: UICollectionViewCell {
         return viewCardView
     }()
     
-    private let checkmarkButton: UIButton = {
+     let checkmarkButton: UIButton = {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.gray
@@ -147,8 +147,6 @@ class PodcastCell: UICollectionViewCell {
         
         switch cellType {
         case .podcast:
-            checkmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            checkmarkButton.addTarget(self, action: #selector(toggleCheckmarkColor), for: .touchUpInside)
             break
         case .AddToPlaylist:
             checkmarkButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
@@ -161,16 +159,16 @@ class PodcastCell: UICollectionViewCell {
             cardView.backgroundColor = .white
         }
     }
-    
-    @objc private func toggleCheckmarkColor() {
-        if  checkmarkButton.tintColor == UIColor.gray {
-            checkmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            checkmarkButton.tintColor = UIColor.red
-    } else {
-        checkmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        checkmarkButton.tintColor = UIColor.gray
+    public func ifLiked(id: Int) {
+        if LikedPodcast.shared.likedPodcasts.contains(id) {
+           checkmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+           checkmarkButton.tintColor = UIColor.red
+        } else {
+           checkmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+           checkmarkButton.tintColor = UIColor.gray
+        }
     }
-}
+    
     @objc private func toggleCheckmarkImage() {
         if  checkmarkButton.tintColor == UIColor.gray {
             checkmarkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
