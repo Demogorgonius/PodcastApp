@@ -31,13 +31,12 @@ class AccountSettingsViewController: UIViewController {
         addSubviews()
         setupConstraints()
         setupNavigationBarAppearance()
-		
-		
+		avatarView.delegate = self
     }
     
     private func setupNavigationBarAppearance() {
         let backButton = UIBarButtonItem(
-            image: UIImage(named: "ArrowBack"),
+            image: UIImage(named: "ArrowBackTo"),
             style: .plain,
             target: self,
             action: #selector(popToPrevious)
@@ -58,6 +57,16 @@ class AccountSettingsViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension AccountSettingsViewController: AvatarViewDelegate {
+	func editPhotoTap() {
+		let popUpVC = PopUpViewController()
+		popUpVC.modalPresentationStyle = .overCurrentContext
+		popUpVC.modalTransitionStyle = .crossDissolve
+		
+		present(popUpVC, animated: true)
+	}
 }
 
 // MARK: - Layout

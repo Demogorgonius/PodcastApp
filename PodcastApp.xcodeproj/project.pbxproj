@@ -30,6 +30,9 @@
 		2F3A63C52AC9849000199BCA /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63C42AC9849000199BCA /* ProfileTextField.swift */; };
 		2F3A63C72ACA3E3100199BCA /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63C62ACA3E3100199BCA /* CheckButton.swift */; };
 		2F3A63C92ACA3E8D00199BCA /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63C82ACA3E8D00199BCA /* GenderView.swift */; };
+		2F3A63D12ACA718D00199BCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63D02ACA718D00199BCA /* PopUpView.swift */; };
+		2F3A63D32ACA71F600199BCA /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63D22ACA71F600199BCA /* PopUpButton.swift */; };
+		2F3A63D52ACA97B300199BCA /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A63D42ACA97B300199BCA /* PopUpViewController.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -99,6 +102,9 @@
 		2F3A63C42AC9849000199BCA /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		2F3A63C62ACA3E3100199BCA /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		2F3A63C82ACA3E8D00199BCA /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		2F3A63D02ACA718D00199BCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		2F3A63D22ACA71F600199BCA /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
+		2F3A63D42ACA97B300199BCA /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +243,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2F3A63CF2ACA716A00199BCA /* PopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				2F3A63D02ACA718D00199BCA /* PopUpView.swift */,
+				2F3A63D22ACA71F600199BCA /* PopUpButton.swift */,
+			);
+			path = PopUpView;
 			sourceTree = "<group>";
 		};
 		A59C54302AC1F945003E6B89 = {
@@ -392,6 +407,7 @@
 		A59C545C2AC1FB60003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F3A63CF2ACA716A00199BCA /* PopUpView */,
 				A59C54E32AC606D2003E6B89 /* AccountSettings */,
 				A59C54E42AC606F4003E6B89 /* ProfileView */,
 			);
@@ -403,6 +419,7 @@
 			children = (
 				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
 				A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */,
+				2F3A63D42ACA97B300199BCA /* PopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -645,6 +662,7 @@
 				A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */,
+				2F3A63D52ACA97B300199BCA /* PopUpViewController.swift in Sources */,
 				2F3A63C52AC9849000199BCA /* ProfileTextField.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
 				2F3A63C72ACA3E3100199BCA /* CheckButton.swift in Sources */,
@@ -652,6 +670,7 @@
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
 				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
+				2F3A63D12ACA718D00199BCA /* PopUpView.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */,
@@ -681,6 +700,7 @@
 				A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */,
 				A59C54D82AC602D9003E6B89 /* AllCategoriesController.swift in Sources */,
 				0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */,
+				2F3A63D32ACA71F600199BCA /* PopUpButton.swift in Sources */,
 				A59C546B2AC1FC09003E6B89 /* CustomViewController.swift in Sources */,
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 				169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */,

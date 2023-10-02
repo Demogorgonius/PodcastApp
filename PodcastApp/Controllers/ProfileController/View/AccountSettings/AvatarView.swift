@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol AvatarViewDelegate: AnyObject {
+	func editPhotoTap()
+}
+
 class AvatarView: UIView {
+	
+	weak var delegate: AvatarViewDelegate?
+	
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -30,11 +37,17 @@ class AvatarView: UIView {
         super.init(frame: frame)
         addSabviews()
         setupConstraints()
+		
+		button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+	
+	@objc private func buttonAction() {
+		delegate?.editPhotoTap()
+	}
 }
 
 // MARK: - Layout
