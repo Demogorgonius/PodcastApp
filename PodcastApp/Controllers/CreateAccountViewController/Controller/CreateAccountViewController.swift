@@ -16,16 +16,6 @@ final class CreateAccountViewController: UIViewController {
     
     //    MARK: - UI
     
-    private lazy var backTapButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "ArrowBack"), for: .normal)
-        button.addTarget(backButtonPressed.self, action: #selector(backButtonPressed), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
-        button.layer.cornerRadius = 24
-        button.backgroundColor = .shadowGray
-        return button
-    }()
-    
     private let titleLabel: UILabel = {
         let label = UILabel(labelText: "Create account", textColor: .white)
         label.textAlignment = .center
@@ -54,8 +44,6 @@ final class CreateAccountViewController: UIViewController {
         navigationItem.hidesBackButton = true
         setUpView()
     }
-    //    MARK: - Functions
-    
     
 }
 
@@ -105,12 +93,9 @@ extension CreateAccountViewController: CreateAccountViewDelegate {
     func continueWithEmailButtonPressed(email: String) {
         let destinationVC = CompleteAccountViewContoller()
         destinationVC.enteredEmail = email
-        print("Before pushing destinationVC")
         
         if let navigationController = navigationController {
             navigationController.pushViewController(destinationVC, animated: true)
-            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backTapButton)
-            
         } else {
             print("Navigation controller is nil. Make sure CreateAccountViewController is embedded in a UINavigationController.")
         }

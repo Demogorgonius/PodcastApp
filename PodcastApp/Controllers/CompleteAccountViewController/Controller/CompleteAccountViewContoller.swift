@@ -306,7 +306,20 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func logInLabelPressed() {
-        print("logInLabelPressed")
+        let fullScreenViewController = LoginInViewController()
+        let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+        navigationController.navigationBar.tintColor = .blue
+
+        if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            if let window = targetWindowScene.windows.first {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromLeft
+                window.rootViewController = navigationController
+                window.layer.add(transition, forKey: nil)
+            }
+        }
     }
     
 }

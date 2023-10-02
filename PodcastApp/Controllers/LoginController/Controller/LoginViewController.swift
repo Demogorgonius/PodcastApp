@@ -123,6 +123,7 @@ final class LoginInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = true
         setUpView()
     }
     
@@ -258,16 +259,19 @@ extension LoginInViewController {
     @objc private func registerLabelTapped() {
         let fullScreenViewController = CreateAccountViewController()
         let navigationController = UINavigationController(rootViewController: fullScreenViewController)
-
-        navigationController.navigationBar.tintColor = .blue
+        
+        navigationController.modalTransitionStyle = .coverVertical
 
         if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
             if let window = targetWindowScene.windows.first {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromRight
                 window.rootViewController = navigationController
+                window.layer.add(transition, forKey: nil)
             }
         }
     }
-
     
 }
 
