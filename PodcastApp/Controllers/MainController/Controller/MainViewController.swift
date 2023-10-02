@@ -7,6 +7,7 @@
 
 import UIKit
 import PodcastIndexKit
+
 class MainViewController: UIViewController {
     private let podcastIndexKit = PodcastIndexKit()
     private let mainCollectionView = MainCollection()
