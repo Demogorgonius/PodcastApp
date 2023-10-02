@@ -27,8 +27,8 @@ final class AuthService {
     
     public func registerUser(with userRequest: UserRequest, completion: @escaping (Bool, Error?) -> Void) {
         
-        let firstName = userRequest.firstName
-        let lastName = userRequest.lastName
+        guard let firstName = userRequest.firstName else { return }
+        guard let lastName = userRequest.lastName else { return }
         let email = userRequest.email
         let password = userRequest.password
         
@@ -53,9 +53,10 @@ final class AuthService {
                 .document(resultUser.uid)
                 .setData([
                     
-                    "fistName" : firstName,
-                    "lastName" : lastName,
-                    "email" : email
+                    "fistName" : firstName  ,
+                    "lastName" : lastName ,
+                    "email" : email,
+                    "userID" : resultUser.uid
                     
                 ]) { error in
                     if let error = error {

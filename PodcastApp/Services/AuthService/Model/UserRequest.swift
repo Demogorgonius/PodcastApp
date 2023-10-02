@@ -9,8 +9,8 @@ import Foundation
 
 struct UserRequest {
     
-    let firstName: String
-    let lastName: String
+    let firstName: String?
+    let lastName: String?
     let email: String
     let password: String
     
