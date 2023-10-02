@@ -180,7 +180,7 @@ class CreateAccountView: UIView {
     
     private func setActionsToUI() {
         logLabel.isUserInteractionEnabled = true
-        logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
+        logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logInLabelPressed)))
         
         let gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(gestureHideKeyboard)
@@ -212,9 +212,21 @@ class CreateAccountView: UIView {
         print("continueWithGooglePressed")
     }
     
-    @objc private func registerLabelPressed() {
-        print("registerLabelPressed")
-        
+    @objc private func logInLabelPressed() {
+        let fullScreenViewController = LoginInViewController()
+        let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+        navigationController.navigationBar.tintColor = .blue
+
+        if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            if let window = targetWindowScene.windows.first {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromLeft
+                window.rootViewController = navigationController
+                window.layer.add(transition, forKey: nil)
+            }
+        }
     }
     
     // MARK: - Corner Radius
