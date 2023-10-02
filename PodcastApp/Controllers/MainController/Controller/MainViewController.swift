@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
         mainCollectionView.bottomVerticalCollectionView.reloadData()
     }
     
@@ -47,7 +48,6 @@ class MainViewController: UIViewController {
         setupMainCollectionView()
         configureSeeAllButtons()
         makeFirstCellActive()
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupMainCollectionView() {
