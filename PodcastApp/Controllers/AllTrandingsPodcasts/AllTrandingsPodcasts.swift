@@ -25,7 +25,11 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             collectionView.backgroundColor = .white
             return collectionView
         }()
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             fetchDataForSelected(name: name ?? "")
@@ -35,7 +39,6 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
             collectionView.dataSource = self
             collectionView.delegate = self
             navigationController?.navigationBar.isHidden = false
-
             collectionView.snp.makeConstraints { make in
                 make.edges.equalTo(view)
             }
@@ -49,6 +52,24 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
                 podcasts = data
             } catch {
                 print("Произошла ошибка: \(error)")
+            }
+        }
+    }
+    
+    @objc private func liked(sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: collectionView)
+        if let indexPath = collectionView.indexPathForItem(at: point) {
+            guard let id = podcasts?.feeds?[indexPath.row].id else { return }
+            if  sender.tintColor == UIColor.gray {
+                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                sender.tintColor = UIColor.red
+                LikedPodcast.shared.likedPodcasts.append(id)
+                print(LikedPodcast.shared.likedPodcasts)
+            } else {
+                sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                sender.tintColor = UIColor.gray
+                LikedPodcast.shared.likedPodcasts.removeAll{$0 == id}
+                print(LikedPodcast.shared.likedPodcasts)
             }
         }
     }
@@ -70,6 +91,8 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
                         descriptionRight: "Right",
                         image: resizedImage,
                         cellType: .podcast)
+                    cell.checkmarkButton.addTarget(self, action: #selector(self.liked(sender:)), for: .touchUpInside)
+                    cell.ifLiked(id: podcast?.id ?? 0)
                 }
             }
             return cell
