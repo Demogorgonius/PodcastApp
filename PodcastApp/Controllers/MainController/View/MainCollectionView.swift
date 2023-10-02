@@ -73,7 +73,7 @@ class MainCollection: UIView  {
         }
     }
     
-    func setupCollectionView() {
+   private func setupCollectionView() {
        topHorizontalCollectionView1.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
         topHorizontalCollectionView2.register(CategoryNameCell.self, forCellWithReuseIdentifier: "CategoryNameCell")
         bottomVerticalCollectionView.register(PodcastCell.self, forCellWithReuseIdentifier: "PodcastCell")
