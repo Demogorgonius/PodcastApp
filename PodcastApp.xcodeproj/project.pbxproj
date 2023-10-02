@@ -26,6 +26,10 @@
 		0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5ACA62AC2E5C800FF7B41 /* Manrope-Bold.ttf */; };
 		0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */; };
 		0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */; };
+		163176A02ACAF48B00B1E70B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631769F2ACAF48B00B1E70B /* Validator.swift */; };
+		163176A22ACAF4A500B1E70B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163176A12ACAF4A500B1E70B /* AuthService.swift */; };
+		163176A52ACAF4D200B1E70B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163176A42ACAF4D200B1E70B /* UserRequest.swift */; };
+		163176A62ACAFB0100B1E70B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1688C4432AC8768A00505476 /* GoogleService-Info.plist */; };
 		169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C12AC5B7BD00ACC05B /* UIBUtton.swift */; };
 		169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169992C52AC5B80600ACC05B /* UITextField + Extension.swift */; };
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
@@ -96,6 +100,10 @@
 		0BF5ACAE2AC3116900FF7B41 /* MainSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSeeAllView.swift; sourceTree = "<group>"; };
 		0BF5ACB42AC45B6C00FF7B41 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 		0BF5ACBA2AC5582C00FF7B41 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
+		1631769F2ACAF48B00B1E70B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		163176A12ACAF4A500B1E70B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		163176A42ACAF4D200B1E70B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		1688C4432AC8768A00505476 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		169992C12AC5B7BD00ACC05B /* UIBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBUtton.swift; sourceTree = "<group>"; };
 		169992C52AC5B80600ACC05B /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +233,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1631769E2ACAF47D00B1E70B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				163176A32ACAF4BB00B1E70B /* UserModel */,
+				1631769F2ACAF48B00B1E70B /* Validator.swift */,
+				163176A12ACAF4A500B1E70B /* AuthService.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		163176A32ACAF4BB00B1E70B /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				163176A42ACAF4D200B1E70B /* UserRequest.swift */,
+			);
+			path = UserModel;
+			sourceTree = "<group>";
+		};
 		169992BA2AC5B4E500ACC05B /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +355,7 @@
 				A59C54452AC1F947003E6B89 /* Assets.xcassets */,
 				A59C54472AC1F947003E6B89 /* LaunchScreen.storyboard */,
 				A59C544A2AC1F947003E6B89 /* Info.plist */,
+				1688C4432AC8768A00505476 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -351,6 +378,7 @@
 		A59C54532AC1FA61003E6B89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1631769E2ACAF47D00B1E70B /* Auth */,
 				0BDBFD082AC74CC100227AC2 /* Realm  */,
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
@@ -662,6 +690,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163176A62ACAFB0100B1E70B /* GoogleService-Info.plist in Resources */,
 				0BF5ACB02AC323E600FF7B41 /* Manrope-Regular.ttf in Resources */,
 				0BF5ACB12AC323E600FF7B41 /* Manrope-ExtraBold.ttf in Resources */,
 				0BF5ACB22AC323E600FF7B41 /* Manrope-Bold.ttf in Resources */,
@@ -689,6 +718,7 @@
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
+				163176A52ACAF4D200B1E70B /* UserRequest.swift in Sources */,
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
@@ -696,6 +726,7 @@
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
 				A59C54692AC1FBFA003E6B89 /* CustomView.swift in Sources */,
 				A59C54DF2AC6037E003E6B89 /* LoginView.swift in Sources */,
+				163176A22ACAF4A500B1E70B /* AuthService.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
@@ -704,6 +735,7 @@
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
 				E224952D2AC8839A007EA23B /* PageView.swift in Sources */,
+				163176A02ACAF48B00B1E70B /* Validator.swift in Sources */,
 				16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,

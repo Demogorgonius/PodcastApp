@@ -8,7 +8,16 @@
 import UIKit
 import SnapKit
 
+protocol CreateAccountViewDelegate: AnyObject {
+    func continueWithEmailButtonPressed(email: String)
+    func showAlert(title: String, message: String)
+}
+
 class CreateAccountView: UIView {
+    
+    //  MARK: - Variables
+    
+    weak var delegate: CreateAccountViewDelegate?
     
     // MARK: - UI Elements
     
@@ -171,7 +180,7 @@ class CreateAccountView: UIView {
     
     private func setActionsToUI() {
         logLabel.isUserInteractionEnabled = true
-        logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerLabelPressed)))
+        logLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logInLabelPressed)))
         
         let gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(gestureHideKeyboard)
@@ -187,15 +196,36 @@ class CreateAccountView: UIView {
     }
     
     @objc private func continueWithEmailPressed() {
-        print("continueWithEmailPressed")
+        guard let email = emailTextField.text, !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, Validator.isValidEmail(for: email) else {
+            delegate?.showAlert(title: "Your email is not Valid!", message: ValidateInputError.wrongSymbolsEmail.errorDescription ?? "Please enter a valid Email")
+            return
+        }
+        
+        let destinationVC = CompleteAccountViewContoller()
+        destinationVC.enteredEmail = email
+        delegate?.continueWithEmailButtonPressed(email: email)
     }
+
     
     @objc private func continueWithGooglePressed() {
         print("continueWithGooglePressed")
     }
     
-    @objc private func registerLabelPressed() {
-        print("registerLabelPressed")
+    @objc private func logInLabelPressed() {
+        let fullScreenViewController = LoginInViewController()
+        let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+        navigationController.navigationBar.tintColor = .blue
+
+        if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            if let window = targetWindowScene.windows.first {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromLeft
+                window.rootViewController = navigationController
+                window.layer.add(transition, forKey: nil)
+            }
+        }
     }
     
     // MARK: - Corner Radius

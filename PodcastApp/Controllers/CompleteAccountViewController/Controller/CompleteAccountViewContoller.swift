@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 final class CompleteAccountViewContoller: UIViewController {
     
@@ -16,17 +17,22 @@ final class CompleteAccountViewContoller: UIViewController {
     
     private var keyboardOffset: CGFloat = 0
     
+    private let alertControllerManager = AlertControllerManager()
+    
+    var enteredEmail: String?
+    
     //    MARK: - UI Elements
     
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "ArrowBack"), for: .normal)
-        button.addTarget(backButtonPressed.self, action: #selector(backButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
         button.layer.cornerRadius = 24
         button.backgroundColor = .shadowGray
         return button
     }()
+
     
     private let titleLabel: UILabel = {
         let label = UILabel(labelText: "Complet your account", textColor: .black)
@@ -127,6 +133,7 @@ final class CompleteAccountViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
         setUpView()
     }
     
@@ -137,32 +144,18 @@ extension CompleteAccountViewContoller {
     //    MARK: - Private Functions
     
     private func setUpView() {
-        setNavigationBar()
+        setNavigation()
         addSubViews()
         setConstrains()
         actionsToUI()
         setDelegates()
     }
     
-    func setNavigationBar() {
-        let navigationBar = UINavigationBar()
-        navigationBar.backgroundColor = .clear
-        navigationBar.isTranslucent = false
-        navigationBar.shadowImage = UIImage()
-        
-        let navigationItem = UINavigationItem()
-        let backButtonItem = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = backButtonItem
-        navigationItem.title = "Sign Up"
-        
-        navigationBar.items = [navigationItem]
-        view.addSubview(navigationBar)
-        
-        navigationBar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.left.equalTo(view)
-            make.right.equalTo(view)
-        }
+
+    
+    private func setNavigation() {
+        title = "Sign Up"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     private func addSubViews() {
@@ -177,7 +170,7 @@ extension CompleteAccountViewContoller {
     
     private func setConstrains() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(45)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(0)
             make.centerX.equalToSuperview()
         }
         
@@ -254,8 +247,7 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func backButtonPressed() {
-        print("backButtonPressed")
-        //        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func passwordShowIndicatorPressed() {
@@ -267,15 +259,68 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func signupButtonPressed() {
-        print("signupButtonPressed")
+        
+        guard let email = enteredEmail else { return }
+        
+        guard let firstName = firstNameTextField.text, !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let lastName = lastNameTextField.text, !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let password = passwordTextField.text, !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let confirmPassword = confirmPasswordTextField.text, !confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        if !Validator.isPasswordValid(for: password) {
+            let alert = alertControllerManager.showAlert(title: "Invalid Password", message: "Your Password must contain 1 upper case letter, 1 lower case letter, 1 Number, 1 special character.")
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if password == confirmPassword {
+            let userRequest = UserRequest(firstName: firstName, lastName: lastName, email: email, password: password)
+            
+            AuthService.shared.registerUser(with: userRequest) { [weak self] wasRegistered, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    let alert = self.alertControllerManager.showAlert(title: "Error", message: error.localizedDescription)
+                    self.present(alert, animated: true)
+                }
+                
+                if wasRegistered {
+                    guard let _ = Auth.auth().currentUser else {
+//                    Handle
+                        return
+                    }
+                    
+                    let alert = alertControllerManager.showAlertQuestion(title: "Вы успешно зарегистрировались!", message: "Теперь войдите в свой аккаунт.") { check in
+                        self.logInLabelPressed()
+                    }
+                    present(alert, animated: true)
+                }
+                
+            }
+            
+        } else {
+            let alert = alertControllerManager.showAlert(title: "Passwords do not match", message: "Please enter password, then confirm it")
+            present(alert, animated: true)
+        }
+        
     }
     
     @objc private func logInLabelPressed() {
-        print("logInLabelPressed")
+        let fullScreenViewController = LoginInViewController()
+        let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+        navigationController.navigationBar.tintColor = .blue
+
+        if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            if let window = targetWindowScene.windows.first {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromLeft
+                window.rootViewController = navigationController
+                window.layer.add(transition, forKey: nil)
+            }
+        }
     }
-    
-    
-    
     
 }
 
