@@ -11,9 +11,9 @@ import SnapKit
 class AccountSettingsViewController: UIViewController {
     
     private let avatarView = AvatarView()
-//    private let profileInfo = ProfileInfo(title: "First Name", buttonIsHidden: false)
 	private let profileInfo = ProfileInfo()
 	private let scrollView = UIScrollView()
+	
     private let saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Save Changes", for: .normal)
@@ -67,7 +67,6 @@ extension AccountSettingsViewController {
         view.addSubview(saveButton)
 		view.addSubview(scrollView)
 		scrollView.addSubview(profileInfo)
-       // view.addSubview(profileInfo)
     }
     
     func setupConstraints() {

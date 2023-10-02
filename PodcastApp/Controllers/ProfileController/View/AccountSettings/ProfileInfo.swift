@@ -14,7 +14,7 @@ class ProfileInfo: UIView {
 	private let lasttName = ProfileTextField(title: "Last Name")
 	private let eMail = ProfileTextField(title: "E-Mail")
 	private let dateOfBirth = ProfileTextField(title: "Date of Birth", buttonIsHidden: false)
-	private let eMail111 = ProfileTextField(title: "E-Mail")
+	private let genderView = GenderView()
 	
 	lazy var stackView: UIStackView =  {
 		let stackView = UIStackView()
@@ -45,7 +45,7 @@ private extension ProfileInfo {
 		stackView.addArrangedSubview(lasttName)
 		stackView.addArrangedSubview(eMail)
 		stackView.addArrangedSubview(dateOfBirth)
-		stackView.addArrangedSubview(eMail111)
+		stackView.addArrangedSubview(genderView)
 	}
 	
 	func addConstraints() {
