@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */; };
 		0BDBFD072AC6BC9000227AC2 /* LikedPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD062AC6BC9000227AC2 /* LikedPodcast.swift */; };
+		0BDBFD0A2AC74CDA00227AC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD092AC74CDA00227AC2 /* Models.swift */; };
 		0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC982AC2E46F00FF7B41 /* View.swift */; };
 		0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC992AC2E47000FF7B41 /* Label.swift */; };
 		0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrandingsPodcasts.swift; sourceTree = "<group>"; };
 		0BDBFD062AC6BC9000227AC2 /* LikedPodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPodcast.swift; sourceTree = "<group>"; };
+		0BDBFD092AC74CDA00227AC2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0BF5AC982AC2E46F00FF7B41 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0BF5AC992AC2E47000FF7B41 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -141,12 +143,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B98AA032AC815C100555025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */ = {
 			isa = PBXGroup;
 			children = (
 				0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */,
 			);
 			path = AllTrandingsPodcasts;
+			sourceTree = "<group>";
+		};
+		0BDBFD082AC74CC100227AC2 /* Realm  */ = {
+			isa = PBXGroup;
+			children = (
+				0BDBFD092AC74CDA00227AC2 /* Models.swift */,
+			);
+			path = "Realm ";
 			sourceTree = "<group>";
 		};
 		0BF5ACA92AC2E65900FF7B41 /* Cell */ = {
@@ -180,6 +197,7 @@
 				A59C543B2AC1F945003E6B89 /* PodcastApp */,
 				A59C543A2AC1F945003E6B89 /* Products */,
 				169992BA2AC5B4E500ACC05B /* Recovered References */,
+				0B98AA032AC815C100555025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +261,7 @@
 		A59C54532AC1FA61003E6B89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0BDBFD082AC74CC100227AC2 /* Realm  */,
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
 				A59C54BB2AC4A248003E6B89 /* ValidationManager.swift */,
 				A59C54BD2AC4B20C003E6B89 /* AlertManager.swift */,
@@ -590,6 +609,7 @@
 				A59C54732AC1FC6F003E6B89 /* SearchView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
 				A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */,
+				0BDBFD0A2AC74CDA00227AC2 /* Models.swift in Sources */,
 				A59C54BC2AC4A248003E6B89 /* ValidationManager.swift in Sources */,
 				A59C54DD2AC60373003E6B89 /* LoginViewController.swift in Sources */,
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
