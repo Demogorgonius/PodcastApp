@@ -249,7 +249,35 @@ extension LoginInViewController {
     }
     
     @objc private func enterButtonPressed() {
-        print("Enter Button Pressed")
+        
+        guard let email = loginTextField.text, let password = passwordTextField.text else { return  }
+        
+        let userRequest = UserRequest(firstName: "", lastName: "", email: email, password: password)
+        
+        AuthService.shared.signInRequest(with: userRequest) { logined, error in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            } else if logined {
+                print("Success")
+                let fullScreenViewController = CustomTabBarController()
+                let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+
+                navigationController.navigationBar.tintColor = .blue
+
+                if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    if let window = targetWindowScene.windows.first {
+                        let transition = CATransition()
+                        transition.type = CATransitionType.fade
+                        transition.subtype = CATransitionSubtype.fromLeft
+                        window.rootViewController = navigationController
+                        window.layer.add(transition, forKey: nil)
+                    }
+                }
+            }
+            
+        }
+        
     }
     
     @objc private func continueWithGoogleButtonPressed() {
