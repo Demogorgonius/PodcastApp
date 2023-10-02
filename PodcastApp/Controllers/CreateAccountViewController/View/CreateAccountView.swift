@@ -196,14 +196,13 @@ class CreateAccountView: UIView {
     }
     
     @objc private func continueWithEmailPressed() {
-        guard let email = emailTextField.text, !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            delegate?.showAlert(title: "Not Valid Email!", message: "Please enter a valid Email")
+        guard let email = emailTextField.text, !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, Validator.isValidEmail(for: email) else {
+            delegate?.showAlert(title: "Your email is not Valid!", message: ValidateInputError.wrongSymbolsEmail.errorDescription ?? "Please enter a valid Email")
             return
         }
         
         let destinationVC = CompleteAccountViewContoller()
         destinationVC.enteredEmail = email
-        
         delegate?.continueWithEmailButtonPressed(email: email)
     }
 

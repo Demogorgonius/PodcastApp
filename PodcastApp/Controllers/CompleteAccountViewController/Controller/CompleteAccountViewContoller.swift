@@ -262,13 +262,10 @@ extension CompleteAccountViewContoller {
         
         guard let email = enteredEmail else { return }
         
-        guard let firstName = firstNameTextField.text, !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        
-        guard let lastName = lastNameTextField.text, !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        
-        guard let password = passwordTextField.text, !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        
-        guard let confirmPassword = confirmPasswordTextField.text, !confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        guard let firstName = firstNameTextField.text, !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let lastName = lastNameTextField.text, !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let password = passwordTextField.text, !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let confirmPassword = confirmPasswordTextField.text, !confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         
         if !Validator.isPasswordValid(for: password) {
             let alert = alertControllerManager.showAlert(title: "Invalid Password", message: "Your Password must contain 1 upper case letter, 1 lower case letter, 1 Number, 1 special character.")
@@ -288,12 +285,15 @@ extension CompleteAccountViewContoller {
                 }
                 
                 if wasRegistered {
-                    guard let user = Auth.auth().currentUser else { 
+                    guard let _ = Auth.auth().currentUser else {
 //                    Handle
                         return
                     }
-
-                    print("Registered")
+                    
+                    let alert = alertControllerManager.showAlertQuestion(title: "Вы успешно зарегистрировались!", message: "Теперь войдите в свой аккаунт.") { check in
+                        self.logInLabelPressed()
+                    }
+                    present(alert, animated: true)
                 }
                 
             }
