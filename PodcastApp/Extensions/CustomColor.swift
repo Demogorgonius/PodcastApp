@@ -49,4 +49,15 @@ extension UIColor {
 	}
     
     static var onboardBackgroundViewColor = UIColor(named: "OnboardingBackgroundViewColor")
+    
+    static var hexadecimal: UIColor {
+        return UIColor(red: 0.8, green: 0.96, blue: 0.94, alpha: 1)
+    }
+    
+    static var redSearch: UIColor {
+        return UIColor(red: 1, green: 0.85, blue: 0.84, alpha: 0.4)
+    }
+    static var blueSearchCell: UIColor {
+        return UIColor(red: 0.74, green: 0.85, blue: 0.98, alpha: 1)
+    }
 }
