@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
         mainCollectionView.bottomVerticalCollectionView.reloadData()
     }
     
@@ -47,7 +48,6 @@ class MainViewController: UIViewController {
         setupMainCollectionView()
         configureSeeAllButtons()
         makeFirstCellActive()
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupMainCollectionView() {
@@ -256,6 +256,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let categoryArray = AppCategoryModel.splitCategories()
             viewController.name = categoryArray[indexPath.row]
             self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let podcast = podcasts?.feeds?[indexPath.row]
+            let vc = ChannelViewController()
+            vc.podcast = podcast
+            self.navigationController?.pushViewController(vc, animated: true)
+
         }
     }
 }
