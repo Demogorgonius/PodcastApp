@@ -11,6 +11,10 @@ import FirebaseAuth
 
 final class LoginInViewController: UIViewController {
     
+    //  MARK: - Variables //com.googleusercontent.apps.623991035936-d8ksnkhto3phk5faslcjc7hmkn1grbgk
+    
+//    private let signConfig = GIDConfiguration(clientID: "com.googleusercontent.apps.623991035936-d8ksnkhto3phk5faslcjc7hmkn1grbgk")
+    
     // MARK: - UI
     
     private let loginLabel: UILabel = {
@@ -241,11 +245,17 @@ extension LoginInViewController {
     }
     
     @objc private func loginShowInidcatorPressed() {
-        print("loginShowInidcator Pressed")
+        if loginTextField.text != "" {
+            loginTextField.isSecureTextEntry.toggle()
+            loginShowInidcator.image = loginTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash"): UIImage(systemName: "eye")
+        }
     }
     
     @objc private func passwordShowIndicatorPressed() {
-        print("passwordShowIndicator Pressed")
+        if passwordTextField.text != "" {
+            passwordTextField.isSecureTextEntry.toggle()
+            passwordShowIndicator.image = passwordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash"): UIImage(systemName: "eye")
+        }
     }
     
     @objc private func enterButtonPressed() {
