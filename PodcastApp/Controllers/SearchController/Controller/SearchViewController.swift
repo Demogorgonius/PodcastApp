@@ -20,36 +20,36 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     private var podcasts: PodcastArrayResponse?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         searchView.searchBar.delegate = self
-
         fetchData()
-                
+        setupBackgroundColor()
+        setupSearch()
+        setupView()
+        searchCollectionView.seeAllButton.addTarget(self, action: #selector(seeAllAction), for: .touchUpInside)
+        hideKeyboard()
+    }
+    
+    private func setupBackgroundColor() {
+        view.backgroundColor = .white
         let gradientLayer = CAGradientLayer()
         let colors = [UIColor.redSearch, UIColor.hexadecimal]
-           gradientLayer.colors = colors.map { $0.cgColor }
-           gradientLayer.frame = view.bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.frame = view.bounds
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-           view.layer.insertSublayer(gradientLayer, at: 0)
-        
-        setupSearch()
-
-        
-        searchCollectionView.seeAllButton.addTarget(self, action: #selector(seeAllAction), for: .touchUpInside)
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    private func setupView() {
         searchResultView.isHidden = true
         searchCollectionView.isHidden = false
         setupMainCollectionView()
         searchView.searchBar.text = nil
         navigationController?.navigationBar.isHidden = true
     }
-    
     private func setupSearch() {
         view.addSubview(searchView)
         searchView.snp.makeConstraints { make in
@@ -79,12 +79,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-    
-    @objc func seeAllAction() {
-        let vc = TopGenresViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+
     private func setupCollectionViewDelegate(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -115,11 +110,44 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
     
+    private func hideKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func seeAllAction() {
+        let vc = TopGenresViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true) // Этот метод скроет клавиатуру
+    }
+    
+    @objc private func liked(sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: searchResultView.collectionView)
+        if let indexPath = searchResultView.collectionView.indexPathForItem(at: point) {
+            guard let id = podcasts?.feeds?[indexPath.row].id else { return }
+            if  sender.tintColor == UIColor.gray {
+                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                sender.tintColor = UIColor.red
+                LikedPodcast.shared.likedPodcasts.append(id)
+                print(LikedPodcast.shared.likedPodcasts)
+            } else {
+                sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                sender.tintColor = UIColor.gray
+                LikedPodcast.shared.likedPodcasts.removeAll{$0 == id}
+                print(LikedPodcast.shared.likedPodcasts)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == searchCollectionView.genresCollectionView {
             return 10
         } else if collectionView == searchCollectionView.categoriesCollectionView {
-            return categoriesArray?.count ?? 2
+            return categoriesArray?.count ?? 0
         } else {
             return podcasts?.feeds?.count ?? 0
         }
@@ -148,10 +176,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
                         descriptionRight: "Right",
                         image: resizedImage,
                         cellType: .podcast)
-                    cell.checkmarkButton.isHidden = true
+                    cell.checkmarkButton.addTarget(self, action: #selector(self.liked(sender:)), for: .touchUpInside)
+                    cell.ifLiked(id: podcast?.id ?? 0)
                 }
             }
-                    return cell
+            return cell
         }
     }
     
@@ -163,6 +192,23 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             let width = (view.frame.width - 64 - 10)/2
             let height = 0.57 * width
             return CGSize(width: width, height: height)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == searchCollectionView.genresCollectionView {
+            let viewController = GenreResultViewController()
+            viewController.genre = TopGenresModel.topGenres[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        } else if collectionView == searchCollectionView.categoriesCollectionView {
+            let viewController = AllTrandingsPodcasts()
+            viewController.name =  categoriesArray?.feeds?[indexPath.row].name ?? ""
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let podcast = podcasts?.feeds?[indexPath.row]
+            let vc = ChannelViewController()
+            vc.podcast = podcast
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -181,5 +227,5 @@ extension SearchViewController: UISearchBarDelegate {
             fetchDataForSearch(text: searchText)
         }
     }
-
+    
 }
