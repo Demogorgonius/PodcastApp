@@ -13,6 +13,7 @@
 		0B68747D2ACAC2ED0055A439 /* LikedPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B68747C2ACAC2ED0055A439 /* LikedPodcast.swift */; };
 		0B6874862ACAD62B0055A439 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6874852ACAD62B0055A439 /* ChannelView.swift */; };
 		0B6874882ACAD9A60055A439 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6874872ACAD9A60055A439 /* ChannelViewController.swift */; };
+		0BB251192ACDED6F000BF7CF /* GenreResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB251182ACDED6F000BF7CF /* GenreResultViewController.swift */; };
 		0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */; };
 		0BDBFD0A2AC74CDA00227AC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBFD092AC74CDA00227AC2 /* Models.swift */; };
 		0BE620E52ACBE46B00C15C56 /* TopGenresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE620E42ACBE46B00C15C56 /* TopGenresModel.swift */; };
@@ -92,6 +93,7 @@
 		0B68747C2ACAC2ED0055A439 /* LikedPodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPodcast.swift; sourceTree = "<group>"; };
 		0B6874852ACAD62B0055A439 /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		0B6874872ACAD9A60055A439 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		0BB251182ACDED6F000BF7CF /* GenreResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResultViewController.swift; sourceTree = "<group>"; };
 		0BDBFD042AC6B33400227AC2 /* AllTrandingsPodcasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrandingsPodcasts.swift; sourceTree = "<group>"; };
 		0BDBFD092AC74CDA00227AC2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0BE620E42ACBE46B00C15C56 /* TopGenresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGenresModel.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0BB2511A2ACDF284000BF7CF /* GenreResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0BB251182ACDED6F000BF7CF /* GenreResultViewController.swift */,
+			);
+			path = GenreResultViewController;
 			sourceTree = "<group>";
 		};
 		0BDBFD032AC6B30A00227AC2 /* AllTrandingsPodcasts */ = {
@@ -426,6 +436,7 @@
 		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0BB2511A2ACDF284000BF7CF /* GenreResultViewController */,
 				0B0EB39B2ACC77E10005D52D /* TopGenresViewController */,
 				0B68747E2ACAD57B0055A439 /* ChannelViewController */,
 				16AB171C2AC8036900906EB1 /* CompleteAccountViewController */,
@@ -748,6 +759,7 @@
 				16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */,
 				0BF5ACA32AC2E4B400FF7B41 /* CategoryNameCell.swift in Sources */,
 				0BF5ACA42AC2E4B400FF7B41 /* CategoryCell.swift in Sources */,
+				0BB251192ACDED6F000BF7CF /* GenreResultViewController.swift in Sources */,
 				16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */,
 				0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */,
 				A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */,

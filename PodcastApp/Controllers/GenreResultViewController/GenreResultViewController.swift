@@ -1,63 +1,57 @@
 //
-//  AllTrandingsPodcasts.swift
+//  TopG.swift
 //  PodcastApp
 //
-//  Created by Vanopr on 29.09.2023.
+//  Created by Vanopr on 04.10.2023.
 //
 
+import Foundation
 import UIKit
 import PodcastIndexKit
-class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+class GenreResultViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let podcastIndexKit = PodcastIndexKit()
-    private var podcasts: PodcastArrayResponse? {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-    
-    var name: String?
-    
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
-        return collectionView
-    }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
-    }
+    private let searchResultView = SearchResultView()
+    private let podcastIndexKit = PodcastIndexKit()
+    private var podcasts: PodcastArrayResponse? 
+    var genre: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataForSelected(name: name ?? "")
-        view.backgroundColor = .white
-        view.addSubview(collectionView)
-        collectionView.register(PodcastCell.self, forCellWithReuseIdentifier: "PodcastCell")
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        navigationController?.navigationBar.isHidden = false
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-        }
+        fetchDataForSearch(genre: genre ?? "")
+        setupView()
     }
     
-    private func fetchDataForSelected(name: String) {
+    private func setupView() {
+        view.backgroundColor = .white
+        view.addSubview(searchResultView)
+        searchResultView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+        }
+        searchResultView.collectionView.delegate = self
+        searchResultView.collectionView.dataSource = self
+        searchResultView.collectionView.register(PodcastCell.self, forCellWithReuseIdentifier: "PodcastCell")
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func fetchDataForSearch(genre: String) {
         Task {
             do {
-                let data = try await podcastIndexKit.podcastsService.trendingPodcasts(cat: name)
+                let data = try await podcastIndexKit.searchService.search(byTerm: genre)
                 podcasts = data
+                searchResultView.collectionView.reloadData()
             } catch {
                 print("Произошла ошибка: \(error)")
             }
         }
     }
     
+    
     @objc private func liked(sender: UIButton) {
-        let point = sender.convert(CGPoint.zero, to: collectionView)
-        if let indexPath = collectionView.indexPathForItem(at: point) {
+        let point = sender.convert(CGPoint.zero, to: searchResultView.collectionView)
+        if let indexPath = searchResultView.collectionView.indexPathForItem(at: point) {
             guard let id = podcasts?.feeds?[indexPath.row].id else { return }
             if  sender.tintColor == UIColor.gray {
                 sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -74,7 +68,7 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return podcasts?.count ?? 1
+        return podcasts?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -108,4 +102,3 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
