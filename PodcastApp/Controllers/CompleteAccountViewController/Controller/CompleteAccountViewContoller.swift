@@ -251,11 +251,17 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func passwordShowIndicatorPressed() {
-        print("passwordShowIndicatorPressed")
+        if passwordTextField.text != "" {
+            passwordTextField.isSecureTextEntry.toggle()
+            passwordShowIndicator.image = passwordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        }
     }
     
     @objc private func confirmPasswordShowIndicatorPressed() {
-        print("confirmPasswordShowIndicatorPressed")
+        if confirmPasswordTextField.text != "" {
+            confirmPasswordTextField.isSecureTextEntry.toggle()
+            confirmPasswordShowIndicator.image = confirmPasswordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        }
     }
     
     @objc private func signupButtonPressed() {
