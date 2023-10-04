@@ -59,7 +59,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
         private func fetchDataForLiked() {
-            var likedPodcastsId = LikedPodcast.shared.likedPodcasts
+            let likedPodcastsId = LikedPodcast.shared.likedPodcasts
             var array: [PodcastResponse] = []
             guard likedPodcastsId.count > 0 else {return}
             for i in 0...likedPodcastsId.count - 1 {
