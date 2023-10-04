@@ -247,14 +247,14 @@ extension LoginInViewController {
     @objc private func loginShowInidcatorPressed() {
         if loginTextField.text != "" {
             loginTextField.isSecureTextEntry.toggle()
-            loginShowInidcator.image = loginTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash"): UIImage(systemName: "eye")
+            loginShowInidcator.image = loginTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
         }
     }
     
     @objc private func passwordShowIndicatorPressed() {
         if passwordTextField.text != "" {
             passwordTextField.isSecureTextEntry.toggle()
-            passwordShowIndicator.image = passwordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash"): UIImage(systemName: "eye")
+            passwordShowIndicator.image = passwordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
         }
     }
     
