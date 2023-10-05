@@ -101,11 +101,12 @@ final class AuthService {
         }
     }
     
+    /// A method to get current User
+    ///    -  UesrRequest?: result - returns model of user
+    ///    - Error? : An optinoal Error if Data Base provides one
     public func getCurrentUser(completion: @escaping (Error?, UserRequest?) -> Void) {
         if let user = Auth.auth().currentUser {
             let uid = user.uid
-            print("fefefe")
-            print(uid)
             let db = Firestore.firestore()
             
             db.collection("user")
@@ -138,7 +139,35 @@ final class AuthService {
             completion(error, nil)
         }
     }
-
     
+    /// A method to signInUser
+    /// - Parameters:
+    ///   - userRequest: The user info (UserName, Email, Password)
+    ///   - comletion:  A comletion with two values :
+    ///    -  Bool: result - Determines DB has this user or not and if Has its Sign In
+    ///    - Error? : An optinoal Error if Data Base provides one
+    public func storeUserDataInFirestore(user: UserRequest) {
+        let db = Firestore.firestore()
+        
+        let userRef = db.collection("user").document(user.email)
+        
+        userRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error retrieving user data: \(error.localizedDescription)")
+            } else if document?.exists != true {
+                userRef.setData([
+                    "firstName": user.firstName ?? "",
+                    "lastName": user.lastName ?? "",
+                    "email": user.email,
+                ]) { error in
+                    if let error = error {
+                        print("Error storing user data: \(error.localizedDescription)")
+                    } else {
+                        print("User data stored successfully.")
+                    }
+                }
+            }
+        }
+    }
     
 }
