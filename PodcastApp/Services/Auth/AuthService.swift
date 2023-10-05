@@ -101,4 +101,44 @@ final class AuthService {
         }
     }
     
+    public func getCurrentUser(completion: @escaping (Error?, UserRequest?) -> Void) {
+        if let user = Auth.auth().currentUser {
+            let uid = user.uid
+            print("fefefe")
+            print(uid)
+            let db = Firestore.firestore()
+            
+            db.collection("user")
+                .document(uid)
+                .getDocument { (document, error) in
+                    if let error = error {
+                        completion(error, nil)
+                        return
+                    }
+                    
+                    if let document = document, document.exists {
+                        let data = document.data()
+                        
+                        if let firstName = data?["firstName"] as? String,
+                           let lastName = data?["lastName"] as? String {
+                            
+                            let userRequest = UserRequest(firstName: firstName, lastName: lastName, email: user.email ?? "", password: "")
+                            completion(nil, userRequest)
+                        } else {
+                            // Missing required data
+                            completion(NSError(domain: "PodcastApp", code: 400, userInfo: [NSLocalizedDescriptionKey: "User data is incomplete"]), nil)
+                        }
+                    } else {
+                        // Document does not exist
+                        completion(NSError(domain: "PodcastApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found"]), nil)
+                    }
+                }
+        } else {
+            let error = NSError(domain: "PodcastApp", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not signed in"])
+            completion(error, nil)
+        }
+    }
+
+    
+    
 }
