@@ -41,6 +41,19 @@
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
 		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
 		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
+		A51D3CC92ACF3476006EB7E9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CC82ACF3476006EB7E9 /* Realm */; };
+		A51D3CCB2ACF3476006EB7E9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCA2ACF3476006EB7E9 /* RealmSwift */; };
+		A51D3CCE2ACF3487006EB7E9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCD2ACF3487006EB7E9 /* SnapKit */; };
+		A51D3CD32ACF34BD006EB7E9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */; };
+		A51D3CD52ACF34BD006EB7E9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CD42ACF34BD006EB7E9 /* FirebaseDatabase */; };
+		A51D3CD72ACF34BD006EB7E9 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CD62ACF34BD006EB7E9 /* FirebaseDatabaseSwift */; };
+		A51D3CD92ACF34BD006EB7E9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CD82ACF34BD006EB7E9 /* FirebaseFirestore */; };
+		A51D3CDB2ACF34BD006EB7E9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CDA2ACF34BD006EB7E9 /* FirebaseFirestoreSwift */; };
+		A51D3CDD2ACF34BD006EB7E9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CDC2ACF34BD006EB7E9 /* FirebaseStorage */; };
+		A51D3CE02ACF34CC006EB7E9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CDF2ACF34CC006EB7E9 /* IQKeyboardManagerSwift */; };
+		A51D3CE32ACF34DF006EB7E9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE22ACF34DF006EB7E9 /* GoogleSignIn */; };
+		A51D3CE52ACF34DF006EB7E9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE42ACF34DF006EB7E9 /* GoogleSignInSwift */; };
+		A51D3CE82ACF34ED006EB7E9 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE72ACF34ED006EB7E9 /* PodcastIndexKit */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -56,17 +69,6 @@
 		A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54782AC1FCA3003E6B89 /* FavoritesViewController.swift */; };
 		A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C547A2AC1FCB0003E6B89 /* ProfileView.swift */; };
 		A59C547D2AC1FCBE003E6B89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */; };
-		A59C54972AC34A77003E6B89 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54962AC34A77003E6B89 /* SnapKit */; };
-		A59C549A2AC34D48003E6B89 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54992AC34D48003E6B89 /* Realm */; };
-		A59C549C2AC34D48003E6B89 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C549B2AC34D48003E6B89 /* RealmSwift */; };
-		A59C549F2AC34D85003E6B89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A59C549E2AC34D85003E6B89 /* FirebaseAuth */; };
-		A59C54A12AC34D85003E6B89 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54A02AC34D85003E6B89 /* FirebaseFirestore */; };
-		A59C54A32AC34D85003E6B89 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54A22AC34D85003E6B89 /* FirebaseFirestoreSwift */; };
-		A59C54A52AC34D85003E6B89 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54A42AC34D85003E6B89 /* FirebaseStorage */; };
-		A59C54A82AC34D9B003E6B89 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54A72AC34D9B003E6B89 /* IQKeyboardManagerSwift */; };
-		A59C54AB2AC34DAE003E6B89 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AA2AC34DAE003E6B89 /* GoogleSignIn */; };
-		A59C54AD2AC34DAE003E6B89 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */; };
-		A59C54B02AC34E3D003E6B89 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */; };
 		A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B52AC49DFF003E6B89 /* OnboardingView.swift */; };
 		A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B72AC49E22003E6B89 /* OnboardingViewController.swift */; };
 		A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */; };
@@ -85,6 +87,19 @@
 		E224952D2AC8839A007EA23B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224952C2AC8839A007EA23B /* PageView.swift */; };
 		E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224952E2AC883B5007EA23B /* PageViewDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A59C55362AC9B4B9003E6B89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B0EB39C2ACC780D0005D52D /* TopGenresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGenresViewController.swift; sourceTree = "<group>"; };
@@ -162,17 +177,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59C549C2AC34D48003E6B89 /* RealmSwift in Frameworks */,
-				A59C54A82AC34D9B003E6B89 /* IQKeyboardManagerSwift in Frameworks */,
-				A59C54B02AC34E3D003E6B89 /* PodcastIndexKit in Frameworks */,
-				A59C549A2AC34D48003E6B89 /* Realm in Frameworks */,
-				A59C54972AC34A77003E6B89 /* SnapKit in Frameworks */,
-				A59C54A12AC34D85003E6B89 /* FirebaseFirestore in Frameworks */,
-				A59C54AD2AC34DAE003E6B89 /* GoogleSignInSwift in Frameworks */,
-				A59C54A52AC34D85003E6B89 /* FirebaseStorage in Frameworks */,
-				A59C549F2AC34D85003E6B89 /* FirebaseAuth in Frameworks */,
-				A59C54A32AC34D85003E6B89 /* FirebaseFirestoreSwift in Frameworks */,
-				A59C54AB2AC34DAE003E6B89 /* GoogleSignIn in Frameworks */,
+				A51D3CD72ACF34BD006EB7E9 /* FirebaseDatabaseSwift in Frameworks */,
+				A51D3CD52ACF34BD006EB7E9 /* FirebaseDatabase in Frameworks */,
+				A51D3CCE2ACF3487006EB7E9 /* SnapKit in Frameworks */,
+				A51D3CDD2ACF34BD006EB7E9 /* FirebaseStorage in Frameworks */,
+				A51D3CD32ACF34BD006EB7E9 /* FirebaseAuth in Frameworks */,
+				A51D3CE52ACF34DF006EB7E9 /* GoogleSignInSwift in Frameworks */,
+				A51D3CE32ACF34DF006EB7E9 /* GoogleSignIn in Frameworks */,
+				A51D3CCB2ACF3476006EB7E9 /* RealmSwift in Frameworks */,
+				A51D3CD92ACF34BD006EB7E9 /* FirebaseFirestore in Frameworks */,
+				A51D3CC92ACF3476006EB7E9 /* Realm in Frameworks */,
+				A51D3CE82ACF34ED006EB7E9 /* PodcastIndexKit in Frameworks */,
+				A51D3CE02ACF34CC006EB7E9 /* IQKeyboardManagerSwift in Frameworks */,
+				A51D3CDB2ACF34BD006EB7E9 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +688,7 @@
 				A59C54352AC1F945003E6B89 /* Sources */,
 				A59C54362AC1F945003E6B89 /* Frameworks */,
 				A59C54372AC1F945003E6B89 /* Resources */,
+				A59C55362AC9B4B9003E6B89 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -678,17 +696,19 @@
 			);
 			name = PodcastApp;
 			packageProductDependencies = (
-				A59C54962AC34A77003E6B89 /* SnapKit */,
-				A59C54992AC34D48003E6B89 /* Realm */,
-				A59C549B2AC34D48003E6B89 /* RealmSwift */,
-				A59C549E2AC34D85003E6B89 /* FirebaseAuth */,
-				A59C54A02AC34D85003E6B89 /* FirebaseFirestore */,
-				A59C54A22AC34D85003E6B89 /* FirebaseFirestoreSwift */,
-				A59C54A42AC34D85003E6B89 /* FirebaseStorage */,
-				A59C54A72AC34D9B003E6B89 /* IQKeyboardManagerSwift */,
-				A59C54AA2AC34DAE003E6B89 /* GoogleSignIn */,
-				A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */,
-				A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */,
+				A51D3CC82ACF3476006EB7E9 /* Realm */,
+				A51D3CCA2ACF3476006EB7E9 /* RealmSwift */,
+				A51D3CCD2ACF3487006EB7E9 /* SnapKit */,
+				A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */,
+				A51D3CD42ACF34BD006EB7E9 /* FirebaseDatabase */,
+				A51D3CD62ACF34BD006EB7E9 /* FirebaseDatabaseSwift */,
+				A51D3CD82ACF34BD006EB7E9 /* FirebaseFirestore */,
+				A51D3CDA2ACF34BD006EB7E9 /* FirebaseFirestoreSwift */,
+				A51D3CDC2ACF34BD006EB7E9 /* FirebaseStorage */,
+				A51D3CDF2ACF34CC006EB7E9 /* IQKeyboardManagerSwift */,
+				A51D3CE22ACF34DF006EB7E9 /* GoogleSignIn */,
+				A51D3CE42ACF34DF006EB7E9 /* GoogleSignInSwift */,
+				A51D3CE72ACF34ED006EB7E9 /* PodcastIndexKit */,
 			);
 			productName = PodcastApp;
 			productReference = A59C54392AC1F945003E6B89 /* PodcastApp.app */;
@@ -719,12 +739,12 @@
 			);
 			mainGroup = A59C54302AC1F945003E6B89;
 			packageReferences = (
-				A59C54952AC34A77003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				A59C54982AC34D48003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				A59C54A62AC34D9B003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				A59C54A92AC34DAE003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				A59C54AE2AC34E3D003E6B89 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
+				A51D3CC72ACF3476006EB7E9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A51D3CDE2ACF34CC006EB7E9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				A51D3CE12ACF34DF006EB7E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				A51D3CE62ACF34ED006EB7E9 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
 			);
 			productRefGroup = A59C543A2AC1F945003E6B89 /* Products */;
 			projectDirPath = "";
@@ -1035,15 +1055,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A59C54952AC34A77003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		A59C54982AC34D48003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		A51D3CC72ACF3476006EB7E9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
@@ -1051,7 +1063,15 @@
 				kind = branch;
 			};
 		};
-		A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -1059,7 +1079,7 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		A59C54A62AC34D9B003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		A51D3CDE2ACF34CC006EB7E9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1067,7 +1087,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		A59C54A92AC34DAE003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+		A51D3CE12ACF34DF006EB7E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
 			requirement = {
@@ -1075,7 +1095,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		A59C54AE2AC34E3D003E6B89 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */ = {
+		A51D3CE62ACF34ED006EB7E9 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SparrowTek/PodcastIndexKit";
 			requirement = {
@@ -1086,59 +1106,69 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A59C54962AC34A77003E6B89 /* SnapKit */ = {
+		A51D3CC82ACF3476006EB7E9 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54952AC34A77003E6B89 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		A59C54992AC34D48003E6B89 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A59C54982AC34D48003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = A51D3CC72ACF3476006EB7E9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		A59C549B2AC34D48003E6B89 /* RealmSwift */ = {
+		A51D3CCA2ACF3476006EB7E9 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54982AC34D48003E6B89 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = A51D3CC72ACF3476006EB7E9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		A59C549E2AC34D85003E6B89 /* FirebaseAuth */ = {
+		A51D3CCD2ACF3487006EB7E9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		A59C54A02AC34D85003E6B89 /* FirebaseFirestore */ = {
+		A51D3CD42ACF34BD006EB7E9 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A51D3CD62ACF34BD006EB7E9 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		A51D3CD82ACF34BD006EB7E9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		A59C54A22AC34D85003E6B89 /* FirebaseFirestoreSwift */ = {
+		A51D3CDA2ACF34BD006EB7E9 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		A59C54A42AC34D85003E6B89 /* FirebaseStorage */ = {
+		A51D3CDC2ACF34BD006EB7E9 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C549D2AC34D85003E6B89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		A59C54A72AC34D9B003E6B89 /* IQKeyboardManagerSwift */ = {
+		A51D3CDF2ACF34CC006EB7E9 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54A62AC34D9B003E6B89 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = A51D3CDE2ACF34CC006EB7E9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		A59C54AA2AC34DAE003E6B89 /* GoogleSignIn */ = {
+		A51D3CE22ACF34DF006EB7E9 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54A92AC34DAE003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			package = A51D3CE12ACF34DF006EB7E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
 		};
-		A59C54AC2AC34DAE003E6B89 /* GoogleSignInSwift */ = {
+		A51D3CE42ACF34DF006EB7E9 /* GoogleSignInSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54A92AC34DAE003E6B89 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			package = A51D3CE12ACF34DF006EB7E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
 		};
-		A59C54AF2AC34E3D003E6B89 /* PodcastIndexKit */ = {
+		A51D3CE72ACF34ED006EB7E9 /* PodcastIndexKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A59C54AE2AC34E3D003E6B89 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
+			package = A51D3CE62ACF34ED006EB7E9 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
 			productName = PodcastIndexKit;
 		};
 /* End XCSwiftPackageProductDependency section */
