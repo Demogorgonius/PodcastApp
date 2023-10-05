@@ -72,12 +72,13 @@ final class CompleteAccountViewContoller: UIViewController {
     
     private let passwordTextField: UITextField = {
         let textField = UITextField(placeHolder: "Enter your password", textColor: .gray, backGroundColor: .ghostWhite)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     private let passwordShowIndicator: UIImageView = {
         let passwordIndicator = UIImageView()
-        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.image = UIImage(systemName: "eye.slash")
         passwordIndicator.tintColor = .gray
         passwordIndicator.isUserInteractionEnabled = true
         return passwordIndicator
@@ -89,12 +90,13 @@ final class CompleteAccountViewContoller: UIViewController {
     
     private let confirmPasswordTextField: UITextField = {
         let textField = UITextField(placeHolder: "Confirm your password", textColor: .gray, backGroundColor: .ghostWhite)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     private let confirmPasswordShowIndicator: UIImageView = {
         let passwordIndicator = UIImageView()
-        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.image = UIImage(systemName: "eye.slash")
         passwordIndicator.tintColor = .gray
         passwordIndicator.isUserInteractionEnabled = true
         return passwordIndicator
@@ -251,11 +253,17 @@ extension CompleteAccountViewContoller {
     }
     
     @objc private func passwordShowIndicatorPressed() {
-        print("passwordShowIndicatorPressed")
+        if passwordTextField.text != "" {
+            passwordTextField.isSecureTextEntry.toggle()
+            passwordShowIndicator.image = passwordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        }
     }
     
     @objc private func confirmPasswordShowIndicatorPressed() {
-        print("confirmPasswordShowIndicatorPressed")
+        if confirmPasswordTextField.text != "" {
+            confirmPasswordTextField.isSecureTextEntry.toggle()
+            confirmPasswordShowIndicator.image = confirmPasswordTextField.isSecureTextEntry == true ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        }
     }
     
     @objc private func signupButtonPressed() {
