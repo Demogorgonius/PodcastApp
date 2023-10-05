@@ -39,12 +39,14 @@ final class LoginInViewController: UIViewController {
     }()
     
     private let passwordTextField: UITextField = {
-        return UITextField(placeholder: "Пароль", borderStyle: .roundedRect)
+        let textField = UITextField(placeholder: "Пароль", borderStyle: .roundedRect)
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     private let passwordShowIndicator: UIImageView = {
         let passwordIndicator = UIImageView()
-        passwordIndicator.image = UIImage(systemName: "eye")
+        passwordIndicator.image = UIImage(systemName: "eye.slash")
         passwordIndicator.tintColor = .gray
         passwordIndicator.isUserInteractionEnabled = true
         return passwordIndicator
