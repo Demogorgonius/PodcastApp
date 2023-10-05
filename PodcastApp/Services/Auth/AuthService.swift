@@ -35,12 +35,9 @@ final class AuthService {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             
             guard error == nil else {
-                
                 completion(false, error)
-                
                 return
             }
-            
             //            Getting Signed Up User
             guard let resultUser = result?.user else {
                 completion(false, nil)
@@ -65,40 +62,43 @@ final class AuthService {
                         
                         return
                     }
-                    
                     completion(true, nil)
                 }
-            
         }
         
     }
     
     /// A method to signInUser
-        /// - Parameters:
-        ///   - userRequest: The user info (UserName, Email, Password)
-        ///   - comletion:  A comletion with two values :
-        ///    -  Bool: result - Determines DB has this user or not and if Has its Sign In
-        ///    - Error? : An optinoal Error if Data Base provides one
-        public func signInRequest(with userRequest: UserRequest, completion: @escaping (Bool, Error?) -> Void) {
-            
-            let userEmail = userRequest.email
-            let userPassword = userRequest.password
-            
-            Auth.auth().signIn(withEmail: userEmail, password: userPassword) { result, error in
-                
-                if let error = error {
-                    
-                    completion(false, error)
-                    
-                    return
-                } else {
-                    completion(true, nil)
-                }
-                
-                
-                
+    /// - Parameters:
+    ///   - userRequest: The user info (UserName, Email, Password)
+    ///   - comletion:  A comletion with two values :
+    ///    -  Bool: result - Determines DB has this user or not and if Has its Sign In
+    ///    - Error? : An optinoal Error if Data Base provides one
+    public func signInRequest(with userRequest: UserRequest, completion: @escaping (Bool, Error?) -> Void) {
+        
+        let userEmail = userRequest.email
+        let userPassword = userRequest.password
+        
+        Auth.auth().signIn(withEmail: userEmail, password: userPassword) { result, error in
+            if let error = error {
+                completion(false, error)
+                return
+            } else {
+                completion(true, nil)
             }
-            
-            
         }
+    }
+    
+    /// A method to Sign Out User
+    /// - Parameter completion:
+    /// ///    - Error? : An optinoal Error if Data Base provides one
+    public func signOut(completion: @escaping (Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        } catch let error {
+            completion(error)
+        }
+    }
+    
 }
