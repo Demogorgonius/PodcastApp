@@ -1149,12 +1149,13 @@
 			productName = RealmSwift;
 		};
 		A51D3CCD2ACF3487006EB7E9 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
+      isa = XCSwiftPackageProductDependency;
 			package = A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 		A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
+
 			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};

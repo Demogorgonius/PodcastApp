@@ -21,10 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadDataFromRealm()
         
         PodcastIndexKit.setup(apiKey: "D45ZGFQ26LEQC7D4D5PW", apiSecret: "ECjvzUTaqq3QK7LRA^RjWgbmmCfCcK9q#9pKAA53", userAgent: "MyiOSApp/1.0 (iPhone; iOS 15.0; Scale/2.0)")
+
         FirebaseApp.configure()
         return true
     }
+
     
+    //  MARK:
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
