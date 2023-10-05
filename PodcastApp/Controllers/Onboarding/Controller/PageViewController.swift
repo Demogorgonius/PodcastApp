@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class PageViewController: CustomViewController<PageView> {
     
@@ -38,13 +39,24 @@ class PageViewController: CustomViewController<PageView> {
         guard let pageType else { return }
         pageView.configureView(with: pageType)
     }
+    
+    private func setOnboardingShowKey() {
+        UserDefaults.standard.set(true, forKey: "onboardingWasShown")
+    }
 }
 
 extension PageViewController: PageViewDelegate {
     func skipButtonPressed() {
-        let customTabBarController = CustomTabBarController()
-        customTabBarController.modalPresentationStyle = .fullScreen
-        present(customTabBarController, animated: true)
+        setOnboardingShowKey()
+        if Auth.auth().currentUser != nil {
+            let customTabBarController = CustomTabBarController()
+            customTabBarController.modalPresentationStyle = .fullScreen
+            present(customTabBarController, animated: true)
+        } else {
+            let loginInViewController = LoginInViewController()
+            loginInViewController.modalPresentationStyle = .fullScreen
+            present(loginInViewController, animated: true)
+        }
     }
     
     func nextButtonPressed() {
