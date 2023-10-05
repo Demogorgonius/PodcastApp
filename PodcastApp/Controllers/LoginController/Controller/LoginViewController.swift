@@ -7,13 +7,11 @@
 
 import UIKit
 import SnapKit
+import Firebase
 import FirebaseAuth
+import GoogleSignIn
 
 final class LoginInViewController: UIViewController {
-    
-    //  MARK: - Variables //com.googleusercontent.apps.623991035936-d8ksnkhto3phk5faslcjc7hmkn1grbgk
-    
-//    private let signConfig = GIDConfiguration(clientID: "com.googleusercontent.apps.623991035936-d8ksnkhto3phk5faslcjc7hmkn1grbgk")
     
     // MARK: - UI
     
@@ -271,12 +269,8 @@ extension LoginInViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if logined {
-                print("Success")
                 let fullScreenViewController = CustomTabBarController()
                 let navigationController = UINavigationController(rootViewController: fullScreenViewController)
-
-                navigationController.navigationBar.tintColor = .blue
-
                 if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                     if let window = targetWindowScene.windows.first {
                         let transition = CATransition()
@@ -293,7 +287,33 @@ extension LoginInViewController {
     }
     
     @objc private func continueWithGoogleButtonPressed() {
-        print("continueWithGoogleButtonPressed")
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            guard error == nil else { return }
+            
+            guard let signInResult = signInResult else { return }
+            
+            let user = signInResult.user
+            guard let email = user.profile?.email,
+                  let fullName = user.profile?.name,
+                  let familyName = user.profile?.familyName else { return }
+            
+            let completeUser = UserRequest(firstName: fullName, lastName: familyName, email: email, password: "")
+            
+            AuthService.shared.storeUserDataInFirestore(user: completeUser)
+                        
+            let fullScreenViewController = CustomTabBarController()
+            let navigationController = UINavigationController(rootViewController: fullScreenViewController)
+            
+            if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                if let window = targetWindowScene.windows.first {
+                    let transition = CATransition()
+                    transition.type = CATransitionType.fade
+                    transition.subtype = CATransitionSubtype.fromLeft
+                    window.rootViewController = navigationController
+                    window.layer.add(transition, forKey: nil)
+                }
+            }
+        }
     }
     
     @objc private func registerLabelTapped() {
@@ -301,7 +321,7 @@ extension LoginInViewController {
         let navigationController = UINavigationController(rootViewController: fullScreenViewController)
         
         navigationController.modalTransitionStyle = .coverVertical
-
+        
         if let targetWindowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
             if let window = targetWindowScene.windows.first {
                 let transition = CATransition()
