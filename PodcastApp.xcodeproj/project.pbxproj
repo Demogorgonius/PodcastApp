@@ -54,6 +54,12 @@
 		A51D3CE32ACF34DF006EB7E9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE22ACF34DF006EB7E9 /* GoogleSignIn */; };
 		A51D3CE52ACF34DF006EB7E9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE42ACF34DF006EB7E9 /* GoogleSignInSwift */; };
 		A51D3CE82ACF34ED006EB7E9 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CE72ACF34ED006EB7E9 /* PodcastIndexKit */; };
+		A51D3CEC2ACF4015006EB7E9 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CE92ACF4015006EB7E9 /* GenderView.swift */; };
+		A51D3CED2ACF4015006EB7E9 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CEA2ACF4015006EB7E9 /* CheckButton.swift */; };
+		A51D3CEE2ACF4015006EB7E9 /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CEB2ACF4015006EB7E9 /* ProfileTextField.swift */; };
+		A51D3CF02ACF4020006EB7E9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CEF2ACF4020006EB7E9 /* PopUpViewController.swift */; };
+		A51D3CF42ACF406B006EB7E9 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CF22ACF406B006EB7E9 /* PopUpButton.swift */; };
+		A51D3CF52ACF406B006EB7E9 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CF32ACF406B006EB7E9 /* PopUpView.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -136,6 +142,12 @@
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
+		A51D3CE92ACF4015006EB7E9 /* GenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		A51D3CEA2ACF4015006EB7E9 /* CheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		A51D3CEB2ACF4015006EB7E9 /* ProfileTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
+		A51D3CEF2ACF4020006EB7E9 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		A51D3CF22ACF406B006EB7E9 /* PopUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
+		A51D3CF32ACF406B006EB7E9 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -368,6 +380,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A51D3CF12ACF406B006EB7E9 /* PopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3CF22ACF406B006EB7E9 /* PopUpButton.swift */,
+				A51D3CF32ACF406B006EB7E9 /* PopUpView.swift */,
+			);
+			path = PopUpView;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +551,7 @@
 		A59C545C2AC1FB60003E6B89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A51D3CF12ACF406B006EB7E9 /* PopUpView */,
 				A59C54E32AC606D2003E6B89 /* AccountSettings */,
 				A59C54E42AC606F4003E6B89 /* ProfileView */,
 			);
@@ -539,6 +561,7 @@
 		A59C545D2AC1FB6C003E6B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A51D3CEF2ACF4020006EB7E9 /* PopUpViewController.swift */,
 				A59C547C2AC1FCBE003E6B89 /* ProfileViewController.swift */,
 				A59C54E12AC606A7003E6B89 /* AccountSettingsViewController.swift */,
 			);
@@ -661,6 +684,9 @@
 		A59C54E32AC606D2003E6B89 /* AccountSettings */ = {
 			isa = PBXGroup;
 			children = (
+				A51D3CEA2ACF4015006EB7E9 /* CheckButton.swift */,
+				A51D3CE92ACF4015006EB7E9 /* GenderView.swift */,
+				A51D3CEB2ACF4015006EB7E9 /* ProfileTextField.swift */,
 				A59C54ED2AC60830003E6B89 /* AvatarView.swift */,
 				A59C54EF2AC60856003E6B89 /* ProfileInfo.swift */,
 			);
@@ -785,10 +811,12 @@
 				A59C54EA2AC6077E003E6B89 /* UserView.swift in Sources */,
 				E224952B2AC88386007EA23B /* PageViewController.swift in Sources */,
 				A59C54EE2AC60830003E6B89 /* AvatarView.swift in Sources */,
+				A51D3CF42ACF406B006EB7E9 /* PopUpButton.swift in Sources */,
 				A59C54BA2AC4A157003E6B89 /* FavoriteManager.swift in Sources */,
 				A59C54772AC1FC8F003E6B89 /* FavoritesView.swift in Sources */,
 				E224952F2AC883B5007EA23B /* PageViewDelegate.swift in Sources */,
 				0BF5AC9F2AC2E47500FF7B41 /* CustomColor.swift in Sources */,
+				A51D3CEC2ACF4015006EB7E9 /* GenderView.swift in Sources */,
 				163176A52ACAF4D200B1E70B /* UserRequest.swift in Sources */,
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
@@ -801,11 +829,13 @@
 				163176A22ACAF4A500B1E70B /* AuthService.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */,
+				A51D3CED2ACF4015006EB7E9 /* CheckButton.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
+				A51D3CF52ACF406B006EB7E9 /* PopUpView.swift in Sources */,
 				E224952D2AC8839A007EA23B /* PageView.swift in Sources */,
 				163176A02ACAF48B00B1E70B /* Validator.swift in Sources */,
 				0B0EB3A12ACC9D100005D52D /* SearchResultView.swift in Sources */,
@@ -813,8 +843,10 @@
 				16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
+				A51D3CF02ACF4020006EB7E9 /* PopUpViewController.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchCollectionView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
+				A51D3CEE2ACF4015006EB7E9 /* ProfileTextField.swift in Sources */,
 				A59C54F02AC60856003E6B89 /* ProfileInfo.swift in Sources */,
 				0B0EB39D2ACC780D0005D52D /* TopGenresViewController.swift in Sources */,
 				0BDBFD0A2AC74CDA00227AC2 /* Models.swift in Sources */,
@@ -1117,12 +1149,13 @@
 			productName = RealmSwift;
 		};
 		A51D3CCD2ACF3487006EB7E9 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
+      isa = XCSwiftPackageProductDependency;
 			package = A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 		A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
+
 			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
