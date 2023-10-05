@@ -7,6 +7,8 @@
 
 import Foundation
 
+//  MARK: - Model only for Register and Sign IN User
+
 struct UserRequest {
     
     let firstName: String?
