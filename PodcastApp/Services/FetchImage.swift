@@ -7,69 +7,46 @@
 
 import Foundation
 import UIKit
-import CommonCrypto
 
-struct FetchImage {
+class FetchImage {
     
     //MARK: - Загрузка изображений
     
-    static func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-        
-        // Вычисляем хеш URL, чтобы использовать его как ключ для кэширования
-        let urlHash = sha256(input: urlString)
-        
-        // Проверяем, есть ли изображение в кэше
-        if let cachedImage = imageCache[urlHash] {
-            completion(cachedImage)
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                completion(nil)
-                return
-            }
-            
-            let image = UIImage(data: data)
-            
-            // Если изображение успешно загружено, сохраняем его в кэше
-            if let image = image {
-                imageCache[urlHash] = image
-            }
-            
-            completion(image)
-        }.resume()
-    }
+    static let shared = FetchImage()
 
-    // Простой кэш для локального хранения изображений
-    private static var imageCache = [String: UIImage]()
+       private let cache = NSCache<NSString, UIImage>()
+    
+       func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
+           // Проверяем, есть ли изображение в кеше
+           if let cachedImage = cache.object(forKey: urlString as NSString) {
+               completion(cachedImage)
+               return
+           }
 
-    // Функция для вычисления хеша SHA-256 для строки
-    private static func sha256(input: String) -> String {
-        if let data = input.data(using: .utf8) {
-            return sha256(data: data)
-        }
-        return ""
-    }
+           guard let url = URL(string: urlString) else {
+               completion(nil)
+               return
+           }
 
-    // Функция для вычисления хеша SHA-256 для данных
-    private static func sha256(data: Data) -> String {
-        var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        
-        data.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
-            _ = CC_SHA256(bytes.baseAddress, CC_LONG(data.count), &digest)
-        }
-        
-        let hexBytes = digest.map { String(format: "%02hhx", $0) }
-        return hexBytes.joined()
-    }
+           URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+               guard let self = self, let data = data, error == nil else {
+                   completion(nil)
+                   return
+               }
+
+               if let image = UIImage(data: data) {
+                   // Кэшируем изображение перед вызовом completion
+                   self.cache.setObject(image, forKey: urlString as NSString)
+                   completion(image)
+               } else {
+                   completion(nil)
+               }
+           }.resume()
+       }
+
 
     
-    static func resizeImage(image: UIImage?, targetSize: CGSize) -> UIImage? {
+static func resizeImage(image: UIImage?, targetSize: CGSize) -> UIImage? {
         guard let image = image else {return nil}
         let size = image.size
         let widthRatio = targetSize.width / size.width

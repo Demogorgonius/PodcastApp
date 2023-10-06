@@ -80,7 +80,7 @@ class AllTrandingsPodcasts: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
         let podcast = podcasts?.feeds?[indexPath.row]
-        FetchImage.loadImageFromURL(urlString: podcast?.image ?? "") { image in
+        FetchImage.shared.loadImageFromURL(urlString: podcast?.image ?? "") { image in
             let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 50, height: 50))
             DispatchQueue.main.async {
                 cell.setupPodcastCell(

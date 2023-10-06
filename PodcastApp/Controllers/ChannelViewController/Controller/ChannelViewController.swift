@@ -35,7 +35,7 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
-        FetchImage.loadImageFromURL(urlString: podcast?.image ?? "") { image in
+        FetchImage.shared.loadImageFromURL(urlString: podcast?.image ?? "") { image in
             let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 84, height: 84))
             DispatchQueue.main.async {
                 self.channelView.setupChannel(title: self.podcast?.title ?? "",
@@ -85,7 +85,7 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCell", for: indexPath) as! PodcastCell
         let episode = episodes?.items?[indexPath.row]
-        FetchImage.loadImageFromURL(urlString: episode?.image ?? "") { image in
+        FetchImage.shared.loadImageFromURL(urlString: episode?.image ?? "") { image in
             let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 84, height: 84))
             let noEpisodeNumber = (self.episodes?.items?.count ?? 0) - indexPath.row
             DispatchQueue.main.async {
