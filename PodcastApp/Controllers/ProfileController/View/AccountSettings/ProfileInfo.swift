@@ -8,6 +8,8 @@
 import UIKit
 import SnapKit
 
+
+
 class ProfileInfo: UIView {
 	
 	private let firstName = ProfileTextField(title: "First Name")
@@ -46,6 +48,7 @@ private extension ProfileInfo {
 		stackView.addArrangedSubview(eMail)
 		stackView.addArrangedSubview(dateOfBirth)
 		stackView.addArrangedSubview(genderView)
+        
 	}
 	
 	func addConstraints() {

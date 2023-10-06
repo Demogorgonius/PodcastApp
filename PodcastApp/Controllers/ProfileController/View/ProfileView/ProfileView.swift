@@ -9,7 +9,15 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol ProfileViewDelegate: AnyObject {
+    
+    func profileView(didTapLogOutButton button: UIButton)
+    
+}
+
 class ProfileView: CustomView {
+    
+    weak var delegateLogout: ProfileViewDelegate?
     
     private let userView = UserView()
     let buttonView = ButtonView()
@@ -34,6 +42,9 @@ class ProfileView: CustomView {
         addSubview(logOutButton)
         addSubview(buttonView)
         
+        logOutButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        
+        
         userView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(70)
             make.leading.equalToSuperview()
@@ -54,5 +65,13 @@ class ProfileView: CustomView {
             make.trailing.equalToSuperview().offset(-32)
         }
     }
+    
+    @objc func buttonTapped(_ button: UIButton) {
+        
+        delegateLogout?.profileView(didTapLogOutButton: button)
+        
+    }
+    
 }
+
 
