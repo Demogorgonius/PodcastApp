@@ -66,7 +66,7 @@ class PodcastCell: UICollectionViewCell {
         return viewCardView
     }()
     
-     let checkmarkButton: UIButton = {
+    let checkmarkButton: UIButton = {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.gray
@@ -74,6 +74,12 @@ class PodcastCell: UICollectionViewCell {
         return button
     }()
     
+    private var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .black
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -88,10 +94,12 @@ class PodcastCell: UICollectionViewCell {
     private func setupUI() {
         contentView.addSubview(cardView)
         cardView.addSubview(imageViewCell)
+        cardView.addSubview(activityIndicator)
         cardView.addSubview(stackView)
         stackView.addArrangedSubview(titleLbl)
         stackView.addArrangedSubview(descriptionLbl)
         cardView.addSubview(checkmarkButton)
+        activityIndicator.startAnimating()
     }
     
     private func setupLayout() {
@@ -121,9 +129,13 @@ class PodcastCell: UICollectionViewCell {
             make.width.equalTo(24)
             make.height.equalTo(24)
         }
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.leading.equalTo(cardView).offset(16)
+            make.centerY.equalTo(cardView)
+            make.width.equalTo(50)
+            make.height.equalTo(50)        }
     }
-    
-    
     
     public func setupPodcastCell(
         titleLeft: String = "",
@@ -143,8 +155,10 @@ class PodcastCell: UICollectionViewCell {
         } else {
             descriptionLbl.text = descriptionLeft
         }
-        imageViewCell.image = image
         
+        imageViewCell.image = image
+        activityIndicator.stopAnimating()
+ 
         switch cellType {
         case .podcast:
             break
@@ -159,13 +173,14 @@ class PodcastCell: UICollectionViewCell {
             cardView.backgroundColor = .white
         }
     }
+    
     public func ifLiked(id: Int) {
         if LikedPodcast.shared.likedPodcasts.contains(id) {
-           checkmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-           checkmarkButton.tintColor = UIColor.red
+            checkmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            checkmarkButton.tintColor = UIColor.red
         } else {
-           checkmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-           checkmarkButton.tintColor = UIColor.gray
+            checkmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            checkmarkButton.tintColor = UIColor.gray
         }
     }
     
