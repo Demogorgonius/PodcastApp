@@ -8,6 +8,10 @@
 import UIKit
 import PodcastIndexKit
 
+protocol MiniPlayerDelegate: AnyObject {
+    func didSelectCell(withId id: Int, allEpisodes: EpisodeArrayResponse)
+}
+
 class ChannelViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     private let podcastIndexKit = PodcastIndexKit()
     private let channelView = Channel()
@@ -18,6 +22,8 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
+     var delegate: MiniPlayerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
@@ -25,6 +31,7 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
         setupView()
         setupCollectionView()
         fetchDataForEpisodes(id: podcast?.id)
+        delegate = self.tabBarController as? MiniPlayerDelegate
     }
     
     private func setupView() {
@@ -105,6 +112,9 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let allEpisodes = episodes else {return}
+        let id = indexPath.row
+        delegate?.didSelectCell(withId: id, allEpisodes: allEpisodes)
         //        let viewController = AllTrandingsPodcasts()
         //        viewController.name = categories?[indexPath.row]
         //        self.navigationController?.pushViewController(viewController, animated: true)
