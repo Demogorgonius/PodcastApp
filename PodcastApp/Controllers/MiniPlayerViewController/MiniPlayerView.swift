@@ -54,7 +54,7 @@ class MiniPlayerView : UIView {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.black
-        button.setImage(UIImage(systemName: "play.circle"), for: .normal)
+        button.setImage(UIImage(systemName: "stop.circle"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -117,6 +117,7 @@ class MiniPlayerView : UIView {
             make.centerY.equalToSuperview()
             make.height.equalTo(30)
             make.width.equalTo(30)
+            
         }
 
         backButton.snp.makeConstraints { make in
@@ -138,8 +139,10 @@ class MiniPlayerView : UIView {
     public func togglePlayButton() {
         if playButton.currentImage == UIImage(systemName: "play.circle") {
             playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+            AudioService.shared.play()
         } else {
             playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
+            AudioService.shared.pause()
         }
     }
     
@@ -147,4 +150,5 @@ class MiniPlayerView : UIView {
         imageViewCell.image = image
         titleLbl.text = title
     }
+    
 }

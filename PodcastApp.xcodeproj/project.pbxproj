@@ -19,6 +19,7 @@
 		0BE620E52ACBE46B00C15C56 /* TopGenresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE620E42ACBE46B00C15C56 /* TopGenresModel.swift */; };
 		0BE620E82ACBE99600C15C56 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE620E72ACBE99600C15C56 /* SearchCell.swift */; };
 		0BECC50F2ACFF1D00084336A /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BECC50E2ACFF1D00084336A /* MiniPlayerView.swift */; };
+		0BECC5122AD16C7D0084336A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BECC5112AD16C7D0084336A /* AudioService.swift */; };
 		0BF5AC9C2AC2E47500FF7B41 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC982AC2E46F00FF7B41 /* View.swift */; };
 		0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC992AC2E47000FF7B41 /* Label.swift */; };
 		0BF5AC9E2AC2E47500FF7B41 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */; };
@@ -121,6 +122,7 @@
 		0BE620E42ACBE46B00C15C56 /* TopGenresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGenresModel.swift; sourceTree = "<group>"; };
 		0BE620E72ACBE99600C15C56 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		0BECC50E2ACFF1D00084336A /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
+		0BECC5112AD16C7D0084336A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		0BF5AC982AC2E46F00FF7B41 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0BF5AC992AC2E47000FF7B41 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		0BF5AC9A2AC2E47400FF7B41 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -298,6 +300,14 @@
 			path = MiniPlayerViewController;
 			sourceTree = "<group>";
 		};
+		0BECC5102AD16C670084336A /* AudioService */ = {
+			isa = PBXGroup;
+			children = (
+				0BECC5112AD16C7D0084336A /* AudioService.swift */,
+			);
+			path = AudioService;
+			sourceTree = "<group>";
+		};
 		0BF5ACA92AC2E65900FF7B41 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +480,7 @@
 		A59C54532AC1FA61003E6B89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0BECC5102AD16C670084336A /* AudioService */,
 				1631769E2ACAF47D00B1E70B /* Auth */,
 				0BDBFD082AC74CC100227AC2 /* Realm  */,
 				A59C54B92AC4A157003E6B89 /* FavoriteManager.swift */,
@@ -845,6 +856,7 @@
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
+				0BECC5122AD16C7D0084336A /* AudioService.swift in Sources */,
 				A59C54792AC1FCA3003E6B89 /* FavoritesViewController.swift in Sources */,
 				A51D3CF52ACF406B006EB7E9 /* PopUpView.swift in Sources */,
 				E224952D2AC8839A007EA23B /* PageView.swift in Sources */,
@@ -1161,13 +1173,12 @@
 			productName = RealmSwift;
 		};
 		A51D3CCD2ACF3487006EB7E9 /* SnapKit */ = {
-      isa = XCSwiftPackageProductDependency;
+			isa = XCSwiftPackageProductDependency;
 			package = A51D3CCC2ACF3487006EB7E9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 		A51D3CD22ACF34BD006EB7E9 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-
 			package = A51D3CD12ACF34BD006EB7E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};

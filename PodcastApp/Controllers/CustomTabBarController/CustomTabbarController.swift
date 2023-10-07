@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import PodcastIndexKit
 
 class CustomTabBarController: UITabBarController {
+    
+    let miniPayer = MiniPlayerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
         setTabBarAppearance()
+        setupMiniPlayer()
     }
     
     private func generateTabBar() {
@@ -86,6 +90,39 @@ class CustomTabBarController: UITabBarController {
         tabBar.layer.shadowOpacity = 0.9
         tabBar.layer.shadowRadius = 20
     }
+    
+     func setupMiniPlayer() {
+        view.addSubview(miniPayer)
+        miniPayer.snp.makeConstraints { make in
+            make.leading.equalTo(view).offset(20)
+            make.trailing.equalTo(view).offset(-20)
+            make.bottom.equalTo(tabBar.snp.top).offset(-20)
+            make.height.equalTo(68)
+        }
+         miniPayer.isHidden = true
+    }
 
 }
 
+extension CustomTabBarController: MiniPlayerDelegate {
+    func didSelectCell(withId id: Int, allEpisodes: EpisodeArrayResponse) {
+        guard  let episode = allEpisodes.items?[id] else { return }
+        let title = (episode.title ?? "") +  "\(episode.episode) Eps "
+        AudioService.shared.playAudio(from: episode.enclosureUrl ?? "")
+        miniPayer.isHidden = false
+        view.reloadInputViews()
+        
+        FetchImage.shared.loadImageFromURL(urlString: episode.image ?? "") { image in
+            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 43, height: 43))
+            self.miniPayer.setupMiniPlayer(image: resizedImage, title: title)
+        }
+        miniPayer.playButton.addTarget(self, action: #selector(playStopButton), for: .touchUpInside)
+
+    }
+    
+    @objc func playStopButton() {
+            miniPayer.togglePlayButton()
+    }
+    
+    
+}
