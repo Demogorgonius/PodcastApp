@@ -32,6 +32,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         hideKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     private func setupBackgroundColor() {
         view.backgroundColor = .white
         let gradientLayer = CAGradientLayer()

@@ -66,6 +66,7 @@
 		A51D3CFC2AD0165F006EB7E9 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CFB2AD0165F006EB7E9 /* PlayerView.swift */; };
 		A51D3D002AD01A36006EB7E9 /* PlayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CFF2AD01A36006EB7E9 /* PlayerViewCell.swift */; };
 		A51D3D022AD01A4D006EB7E9 /* PlayerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3D012AD01A4D006EB7E9 /* PlayerCollectionView.swift */; };
+		A51D3D042AD18067006EB7E9 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -160,6 +161,7 @@
 		A51D3CFB2AD0165F006EB7E9 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		A51D3CFF2AD01A36006EB7E9 /* PlayerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewCell.swift; sourceTree = "<group>"; };
 		A51D3D012AD01A4D006EB7E9 /* PlayerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionView.swift; sourceTree = "<group>"; };
+		A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
 				169992C12AC5B7BD00ACC05B /* UIBUtton.swift */,
 				169992C52AC5B80600ACC05B /* UITextField + Extension.swift */,
+				A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
+				A51D3D042AD18067006EB7E9 /* UIActivityIndicatorView.swift in Sources */,
 				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
 				0BE620E82ACBE99600C15C56 /* SearchCell.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
