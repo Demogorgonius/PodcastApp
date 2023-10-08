@@ -26,8 +26,8 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
         self.episodes = episodes
         self.podcastName = podcastName
         super.init(nibName: nil, bundle: nil)
-//        modalPresentationStyle = .fullScreen
-//        modalTransitionStyle = .crossDissolve
+        //        modalPresentationStyle = .fullScreen
+        //        modalTransitionStyle = .crossDissolve
         
     }
     
@@ -45,7 +45,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
         
     }
     
-  
+    
     
     
 }
@@ -54,7 +54,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
 
 private extension PlayerViewController {
     
-   
+    
     
 }
 
@@ -73,9 +73,11 @@ extension PlayerViewController: UICollectionViewDelegate {
         
         guard scrollView is UICollectionView else { return }
         
+        print(self.episodeVC.frame.size)
+        
         if let centerCellIndexPath: IndexPath  = self.episodeVC.centerCellIndexPath {
-                        print(centerCellIndexPath)
-                    }
+            customView.configureScreen(episodeName: episodes?.items?[centerCellIndexPath.row].title ?? "", podcastName: podcastName ?? "")
+        }
         
     }
 }
