@@ -34,5 +34,22 @@ class AudioService {
         player = nil
     }
     
+    func playOrStop() {
+        if let player = AudioService.shared.player, player.rate != 0 {
+            player.pause()
+        } else {
+            player?.play()
+        }
+    }
+    
+    func isPlaying() -> Bool {
+        player?.rate != 0
+    }
+    
+    func playInTime(value: Float) {
+        let seekTime = Double(value)
+            let time = CMTime(seconds: seekTime, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player?.seek(to: time)
+    }
     
 }

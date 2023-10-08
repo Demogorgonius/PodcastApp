@@ -11,7 +11,8 @@ import SnapKit
 
 protocol PlayerViewDelegate: AnyObject {
     
-    func playerView(didButtonTapped button: UIButton)
+    func button(didButtonTapped button: UIButton)
+    func slider(sliderChange slider: UISlider)
     
 }
 
@@ -63,7 +64,7 @@ class PlayerViewClass: CustomView {
     private lazy var playTrackButton: UIButton = {
         let button = UIButton()
         let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 64, weight: .medium, scale: .medium)
-        let image = UIImage(systemName: "play.circle.fill", withConfiguration: iconConfiguration)
+        let image = UIImage(systemName: "stop.circle.fill", withConfiguration: iconConfiguration)
         button.setImage(image, for: .normal)
         button.tintColor = .skyBlue
         button.imageView?.contentMode = .scaleAspectFit
@@ -81,13 +82,15 @@ class PlayerViewClass: CustomView {
     
     //MARK: - - Make progress bar:
     
-    private lazy var progressBar: UIProgressView = {
-        let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.center = self.center
-        progressView.setProgress(0.0, animated: true)
-        progressView.trackTintColor = .skyBlue
-        progressView.tintColor = .skyBlue
-        return progressView
+    private lazy var slider: UISlider = {
+        let slider = UISlider()
+        slider.center = self.center
+        slider.minimumValue = 0
+        slider.thumbTintColor = .skyBlue
+        slider.tintColor = .skyBlue
+        slider.addTarget(self, action: #selector(audioSliderValueChanged(_:)), for: .valueChanged)
+
+        return slider
     }()
 
     
@@ -115,14 +118,13 @@ class PlayerViewClass: CustomView {
         addSubview(episodeTitle)
         addSubview(podcastTitle)
         addSubview(timePassedLabel)
-        addSubview(progressBar)
+        addSubview(slider)
         addSubview(timeLeftLabel)
         addSubview(shuffleButton)
         addSubview(previousTrackButton)
         addSubview(playTrackButton)
         addSubview(nextTrackButton)
         addSubview(repeatTrackButton)
-        
     }
     
     // MARK: layoutViews
@@ -149,20 +151,20 @@ class PlayerViewClass: CustomView {
             make.top.equalTo(episodeTitle.snp.bottom).offset(5)
         }
         
-        progressBar.snp.makeConstraints { make in
+        slider.snp.makeConstraints { make in
             make.width.equalTo(191)
             make.centerX.equalToSuperview()
             make.top.equalTo(podcastTitle.snp.bottom).offset(58.5)
         }
         
         timePassedLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(progressBar.snp.leading).offset(-7)
-            make.centerY.equalTo(progressBar.snp.centerY)
+            make.trailing.equalTo(slider.snp.leading).offset(-7)
+            make.centerY.equalTo(slider.snp.centerY)
         }
         
         timeLeftLabel.snp.makeConstraints { make in
-            make.leading.equalTo(progressBar.snp.trailing).offset(7)
-            make.centerY.equalTo(progressBar.snp.centerY)
+            make.leading.equalTo(slider.snp.trailing).offset(7)
+            make.centerY.equalTo(slider.snp.centerY)
         }
         
         playTrackButton.snp.makeConstraints { make in
@@ -170,7 +172,7 @@ class PlayerViewClass: CustomView {
             make.width.equalTo(64.0)
             make.width.equalTo(64.0)
             make.centerX.equalToSuperview()
-            make.top.equalTo(progressBar.snp.bottom).offset(88.5)
+            make.top.equalTo(slider.snp.bottom).offset(88.5)
         }
         
         previousTrackButton.snp.makeConstraints { make in
@@ -203,6 +205,18 @@ class PlayerViewClass: CustomView {
         
     }
     
+    public func changePlayStopButton() {
+        let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 64, weight: .medium, scale: .medium)
+        let stopImage = UIImage(systemName: "stop.circle.fill", withConfiguration: iconConfiguration)
+        let playImage = UIImage(systemName: "play.circle.fill", withConfiguration: iconConfiguration)
+        
+        if AudioService.shared.isPlaying() {
+            playTrackButton.setImage(stopImage, for: .normal)
+        } else {
+            playTrackButton.setImage(playImage, for: .normal)
+        }
+    }
+    
 }
 
 // MARK: Extensions
@@ -210,9 +224,11 @@ class PlayerViewClass: CustomView {
 extension PlayerViewClass {
     
     @objc func didButtonTapped(_ button: UIButton) {
-        
-        delegate?.playerView(didButtonTapped: button)
-        
+        delegate?.button(didButtonTapped: button)
+    }
+    
+    @objc func audioSliderValueChanged(_ slider: UISlider) {
+        delegate?.slider(sliderChange: slider)
     }
     
     func configureScreen(episodeName: String, podcastName: String) {

@@ -108,67 +108,67 @@ class CustomTabBarController: UITabBarController {
 
 extension CustomTabBarController: MiniPlayerDelegate {
     func didSelectCell(withId id: Int, allEpisodes: EpisodeArrayResponse) {
-        print(id)
-        self.id = id
-        self.episodArray = allEpisodes
-        
-        guard  let episode = allEpisodes.items?[id] else { return }
-        playSongAndSetupMiniPayer(with: episode)
-        
-        
-        miniPayer.isHidden = false
-        view.reloadInputViews()
-        miniPayer.playButton.addTarget(self, action: #selector(playStopButton), for: .touchUpInside)
-        miniPayer.forwardButton.addTarget(self, action: #selector(forwardButton), for: .touchUpInside)
-        miniPayer.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bigPlayer(_:)))
-        miniPayer.backView.addGestureRecognizer(tapGesture)
-
-    }
-    
-    @objc func playStopButton() {
-            miniPayer.togglePlayButton()
-    }
-    
-    @objc func forwardButton() {
-        guard  let episodes = episodArray?.items else { return }
-        if id < episodes.count {
-            self.id += 1
-            print(id)
-            let episode = episodes[id]
-            playSongAndSetupMiniPayer(with: episode)
-        } else {
-            id = 0
-            let episode = episodes[id]
-            playSongAndSetupMiniPayer(with: episode)
-        }
-    }
-    
-    @objc func backButton() {
-        guard  let episodes = episodArray?.items else { return }
-        if id > 0 {
-            self.id -= 1
-            print(id)
-            let episode = episodes[id]
-            playSongAndSetupMiniPayer(with: episode)
-        } else {
-            self.id = episodes.count - 1
-            let episode = episodes[id]
-            playSongAndSetupMiniPayer(with: episode)
-        }
-    }
-    
-    @objc func bigPlayer(_ gesture: UITapGestureRecognizer) {
-        guard let episodes = episodArray else {return}
-        let playerViewController = PlayerViewController(with: episodes, podcastName: episodes.items?[id].title, id: id)
-        present(playerViewController, animated: true, completion: nil)
-    }
-   private func playSongAndSetupMiniPayer(with episode: Episode) {
-        let title = (episode.title ?? "") +  "\(episode.episode) Eps"
-        AudioService.shared.playAudio(from: episode.enclosureUrl ?? "")
-        FetchImage.shared.loadImageFromURL(urlString: episode.image ?? "") { image in
-            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 43, height: 43))
-            self.miniPayer.setupMiniPlayer(image: resizedImage, title: title)
-        }
+//
+//        self.id = id
+//        self.episodArray = allEpisodes
+//        
+//        guard  let episode = allEpisodes.items?[id] else { return }
+//        playSongAndSetupMiniPayer(with: episode)
+//        
+//        
+//        miniPayer.isHidden = false
+//        view.reloadInputViews()
+//        miniPayer.playButton.addTarget(self, action: #selector(playStopButton), for: .touchUpInside)
+//        miniPayer.forwardButton.addTarget(self, action: #selector(forwardButton), for: .touchUpInside)
+//        miniPayer.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bigPlayer(_:)))
+//        miniPayer.backView.addGestureRecognizer(tapGesture)
+//
+//    }
+//    
+//    @objc func playStopButton() {
+//            miniPayer.togglePlayButton()
+//    }
+//    
+//    @objc func forwardButton() {
+//        guard  let episodes = episodArray?.items else { return }
+//        if id < episodes.count {
+//            self.id += 1
+//            print(id)
+//            let episode = episodes[id]
+//            playSongAndSetupMiniPayer(with: episode)
+//        } else {
+//            id = 0
+//            let episode = episodes[id]
+//            playSongAndSetupMiniPayer(with: episode)
+//        }
+//    }
+//    
+//    @objc func backButton() {
+//        guard  let episodes = episodArray?.items else { return }
+//        if id > 0 {
+//            self.id -= 1
+//            print(id)
+//            let episode = episodes[id]
+//            playSongAndSetupMiniPayer(with: episode)
+//        } else {
+//            self.id = episodes.count - 1
+//            let episode = episodes[id]
+//            playSongAndSetupMiniPayer(with: episode)
+//        }
+//    }
+//    
+//    @objc func bigPlayer(_ gesture: UITapGestureRecognizer) {
+//        guard let episodes = episodArray else {return}
+//        let playerViewController = PlayerViewController(with: episodes, podcastName: "", id: id)
+//        present(playerViewController, animated: true, completion: nil)
+//    }
+//   private func playSongAndSetupMiniPayer(with episode: Episode) {
+//        let title = (episode.title ?? "") +  "\(episode.episode) Eps"
+//        AudioService.shared.playAudio(from: episode.enclosureUrl ?? "")
+//        FetchImage.shared.loadImageFromURL(urlString: episode.image ?? "") { image in
+//            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 43, height: 43))
+//            self.miniPayer.setupMiniPlayer(image: resizedImage, title: title)
+//        }
     }
 }

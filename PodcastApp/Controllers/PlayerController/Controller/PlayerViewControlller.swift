@@ -17,47 +17,62 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     private var episodes: EpisodeArrayResponse?
     private var podcastName: String?
-    private var id: Int = 0
+    private var firstId: Int = 0
+    private var currentId: Int = 0
     private var centerCell: PlayerCollectionViewCell?
-    
     // MARK: init & viewDidLoad
     
     init(with episodes: EpisodeArrayResponse, podcastName: String?, id: Int) {
         
         self.episodes = episodes
         self.podcastName = podcastName
-        self.id = id
+        self.firstId = id
         super.init(nibName: nil, bundle: nil)
-        //        modalPresentationStyle = .fullScreen
-        //        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .automatic
+        modalTransitionStyle = .crossDissolve
+        navigationController?.navigationBar.isHidden = false
         
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollTo(id: firstId)
+        currentId = firstId
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        episodeVC = EpisodeCollectionView()
-        customView.configureScreen(episodeName: episodes?.items?[id].title ?? "", podcastName: podcastName ?? "")
         customView.episodeCollectionView.delegate = self
         customView.episodeCollectionView.dataSource = self
+        customView.delegate = self
+        episodeVC = EpisodeCollectionView()
+        customView.configureScreen(episodeName: episodes?.items?[firstId].title ?? "", podcastName: podcastName ?? "")
+        playSong(id: firstId)
         
+
     }
     
+    private func scrollTo(id: Int) {
+        let indexPathToScroll = IndexPath(row: id, section: 0)
+        customView.episodeCollectionView.scrollToItem(at: indexPathToScroll, at: .centeredHorizontally, animated: true)
+    }
     
-    
-    
+    private func playSong(id: Int) {
+        guard  let episodeURL = episodes?.items?[id].enclosureUrl else { return }
+        print("Start plaing \(episodeURL)")
+        AudioService.shared.playAudio(from: episodeURL)
+        customView.changePlayStopButton()
+    }
 }
 
 // MARK: - Extensions
 
 private extension PlayerViewController {
     
-    
-    
+
 }
 
 // MARK: - - UICollectionViewDelegate:
@@ -67,21 +82,23 @@ extension PlayerViewController: UICollectionViewDelegate {
         guard episodes?.items?.count != 0 else {
             return
         }
-        
-        
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        guard scrollView is UICollectionView else { return }
-        
-        print(self.episodeVC.frame.size)
-
-        if let centerCellIndexPath: IndexPath  = self.episodeVC.centerCellIndexPath {
-            customView.configureScreen(episodeName: episodes?.items?[centerCellIndexPath.row].title ?? "", podcastName: podcastName ?? "")
-        }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+       
+            guard scrollView is UICollectionView else { return }
+            if let centerCellIndexPath: IndexPath = self.customView.episodeCollectionView.centerCellIndexPath {
+                currentId = centerCellIndexPath.row
+                customView.configureScreen(episodeName: episodes?.items?[currentId].title ?? "", podcastName: podcastName ?? "")
+                playSong(id: currentId)
+            }
     }
 }
+
+
+
+
 
 // MARK: - UICollectionViewDataSource
 extension PlayerViewController: UICollectionViewDataSource {
@@ -106,6 +123,8 @@ extension PlayerViewController: UICollectionViewDataSource {
         return episodeCell
     }
     
+
+    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -117,10 +136,48 @@ extension PlayerViewController: UICollectionViewDataSource {
 //}
 
 extension PlayerViewController: PlayerViewDelegate {
+
+    func button(didButtonTapped button: UIButton) {
+        let buttonTag = button.tag
+           // Определяем, какая кнопка была нажата
+           switch buttonTag {
+           case 1:
+              
+               break
+           case 2:
+               if currentId > 0 {
+                   currentId -= 1
+                   scrollTo(id: currentId)
+                   playSong(id: currentId)
+               }
+               break
+           case 3:
+               AudioService.shared.playOrStop()
+               customView.changePlayStopButton()
+               break
+           case 4:
+               guard let numbersOfEpisodes = episodes?.items?.count else {return}
+               if currentId < numbersOfEpisodes - 1 {
+                   currentId += 1
+                   scrollTo(id: currentId)
+                   playSong(id: currentId)
+               }
+               break
+           case 5:
+               // Действия для кнопки repeatTrackButton
+               // Например, изменение режима повтора трека
+               break
+           default:
+               break
+           }
+    }
     
-    
-    func playerView(didButtonTapped button: UIButton) {
-        
+    func slider(sliderChange slider: UISlider) {
+        guard let length = episodes?.items?[currentId].enclosureLength else { return}
+        slider.maximumValue = Float(length)
+        AudioService.shared.playInTime(value: slider.value)
+        print(length)
+        print(slider.value)
     }
     
 }

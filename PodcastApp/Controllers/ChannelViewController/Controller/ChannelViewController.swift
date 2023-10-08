@@ -115,9 +115,9 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
         guard let allEpisodes = episodes else {return}
         let id = indexPath.row
         delegate?.didSelectCell(withId: id, allEpisodes: allEpisodes)
-        //        let viewController = AllTrandingsPodcasts()
-        //        viewController.name = categories?[indexPath.row]
-        //        self.navigationController?.pushViewController(viewController, animated: true)
+        let vc = PlayerViewController(with: allEpisodes , podcastName: podcast?.title, id: id)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
