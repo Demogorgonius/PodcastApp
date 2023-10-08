@@ -43,6 +43,7 @@
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
 		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
 		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
+		A509D9FE2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */; };
 		A51D3CC92ACF3476006EB7E9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CC82ACF3476006EB7E9 /* Realm */; };
 		A51D3CCB2ACF3476006EB7E9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCA2ACF3476006EB7E9 /* RealmSwift */; };
 		A51D3CCE2ACF3487006EB7E9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCD2ACF3487006EB7E9 /* SnapKit */; };
@@ -62,6 +63,11 @@
 		A51D3CF02ACF4020006EB7E9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CEF2ACF4020006EB7E9 /* PopUpViewController.swift */; };
 		A51D3CF42ACF406B006EB7E9 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CF22ACF406B006EB7E9 /* PopUpButton.swift */; };
 		A51D3CF52ACF406B006EB7E9 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CF32ACF406B006EB7E9 /* PopUpView.swift */; };
+		A51D3CFA2AD01642006EB7E9 /* PlayerViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CF92AD01642006EB7E9 /* PlayerViewControlller.swift */; };
+		A51D3CFC2AD0165F006EB7E9 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CFB2AD0165F006EB7E9 /* PlayerView.swift */; };
+		A51D3D002AD01A36006EB7E9 /* PlayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3CFF2AD01A36006EB7E9 /* PlayerViewCell.swift */; };
+		A51D3D022AD01A4D006EB7E9 /* PlayerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3D012AD01A4D006EB7E9 /* PlayerCollectionView.swift */; };
+		A51D3D042AD18067006EB7E9 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */; };
 		A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543C2AC1F945003E6B89 /* AppDelegate.swift */; };
 		A59C543F2AC1F945003E6B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */; };
 		A59C54462AC1F947003E6B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C54452AC1F947003E6B89 /* Assets.xcassets */; };
@@ -146,12 +152,18 @@
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
+		A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + CenterCell.swift"; sourceTree = "<group>"; };
 		A51D3CE92ACF4015006EB7E9 /* GenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		A51D3CEA2ACF4015006EB7E9 /* CheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		A51D3CEB2ACF4015006EB7E9 /* ProfileTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		A51D3CEF2ACF4020006EB7E9 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A51D3CF22ACF406B006EB7E9 /* PopUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
 		A51D3CF32ACF406B006EB7E9 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		A51D3CF92AD01642006EB7E9 /* PlayerViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewControlller.swift; sourceTree = "<group>"; };
+		A51D3CFB2AD0165F006EB7E9 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		A51D3CFF2AD01A36006EB7E9 /* PlayerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewCell.swift; sourceTree = "<group>"; };
+		A51D3D012AD01A4D006EB7E9 /* PlayerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionView.swift; sourceTree = "<group>"; };
+		A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A59C54392AC1F945003E6B89 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C543C2AC1F945003E6B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59C543E2AC1F945003E6B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -409,6 +421,49 @@
 			path = PopUpView;
 			sourceTree = "<group>";
 		};
+		A51D3CF62AD01607006EB7E9 /* PlayerController */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3CFE2AD01A03006EB7E9 /* CollectionViewCell */,
+				A51D3CFD2AD019F6006EB7E9 /* CollectionView */,
+				A51D3CF82AD0162E006EB7E9 /* Controller */,
+				A51D3CF72AD01628006EB7E9 /* View */,
+			);
+			path = PlayerController;
+			sourceTree = "<group>";
+		};
+		A51D3CF72AD01628006EB7E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3CFB2AD0165F006EB7E9 /* PlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A51D3CF82AD0162E006EB7E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3CF92AD01642006EB7E9 /* PlayerViewControlller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A51D3CFD2AD019F6006EB7E9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3D012AD01A4D006EB7E9 /* PlayerCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		A51D3CFE2AD01A03006EB7E9 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A51D3CFF2AD01A36006EB7E9 /* PlayerViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		A59C54302AC1F945003E6B89 = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +528,8 @@
 				A59C546A2AC1FC09003E6B89 /* CustomViewController.swift */,
 				169992C12AC5B7BD00ACC05B /* UIBUtton.swift */,
 				169992C52AC5B80600ACC05B /* UITextField + Extension.swift */,
+				A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */,
+				A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -495,6 +552,7 @@
 		A59C54542AC1FA6D003E6B89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A51D3CF62AD01607006EB7E9 /* PlayerController */,
 				0BECC50D2ACFF1A80084336A /* MiniPlayerViewController */,
 				0BB2511A2ACDF284000BF7CF /* GenreResultViewController */,
 				0B0EB39B2ACC77E10005D52D /* TopGenresViewController */,
@@ -843,6 +901,7 @@
 				169992C22AC5B7BD00ACC05B /* UIBUtton.swift in Sources */,
 				A59C546D2AC1FC31003E6B89 /* CustomTabbarController.swift in Sources */,
 				0BDBFD052AC6B33400227AC2 /* AllTrandingsPodcasts.swift in Sources */,
+				A51D3D042AD18067006EB7E9 /* UIActivityIndicatorView.swift in Sources */,
 				A59C54E82AC60758003E6B89 /* ProfileSettingsButton.swift in Sources */,
 				0BE620E82ACBE99600C15C56 /* SearchCell.swift in Sources */,
 				A59C54712AC1FC5F003E6B89 /* MainCollectionView.swift in Sources */,
@@ -851,9 +910,11 @@
 				163176A22ACAF4A500B1E70B /* AuthService.swift in Sources */,
 				A59C547B2AC1FCB0003E6B89 /* ProfileView.swift in Sources */,
 				A59C54E22AC606A7003E6B89 /* AccountSettingsViewController.swift in Sources */,
+				A51D3D002AD01A36006EB7E9 /* PlayerViewCell.swift in Sources */,
 				A51D3CED2ACF4015006EB7E9 /* CheckButton.swift in Sources */,
 				A59C54752AC1FC80003E6B89 /* SearchViewController.swift in Sources */,
 				0BF5ACB52AC45B6C00FF7B41 /* AppCategoryModel.swift in Sources */,
+				A51D3CFA2AD01642006EB7E9 /* PlayerViewControlller.swift in Sources */,
 				A59C543D2AC1F945003E6B89 /* AppDelegate.swift in Sources */,
 				A59C54B82AC49E22003E6B89 /* OnboardingViewController.swift in Sources */,
 				0BECC5122AD16C7D0084336A /* AudioService.swift in Sources */,
@@ -866,6 +927,7 @@
 				16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */,
 				0BF5ACAB2AC2EA7D00FF7B41 /* PodcastCell.swift in Sources */,
 				0BF5AC9D2AC2E47500FF7B41 /* Label.swift in Sources */,
+				A51D3CFC2AD0165F006EB7E9 /* PlayerView.swift in Sources */,
 				A51D3CF02ACF4020006EB7E9 /* PopUpViewController.swift in Sources */,
 				A59C54732AC1FC6F003E6B89 /* SearchCollectionView.swift in Sources */,
 				A59C546F2AC1FC54003E6B89 /* MainViewController.swift in Sources */,
@@ -879,6 +941,7 @@
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0B68747D2ACAC2ED0055A439 /* LikedPodcast.swift in Sources */,
 				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
+				A509D9FE2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift in Sources */,
 				A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				0B6874862ACAD62B0055A439 /* ChannelView.swift in Sources */,
@@ -892,6 +955,7 @@
 				0BF5ACAD2AC30A3300FF7B41 /* MainProfileView.swift in Sources */,
 				0B6874882ACAD9A60055A439 /* ChannelViewController.swift in Sources */,
 				169992C62AC5B80600ACC05B /* UITextField + Extension.swift in Sources */,
+				A51D3D022AD01A4D006EB7E9 /* PlayerCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
