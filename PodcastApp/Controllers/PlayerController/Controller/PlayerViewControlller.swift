@@ -17,14 +17,16 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     private var episodes: EpisodeArrayResponse?
     private var podcastName: String?
+    private var id: Int = 0
     private var centerCell: PlayerCollectionViewCell?
     
     // MARK: init & viewDidLoad
     
-    init(with episodes: EpisodeArrayResponse, podcastName: String?) {
+    init(with episodes: EpisodeArrayResponse, podcastName: String?, id: Int) {
         
         self.episodes = episodes
         self.podcastName = podcastName
+        self.id = id
         super.init(nibName: nil, bundle: nil)
         //        modalPresentationStyle = .fullScreen
         //        modalTransitionStyle = .crossDissolve
@@ -39,7 +41,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     override func viewDidLoad() {
         super.viewDidLoad()
         episodeVC = EpisodeCollectionView()
-        customView.configureScreen(episodeName: episodes?.items?[0].title ?? "", podcastName: podcastName ?? "")
+        customView.configureScreen(episodeName: episodes?.items?[id].title ?? "", podcastName: podcastName ?? "")
         customView.episodeCollectionView.delegate = self
         customView.episodeCollectionView.dataSource = self
         
@@ -74,11 +76,10 @@ extension PlayerViewController: UICollectionViewDelegate {
         guard scrollView is UICollectionView else { return }
         
         print(self.episodeVC.frame.size)
-        
+
         if let centerCellIndexPath: IndexPath  = self.episodeVC.centerCellIndexPath {
             customView.configureScreen(episodeName: episodes?.items?[centerCellIndexPath.row].title ?? "", podcastName: podcastName ?? "")
         }
-        
     }
 }
 
