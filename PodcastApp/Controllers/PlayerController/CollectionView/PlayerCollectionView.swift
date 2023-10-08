@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 class EpisodeCollectionView: UICollectionView {
-    
     init() {
+        
         let layout = PlayerCollectionViewFlowLayout()
         
         super.init(frame: .zero, collectionViewLayout: layout)
-        
+        selectionFollowsFocus = true
         register(PlayerCollectionViewCell.self, forCellWithReuseIdentifier: PlayerCollectionViewCell.reuseId)
         backgroundColor = .none
         contentInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
@@ -26,7 +26,10 @@ class EpisodeCollectionView: UICollectionView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+
     }
+    
+   
 }
 
 final class PlayerCollectionViewFlowLayout: UICollectionViewFlowLayout {
@@ -42,12 +45,12 @@ final class PlayerCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override init() {
         super.init()
-        
         scrollDirection = .horizontal
         minimumLineSpacing = 20
         itemSize = CGSize(width: 279, height: 270)
     }
     
+ 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,6 +63,7 @@ final class PlayerCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         super.prepare()
     }
+    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let collectionView = collectionView else { return nil }
@@ -100,6 +104,8 @@ final class PlayerCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
     }
+    
+    
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         // Invalidate layout so that every cell get a chance to be zoomed when it reaches the center of the screen

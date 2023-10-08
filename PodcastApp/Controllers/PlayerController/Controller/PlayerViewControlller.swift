@@ -19,6 +19,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     private var podcastName: String?
     private var id: Int = 0
     private var centerCell: PlayerCollectionViewCell?
+    private var flag: Bool = false
     
     // MARK: init & viewDidLoad
     
@@ -28,9 +29,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
         self.podcastName = podcastName
         self.id = id
         super.init(nibName: nil, bundle: nil)
-        //        modalPresentationStyle = .fullScreen
-        //        modalTransitionStyle = .crossDissolve
-        
+
     }
     
     required init?(coder: NSCoder) {
@@ -40,11 +39,19 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        episodeVC = EpisodeCollectionView()
+//        episodeVC = EpisodeCollectionView()
         customView.configureScreen(episodeName: episodes?.items?[id].title ?? "", podcastName: podcastName ?? "")
         customView.episodeCollectionView.delegate = self
         customView.episodeCollectionView.dataSource = self
+        customView.delegate = self
+        scrollTo(id: id)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollTo(id: id)
+        tabBarController?.tabBar.isHidden = true
     }
     
     
@@ -56,7 +63,10 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
 
 private extension PlayerViewController {
     
-    
+    private func scrollTo(id: Int) {
+            let indexPathToScroll = IndexPath(row: id, section: 0)
+            customView.episodeCollectionView.scrollToItem(at: indexPathToScroll, at: .centeredHorizontally, animated: true)
+        }
     
 }
 
@@ -74,13 +84,13 @@ extension PlayerViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         guard scrollView is UICollectionView else { return }
-        
-        print(self.episodeVC.frame.size)
-
-        if let centerCellIndexPath: IndexPath  = self.episodeVC.centerCellIndexPath {
-            customView.configureScreen(episodeName: episodes?.items?[centerCellIndexPath.row].title ?? "", podcastName: podcastName ?? "")
-        }
+    
+        if let centerCellIndexPath: IndexPath = self.customView.episodeCollectionView.centerCellIndexPath {
+                    customView.configureScreen(episodeName: episodes?.items?[centerCellIndexPath.row].title ?? "", podcastName: podcastName ?? "")
+                }
     }
+    
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -106,6 +116,8 @@ extension PlayerViewController: UICollectionViewDataSource {
         return episodeCell
     }
     
+    
+    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -120,7 +132,21 @@ extension PlayerViewController: PlayerViewDelegate {
     
     
     func playerView(didButtonTapped button: UIButton) {
-        
+        switch button.tag {
+        case 6:
+            let transition: CATransition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.reveal
+            transition.subtype = CATransitionSubtype.fromBottom
+            self.customView.window!.layer.add(transition, forKey: nil)
+            self.dismiss(animated: false, completion: nil)
+        default:
+            break
+        }
     }
     
 }
+
+
+
