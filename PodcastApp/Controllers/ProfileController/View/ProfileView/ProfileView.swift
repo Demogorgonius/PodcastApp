@@ -64,6 +64,14 @@ class ProfileView: CustomView {
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }
+        
+        
+    }
+    
+    func setConstraintToButton(_ size: CGFloat) {
+        logOutButton.snp.makeConstraints { make in
+            make.bottom.equalTo( 0 - size )
+        }
     }
     
     @objc func buttonTapped(_ button: UIButton) {

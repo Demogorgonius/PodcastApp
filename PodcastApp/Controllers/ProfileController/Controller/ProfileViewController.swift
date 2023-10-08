@@ -20,6 +20,24 @@ class ProfileViewController: CustomViewController<ProfileView> {
         customView.buttonView.delegate = self
         
 //        view = profView
+        if let size = tabBarController?.tabBar.frame.height {
+            print(size)
+            customView.setConstraintToButton(size)
+            
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if var size = tabBarController?.tabBar.frame.height {
+            if tabBarController?.tabBar.tag == 1 {
+                size += 98
+                print(size)
+                customView.setConstraintToButton(size)
+            } else {
+                print(size)
+                customView.setConstraintToButton(size)
+            }
+        }
     }
     
 }
