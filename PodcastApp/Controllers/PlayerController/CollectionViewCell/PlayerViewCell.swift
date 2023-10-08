@@ -65,6 +65,7 @@ class PlayerCollectionViewCell: UICollectionViewCell {
             spinner.setUpSpinner(loadingImageView: mainImageView)
         }
     }
+    
 }
 
 

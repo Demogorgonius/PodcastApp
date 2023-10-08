@@ -43,6 +43,7 @@
 		16AB17192AC8011300906EB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */; };
 		16AB171B2AC8015400906EB1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171A2AC8015400906EB1 /* CreateAccountView.swift */; };
 		16AB17202AC803A500906EB1 /* CompleteAccountViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */; };
+		A509D9FE2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */; };
 		A51D3CC92ACF3476006EB7E9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CC82ACF3476006EB7E9 /* Realm */; };
 		A51D3CCB2ACF3476006EB7E9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCA2ACF3476006EB7E9 /* RealmSwift */; };
 		A51D3CCE2ACF3487006EB7E9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A51D3CCD2ACF3487006EB7E9 /* SnapKit */; };
@@ -151,6 +152,7 @@
 		16AB17182AC8011300906EB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		16AB171A2AC8015400906EB1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		16AB171F2AC803A500906EB1 /* CompleteAccountViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAccountViewContoller.swift; sourceTree = "<group>"; };
+		A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + CenterCell.swift"; sourceTree = "<group>"; };
 		A51D3CE92ACF4015006EB7E9 /* GenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		A51D3CEA2ACF4015006EB7E9 /* CheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		A51D3CEB2ACF4015006EB7E9 /* ProfileTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				169992C12AC5B7BD00ACC05B /* UIBUtton.swift */,
 				169992C52AC5B80600ACC05B /* UITextField + Extension.swift */,
 				A51D3D032AD18067006EB7E9 /* UIActivityIndicatorView.swift */,
+				A509D9FD2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				A59C54B62AC49DFF003E6B89 /* OnboardingView.swift in Sources */,
 				0B68747D2ACAC2ED0055A439 /* LikedPodcast.swift in Sources */,
 				0BF5ACBB2AC5582C00FF7B41 /* FetchImage.swift in Sources */,
+				A509D9FE2AD226FD000DAAD4 /* UICollectionView + CenterCell.swift in Sources */,
 				A59C54E62AC60732003E6B89 /* ButtonView.swift in Sources */,
 				0BF5ACAF2AC3116900FF7B41 /* MainSeeAllView.swift in Sources */,
 				0B6874862ACAD62B0055A439 /* ChannelView.swift in Sources */,

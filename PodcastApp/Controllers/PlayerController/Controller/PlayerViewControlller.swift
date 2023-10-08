@@ -17,6 +17,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     private var episodes: EpisodeArrayResponse?
     private var podcastName: String?
+    private var centerCell: PlayerCollectionViewCell?
     
     // MARK: init & viewDidLoad
     
@@ -37,6 +38,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        episodeVC = EpisodeCollectionView()
         customView.configureScreen(episodeName: episodes?.items?[0].title ?? "", podcastName: podcastName ?? "")
         customView.episodeCollectionView.delegate = self
         customView.episodeCollectionView.dataSource = self
@@ -52,6 +54,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
 
 private extension PlayerViewController {
     
+   
     
 }
 
@@ -63,6 +66,16 @@ extension PlayerViewController: UICollectionViewDelegate {
             return
         }
         
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        guard scrollView is UICollectionView else { return }
+        
+        if let centerCellIndexPath: IndexPath  = self.episodeVC.centerCellIndexPath {
+                        print(centerCellIndexPath)
+                    }
         
     }
 }
@@ -93,12 +106,12 @@ extension PlayerViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension PlayerViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 279.0, height: 326.0)
-    }
-}
+//extension PlayerViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        return CGSize(width: 279.0, height: 326.0)
+//    }
+//}
 
 extension PlayerViewController: PlayerViewDelegate {
     
