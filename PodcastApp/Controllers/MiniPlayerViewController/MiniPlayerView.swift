@@ -30,7 +30,7 @@ class MiniPlayerView : UIView {
         return label
     }()
     
-    private var backView: UIView = {
+     var backView: UIView = {
         let viewCardView = UIView()
         viewCardView.backgroundColor = .blueSearchCell
         viewCardView.layer.cornerRadius = 10
@@ -77,11 +77,14 @@ class MiniPlayerView : UIView {
       super.init(frame: frame)
         setupView()
         setupConstrains()
+       
     }
     
     required init?(coder: NSCoder) {
       fatalError("Please use this class from code.")
     }
+    
+ 
     
     private func setupView() {
         addSubview(backView)
