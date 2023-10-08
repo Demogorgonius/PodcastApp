@@ -49,7 +49,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
         customView.episodeCollectionView.dataSource = self
         customView.delegate = self
         episodeVC = EpisodeCollectionView()
-        customView.configureScreen(episodeName: episodes?.items?[firstId].title ?? "", podcastName: podcastName ?? "")
+        customView.configureScreen(episodeName: episodes?.items?[firstId].title ?? "", podcastName: podcastName ?? "", length: episodes?.items?[firstId].duration)
         playSong(id: firstId)
         
 
@@ -90,7 +90,7 @@ extension PlayerViewController: UICollectionViewDelegate {
             guard scrollView is UICollectionView else { return }
             if let centerCellIndexPath: IndexPath = self.customView.episodeCollectionView.centerCellIndexPath {
                 currentId = centerCellIndexPath.row
-                customView.configureScreen(episodeName: episodes?.items?[currentId].title ?? "", podcastName: podcastName ?? "")
+                customView.configureScreen(episodeName: episodes?.items?[currentId].title ?? "", podcastName: podcastName ?? "", length: episodes?.items?[currentId].duration)
                 playSong(id: currentId)
             }
     }
@@ -173,11 +173,9 @@ extension PlayerViewController: PlayerViewDelegate {
     }
     
     func slider(sliderChange slider: UISlider) {
-        guard let length = episodes?.items?[currentId].enclosureLength else { return}
+        guard let length = episodes?.items?[currentId].duration else { return}
         slider.maximumValue = Float(length)
         AudioService.shared.playInTime(value: slider.value)
-        print(length)
-        print(slider.value)
     }
     
 }

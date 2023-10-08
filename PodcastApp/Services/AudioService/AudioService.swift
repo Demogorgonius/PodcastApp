@@ -52,4 +52,9 @@ class AudioService {
         player?.seek(to: time)
     }
     
+    func second() -> Float {
+        guard let time = player?.currentTime() else {return 0.0}
+        return Float(CMTimeGetSeconds(time))
+    }
+    
 }

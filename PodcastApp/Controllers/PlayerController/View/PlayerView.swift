@@ -20,7 +20,8 @@ class PlayerViewClass: CustomView {
     
     // MARK: Variables
     weak var delegate: PlayerViewDelegate?
-    
+    private var timer: Timer?
+
     // MARK: - --- UI ---
     
     let episodeCollectionView = EpisodeCollectionView()
@@ -84,12 +85,10 @@ class PlayerViewClass: CustomView {
     
     private lazy var slider: UISlider = {
         let slider = UISlider()
-        slider.center = self.center
-        slider.minimumValue = 0
         slider.thumbTintColor = .skyBlue
         slider.tintColor = .skyBlue
-        slider.addTarget(self, action: #selector(audioSliderValueChanged(_:)), for: .valueChanged)
-
+        slider.addTarget(self, action: #selector(audioSliderValueChanged(_:)), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(sliderTouchDown), for: .touchDown)
         return slider
     }()
 
@@ -125,6 +124,7 @@ class PlayerViewClass: CustomView {
         addSubview(playTrackButton)
         addSubview(nextTrackButton)
         addSubview(repeatTrackButton)
+        startUpdatingSlider()
     }
     
     // MARK: layoutViews
@@ -205,6 +205,19 @@ class PlayerViewClass: CustomView {
         
     }
     
+
+      func startUpdatingSlider() {
+          timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+              self?.slider.value = AudioService.shared.second()
+              self?.timePassedLabel.text = SecondsToTime.secondsToTime(seconds: Int(self?.slider.value ?? 0))
+          }
+      }
+
+      func stopUpdatingSlider() {
+          timer?.invalidate()
+          timer = nil
+      }
+    
     public func changePlayStopButton() {
         let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 64, weight: .medium, scale: .medium)
         let stopImage = UIImage(systemName: "stop.circle.fill", withConfiguration: iconConfiguration)
@@ -229,13 +242,20 @@ extension PlayerViewClass {
     
     @objc func audioSliderValueChanged(_ slider: UISlider) {
         delegate?.slider(sliderChange: slider)
+        startUpdatingSlider()
     }
     
-    func configureScreen(episodeName: String, podcastName: String) {
+    @objc func sliderTouchDown() {
+        stopUpdatingSlider()
+    }
+    
+    func configureScreen(episodeName: String, podcastName: String, length: Int?) {
         episodeTitle.text = episodeName
         podcastTitle.text = podcastName
-        timeLeftLabel.text = "00:00"
-        timePassedLabel.text = "00:00"
+        timeLeftLabel.text = SecondsToTime.secondsToTime(seconds: length ?? 0)
+        timePassedLabel.text = "00:00:00"
+        slider.maximumValue = Float(length ?? 0)
+        
     }
     
 }

@@ -74,16 +74,7 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    private func secondsToTime(seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let remainingSeconds = seconds % 60
-        let formattedHours = String(format: "%02d", hours)
-        let formattedMinutes = String(format: "%02d", minutes)
-        let formattedSeconds = String(format: "%02d", remainingSeconds)
-        let time = "\(formattedHours):\(formattedMinutes):\(formattedSeconds)"
-        return time
-    }
+ 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return episodes?.items?.count ?? 0
@@ -98,7 +89,7 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
             DispatchQueue.main.async {
                 cell.setupPodcastCell(
                     titleLeft: episode?.title ?? "",
-                    descriptionLeft: self.secondsToTime(seconds: episode?.duration ?? 0),
+                    descriptionLeft: SecondsToTime.secondsToTime(seconds: episode?.duration ?? 0),
                     descriptionRight: String(episode?.episode ?? noEpisodeNumber) + " Eps",
                     image: resizedImage)
             }
