@@ -11,14 +11,17 @@ import PodcastIndexKit
 class CustomTabBarController: UITabBarController {
     
     let miniPayer = MiniPlayerView()
-    var id: Int = 0
-    var episodArray: EpisodeArrayResponse?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        miniPayer.togglePlayButton()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
         setTabBarAppearance()
         setupMiniPlayer()
+        AudioService.shared.delegateMiniPlayer = self
     }
     
     private func generateTabBar() {
@@ -102,73 +105,95 @@ class CustomTabBarController: UITabBarController {
             make.height.equalTo(68)
         }
          miniPayer.isHidden = true
-    }
+         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+         miniPayer.backView.addGestureRecognizer(tapGesture)
+         let swipeUpGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeUp(_:)))
+         miniPayer.addGestureRecognizer(swipeUpGesture)
+         miniPayer.backButton.addTarget(self, action: #selector(backButtonTaped), for: .touchUpInside)
+         miniPayer.playButton.addTarget(self, action: #selector(playButtonTaped), for: .touchUpInside)
+         miniPayer.forwardButton.addTarget(self, action: #selector(forwardButtonTaped), for: .touchUpInside)
 
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        let vc = PlayerViewController()
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
+    @objc func handleSwipeUp(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.view)
+        let deltaY = translation.y
+        let viewHeight: CGFloat = 100 // Измените это значение на желаемую высоту
+        switch gesture.state {
+        case .changed:
+            if deltaY > 0 {
+                miniPayer.transform = CGAffineTransform(translationX: 0, y: -deltaY)
+            }
+        case .ended:
+            if deltaY > viewHeight {
+                UIView.animate(withDuration: 0.3) {
+                    self.miniPayer.alpha = 0
+                    self.miniPayer.transform = CGAffineTransform(translationX: 0, y: -self.miniPayer.frame.height)
+                } completion: { _ in
+                    self.miniPayer.isHidden = true
+                    AudioService.shared.stop()
+                }
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.miniPayer.transform = .identity
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    @objc func backButtonTaped() {
+        AudioService.shared.previousSong()
+        miniPayer.togglePlayButton()
+    }
+    
+    @objc func playButtonTaped() {
+        AudioService.shared.playOrStop()
+        miniPayer.togglePlayButton()
+    }
+    
+    @objc func forwardButtonTaped() {
+        AudioService.shared.nextSong()
+        miniPayer.togglePlayButton()
+    }
 }
 
 extension CustomTabBarController: MiniPlayerDelegate {
-    func didSelectCell(withId id: Int, allEpisodes: EpisodeArrayResponse) {
-//
-//        self.id = id
-//        self.episodArray = allEpisodes
-//        
-//        guard  let episode = allEpisodes.items?[id] else { return }
-//        playSongAndSetupMiniPayer(with: episode)
-//        
-//        
-//        miniPayer.isHidden = false
-//        view.reloadInputViews()
-//        miniPayer.playButton.addTarget(self, action: #selector(playStopButton), for: .touchUpInside)
-//        miniPayer.forwardButton.addTarget(self, action: #selector(forwardButton), for: .touchUpInside)
-//        miniPayer.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bigPlayer(_:)))
-//        miniPayer.backView.addGestureRecognizer(tapGesture)
-//
-//    }
-//    
-//    @objc func playStopButton() {
-//            miniPayer.togglePlayButton()
-//    }
-//    
-//    @objc func forwardButton() {
-//        guard  let episodes = episodArray?.items else { return }
-//        if id < episodes.count {
-//            self.id += 1
-//            print(id)
-//            let episode = episodes[id]
-//            playSongAndSetupMiniPayer(with: episode)
-//        } else {
-//            id = 0
-//            let episode = episodes[id]
-//            playSongAndSetupMiniPayer(with: episode)
-//        }
-//    }
-//    
-//    @objc func backButton() {
-//        guard  let episodes = episodArray?.items else { return }
-//        if id > 0 {
-//            self.id -= 1
-//            print(id)
-//            let episode = episodes[id]
-//            playSongAndSetupMiniPayer(with: episode)
-//        } else {
-//            self.id = episodes.count - 1
-//            let episode = episodes[id]
-//            playSongAndSetupMiniPayer(with: episode)
-//        }
-//    }
-//    
-//    @objc func bigPlayer(_ gesture: UITapGestureRecognizer) {
-//        guard let episodes = episodArray else {return}
-//        let playerViewController = PlayerViewController(with: episodes, podcastName: "", id: id)
-//        present(playerViewController, animated: true, completion: nil)
-//    }
-//   private func playSongAndSetupMiniPayer(with episode: Episode) {
-//        let title = (episode.title ?? "") +  "\(episode.episode) Eps"
-//        AudioService.shared.playAudio(from: episode.enclosureUrl ?? "")
-//        FetchImage.shared.loadImageFromURL(urlString: episode.image ?? "") { image in
-//            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 43, height: 43))
-//            self.miniPayer.setupMiniPlayer(image: resizedImage, title: title)
-//        }
+    func didSelectCell() {
+        let currentId = AudioService.shared.currentId()
+        let episode = AudioService.shared.allEps?.items?[currentId]
+        FetchImage.shared.loadImageFromURL(urlString: episode?.image ?? "") { image in
+            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 279, height: 326))
+            DispatchQueue.main.async {
+                self.miniPayer.setupMiniPlayer(image: resizedImage, title: episode?.title ?? "")
+            }
+        }
+        AudioService.shared.playAudio()
+        miniPayer.togglePlayButton()
+        miniPayer.isHidden = false
+        miniPayer.alpha = 1.0
+        miniPayer.transform = .identity
     }
 }
+
+extension CustomTabBarController: PlayerViewControllerDelegate {
+    func updateMiniPlayer() {
+        print("UPDATE MINI Player")
+        let currentId = AudioService.shared.currentId()
+        let episode = AudioService.shared.allEps?.items?[currentId]
+        FetchImage.shared.loadImageFromURL(urlString: episode?.image ?? "") { image in
+            let resizedImage = FetchImage.resizeImage(image: image, targetSize: CGSize(width: 279, height: 326))
+            DispatchQueue.main.async {
+                self.miniPayer.setupMiniPlayer(image: resizedImage, title: episode?.title ?? "")
+            }
+        }
+    }
+}
+

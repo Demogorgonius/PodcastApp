@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 import PodcastIndexKit
 
+protocol PlayerViewControllerDelegate {
+    func updateMiniPlayer()
+}
+
 class PlayerViewController: CustomViewController<PlayerViewClass> {
     
     // MARK: Variables
@@ -18,20 +22,20 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     private var episodes: EpisodeArrayResponse?
     private var podcastName: String?
     private var firstId: Int = 0
-    private var currentId: Int = 0
     private var centerCell: PlayerCollectionViewCell?
+    private weak var audioService = AudioService.shared
+    var delegate: PlayerViewControllerDelegate?
+    
     // MARK: init & viewDidLoad
     
-    init(with episodes: EpisodeArrayResponse, podcastName: String?, id: Int) {
-        
-        self.episodes = episodes
-        self.podcastName = podcastName
-        self.firstId = id
+    init() {
         super.init(nibName: nil, bundle: nil)
-        modalPresentationStyle = .automatic
+        episodes = AudioService.shared.allEps
+        firstId = AudioService.shared.id ?? 2
+        podcastName = AudioService.shared.podcastName
+        modalPresentationStyle = .fullScreen
         modalTransitionStyle = .crossDissolve
         navigationController?.navigationBar.isHidden = false
-        
     }
     
     required init?(coder: NSCoder) {
@@ -39,8 +43,7 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        scrollTo(id: firstId)
-        currentId = firstId
+        scrollTo()
     }
     
     override func viewDidLoad() {
@@ -48,23 +51,24 @@ class PlayerViewController: CustomViewController<PlayerViewClass> {
         customView.episodeCollectionView.delegate = self
         customView.episodeCollectionView.dataSource = self
         customView.delegate = self
+        audioService?.delegatePlayer = self
         episodeVC = EpisodeCollectionView()
-        customView.configureScreen(episodeName: episodes?.items?[firstId].title ?? "", podcastName: podcastName ?? "", length: episodes?.items?[firstId].duration)
-        playSong(id: firstId)
-        
-
+        setupView(id: firstId)
     }
     
-    private func scrollTo(id: Int) {
+    private func scrollTo() {
+        let id = AudioService.shared.currentId()
         let indexPathToScroll = IndexPath(row: id, section: 0)
-        customView.episodeCollectionView.scrollToItem(at: indexPathToScroll, at: .centeredHorizontally, animated: true)
+        customView.episodeCollectionView.scrollToItem(at: indexPathToScroll, at: .centeredHorizontally, animated: false)
     }
     
-    private func playSong(id: Int) {
-        guard  let episodeURL = episodes?.items?[id].enclosureUrl else { return }
-        print("Start plaing \(episodeURL)")
-        AudioService.shared.playAudio(from: episodeURL)
+    private func playSong() {
+        AudioService.shared.playAudio()
         customView.changePlayStopButton()
+    }
+    
+    private func setupView(id: Int) {
+        customView.configureScreen(episodeName: episodes?.items?[id].title ?? "", podcastName: podcastName ?? "", length: episodes?.items?[id].duration)
     }
 }
 
@@ -86,12 +90,11 @@ extension PlayerViewController: UICollectionViewDelegate {
     
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-       
             guard scrollView is UICollectionView else { return }
             if let centerCellIndexPath: IndexPath = self.customView.episodeCollectionView.centerCellIndexPath {
-                currentId = centerCellIndexPath.row
-                customView.configureScreen(episodeName: episodes?.items?[currentId].title ?? "", podcastName: podcastName ?? "", length: episodes?.items?[currentId].duration)
-                playSong(id: currentId)
+                setupView(id: centerCellIndexPath.row)
+                AudioService.shared.id = centerCellIndexPath.row
+                playSong()
             }
     }
 }
@@ -139,43 +142,56 @@ extension PlayerViewController: PlayerViewDelegate {
 
     func button(didButtonTapped button: UIButton) {
         let buttonTag = button.tag
-           // Определяем, какая кнопка была нажата
-           switch buttonTag {
+        let currentId = AudioService.shared.currentId()
+        switch buttonTag {
            case 1:
-              
+            AudioService.shared.isShuffleActive.toggle()
+            customView.changeShuffleButton()
+            setupView(id: currentId)
                break
            case 2:
-               if currentId > 0 {
-                   currentId -= 1
-                   scrollTo(id: currentId)
-                   playSong(id: currentId)
-               }
+               AudioService.shared.previousSong()
+               scrollTo()
+               setupView(id: currentId)
+               customView.changePlayStopButton()
                break
            case 3:
                AudioService.shared.playOrStop()
                customView.changePlayStopButton()
                break
            case 4:
-               guard let numbersOfEpisodes = episodes?.items?.count else {return}
-               if currentId < numbersOfEpisodes - 1 {
-                   currentId += 1
-                   scrollTo(id: currentId)
-                   playSong(id: currentId)
-               }
+               AudioService.shared.nextSong()
+               scrollTo()
+               setupView(id: currentId)
+               customView.changePlayStopButton()
                break
            case 5:
-               // Действия для кнопки repeatTrackButton
-               // Например, изменение режима повтора трека
-               break
+            AudioService.shared.isRepeatActive.toggle()
+            customView.changeRepeatTrackButton()
+            setupView(id: currentId)
+            break
+        case 6:
+            delegate?.updateMiniPlayer()
+            dismiss(animated: true, completion: nil)
+            break
            default:
                break
            }
     }
     
     func slider(sliderChange slider: UISlider) {
+        let currentId = AudioService.shared.currentId()
         guard let length = episodes?.items?[currentId].duration else { return}
         slider.maximumValue = Float(length)
         AudioService.shared.playInTime(value: slider.value)
     }
     
+}
+
+extension PlayerViewController: PlayerAudioDelegate {
+    func updateView() {
+        let currentId = AudioService.shared.currentId()
+        scrollTo()
+        setupView(id: currentId)
+    }
 }

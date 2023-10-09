@@ -9,7 +9,7 @@ import UIKit
 import PodcastIndexKit
 
 protocol MiniPlayerDelegate: AnyObject {
-    func didSelectCell(withId id: Int, allEpisodes: EpisodeArrayResponse)
+    func didSelectCell()
 }
 
 class ChannelViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -105,10 +105,9 @@ class ChannelViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let allEpisodes = episodes else {return}
         let id = indexPath.row
-        delegate?.didSelectCell(withId: id, allEpisodes: allEpisodes)
-        let vc = PlayerViewController(with: allEpisodes , podcastName: podcast?.title, id: id)
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        AudioService.shared.setupAudioService(allEps: allEpisodes, id: id, podcastName: podcast?.title)
+        delegate?.didSelectCell()
+        
     }
 }
 

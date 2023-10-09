@@ -23,7 +23,8 @@ class MiniPlayerView : UIView {
         let label = UILabel()
         label.font = .manropeBold(size: 16)
         label.text = "Pop Star Eps 49"
-        label.numberOfLines = 1
+        label.numberOfLines = 0
+        label.textAlignment = .left
         label.minimumScaleFactor = 0.7
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +36,7 @@ class MiniPlayerView : UIView {
         viewCardView.backgroundColor = .blueSearchCell
         viewCardView.layer.cornerRadius = 10
         viewCardView.translatesAutoresizingMaskIntoConstraints = false
+     
         return viewCardView
     }()
     
@@ -43,7 +45,7 @@ class MiniPlayerView : UIView {
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.black
         button.contentMode = .scaleToFill
-        button.setImage(UIImage(systemName: "backward.end"), for: .normal)
+        button.setImage(UIImage(systemName: "backward.end.fill"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -54,11 +56,10 @@ class MiniPlayerView : UIView {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.black
-        button.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+        button.setImage(UIImage(systemName: "pause.circle"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     
@@ -66,7 +67,7 @@ class MiniPlayerView : UIView {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor.black
-        button.setImage(UIImage(systemName: "forward.end"), for: .normal)
+        button.setImage(UIImage(systemName: "forward.end.fill"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +78,6 @@ class MiniPlayerView : UIView {
       super.init(frame: frame)
         setupView()
         setupConstrains()
-       
     }
     
     required init?(coder: NSCoder) {
@@ -111,8 +111,8 @@ class MiniPlayerView : UIView {
         forwardButton.snp.makeConstraints { make in
             make.trailing.equalTo(backView).inset(10)
             make.centerY.equalToSuperview()
-            make.height.equalTo(20)
-            make.width.equalTo(20)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
         
         playButton.snp.makeConstraints { make in
@@ -126,26 +126,24 @@ class MiniPlayerView : UIView {
         backButton.snp.makeConstraints { make in
             make.trailing.equalTo(playButton.snp.leading).offset(-20)
             make.centerY.equalToSuperview()
-            make.height.equalTo(20)
-            make.width.equalTo(20)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
 
         }
 
         titleLbl.snp.makeConstraints { make in
             make.leading.equalTo(imageViewCell.snp.trailing).offset(10)
-            make.trailing.equalTo(backButton.snp.leading).inset(10)
+            make.trailing.equalTo(backButton.snp.leading).inset(-10)
             make.centerY.equalToSuperview()
             make.height.equalTo(43)
         }
     }
     
     public func togglePlayButton() {
-        if playButton.currentImage == UIImage(systemName: "play.circle") {
-            playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
-            AudioService.shared.play()
+        if AudioService.shared.isEpsPlaying {
+            playButton.setImage(UIImage(systemName: "pause.circle"), for: .normal)
         } else {
             playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
-            AudioService.shared.pause()
         }
     }
     
@@ -153,5 +151,8 @@ class MiniPlayerView : UIView {
         imageViewCell.image = image
         titleLbl.text = title
     }
+    
+ 
+  
     
 }

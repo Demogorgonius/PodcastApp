@@ -65,7 +65,7 @@ class PlayerViewClass: CustomView {
     private lazy var playTrackButton: UIButton = {
         let button = UIButton()
         let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 64, weight: .medium, scale: .medium)
-        let image = UIImage(systemName: "stop.circle.fill", withConfiguration: iconConfiguration)
+        let image = UIImage(systemName: "pause.circle.fill", withConfiguration: iconConfiguration)
         button.setImage(image, for: .normal)
         button.tintColor = .skyBlue
         button.imageView?.contentMode = .scaleAspectFit
@@ -91,6 +91,15 @@ class PlayerViewClass: CustomView {
         slider.addTarget(self, action: #selector(sliderTouchDown), for: .touchDown)
         return slider
     }()
+    
+    private lazy var backButton: UIButton = {
+         let button = UIButton(type: .system)
+         let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 48, weight: .medium, scale: .medium)
+         let image = UIImage(systemName: "arrow.backward.circle", withConfiguration: iconConfiguration)
+         button.setImage(image, for: .normal)
+         button.tintColor = .purplyGrey
+         return button
+     }()
 
     
     // MARK: setViews
@@ -103,16 +112,23 @@ class PlayerViewClass: CustomView {
         playTrackButton.tag = 3
         nextTrackButton.tag = 4
         repeatTrackButton.tag = 5
+        backButton.tag = 6
+
         
         shuffleButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         previousTrackButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         playTrackButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         nextTrackButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         repeatTrackButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+
         
         episodeTitle.numberOfLines = 0
         episodeTitle.textAlignment = .center
+        podcastTitle.numberOfLines = 0
+        podcastTitle.textAlignment = .center
         
+        addSubview(backButton)
         addSubview(episodeCollectionView)
         addSubview(episodeTitle)
         addSubview(podcastTitle)
@@ -125,6 +141,9 @@ class PlayerViewClass: CustomView {
         addSubview(nextTrackButton)
         addSubview(repeatTrackButton)
         startUpdatingSlider()
+        changePlayStopButton()
+        changeShuffleButton()
+        changeRepeatTrackButton()
     }
     
     // MARK: layoutViews
@@ -132,6 +151,13 @@ class PlayerViewClass: CustomView {
     override func layoutViews() {
         super.layoutViews()
         
+        backButton.snp.makeConstraints { make in
+                   make.height.equalTo(48)
+                   make.width.equalTo(48)
+                   make.top.equalToSuperview().offset(40)
+                   make.leading.equalToSuperview().offset(15)
+               }
+
         episodeCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(129)
             make.trailing.equalToSuperview()
@@ -149,6 +175,8 @@ class PlayerViewClass: CustomView {
         podcastTitle.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(episodeTitle.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
         
         slider.snp.makeConstraints { make in
@@ -220,17 +248,34 @@ class PlayerViewClass: CustomView {
     
     public func changePlayStopButton() {
         let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 64, weight: .medium, scale: .medium)
-        let stopImage = UIImage(systemName: "stop.circle.fill", withConfiguration: iconConfiguration)
+        let stopImage = UIImage(systemName: "pause.circle.fill", withConfiguration: iconConfiguration)
         let playImage = UIImage(systemName: "play.circle.fill", withConfiguration: iconConfiguration)
         
-        if AudioService.shared.isPlaying() {
+        if AudioService.shared.isEpsPlaying {
             playTrackButton.setImage(stopImage, for: .normal)
         } else {
             playTrackButton.setImage(playImage, for: .normal)
         }
     }
     
-}
+    public func changeShuffleButton() {
+        if  AudioService.shared.isShuffleActive {
+            shuffleButton.tintColor = .skyBlue
+        } else {
+            shuffleButton.tintColor = .purplyGrey
+        }
+    }
+    
+    public func changeRepeatTrackButton() {
+        if   AudioService.shared.isRepeatActive {
+            repeatTrackButton.tintColor = .skyBlue
+        } else {
+            repeatTrackButton.tintColor = .purplyGrey
+        }
+    }
+    }
+    
+
 
 // MARK: Extensions
 
